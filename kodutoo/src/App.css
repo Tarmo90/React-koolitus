@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+}
+
+.nupp {
+  /* font-weight: bold; */
+  background-color: green;
+  color: lightgrey;
+  border-radius: 3px;
+  border-color: blue
+}
+.nupp:hover{
+  height: 100px;
+}
+.nupp:active{
+  cursor: grab;
+}
+
+.tekst {
+  color: blue;
+}
+.tekst:hover {
+  font-size: 24px;
+}
+
+.kaldkiri {
+  font-style: italic;
+}
+
+.roheline {
+  font-weight: bold;
+  color: green;
+  text-decoration: underline;
+ 
+  padding: 0.9%;
+}
+.roheline:hover {
+  text-decoration-color: brown;
+}
+
+.pilt {
+  width: 200px; /* Määrake soovitud laius */
+  height: 250px; /* Määrake soovitud kõrgus */
+  float: left;     
+}
+.pilt:hover {
+  border-radius: 10%;
+  opacity: 50%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
