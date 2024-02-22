@@ -1,0 +1,171 @@
+.App {
+  text-align: center;
+}
+
+.avaleht {
+  color: aqua;
+  right: 5%;
+  position: absolute;
+}
+
+.konteiner {
+  background-image:url("https://img.freepik.com/free-vector/cryptocurrency-bitcoin-symbol-technology-background_1017-33588.jpg?w=1380&t=st=1708600254~exp=1708600854~hmac=68e7a1f33caa2debd3064ca00710af1294b554fa5a830b97d5c9cf8fa53df03b");
+  background-size: cover;
+  height: 100vh;
+  
+} 
+.pilt {
+  width: 30%; 
+  height: 70%;
+  position: relative;
+  left: 20px;
+  top: 15%;
+  border: 3px solid #f5f10b; 
+}
+.pealkiri1{
+  position: absolute;
+  text-transform: uppercase;
+  text-align: center;
+  top: 6%;
+  left: 41%;
+  color: rgb(168, 255, 6);
+  text-shadow: 2px 2px 5px rgba(208, 255, 0, 0.863);
+  font-weight: bold;
+   
+}
+.uudised {
+  color:aqua;
+  right: 5%;
+  position: absolute;
+}
+.pilt2 { 
+  width: 30%; 
+  height: 30%;
+  position: relative;
+  left: 20px;
+  top: 15%;
+  border: 3px solid #f5f10b; 
+}
+.pealkiri2{
+  position: absolute;
+  text-transform: uppercase;
+  text-align: center;
+  top: 6%;
+  left: 30%;
+  color: rgb(168, 255, 6);
+  text-shadow: 2px 2px 5px rgba(208, 255, 0, 0.863);
+  font-weight: bold;
+   
+}
+
+.tekst {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgba(0, 217, 255, 0.863);
+  /* font-weight: bold; */
+    position: absolute; /* Absoluutne positsioneerimine */
+    top: 50%; /* Paigutamine 50% kaugusele ülemisest servast */
+    left: 50%; /* Paigutamine 50% kaugusele vasakust servast */
+    transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */
+    text-align: center; /* Teksti keskjoondamine */ 
+}
+.tekst2 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgba(0, 217, 255, 0.863);
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 70%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 35%;
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */
+  text-align: center; /* Teksti keskjoondamine */ 
+}
+
+.kontaktid {
+  color: aqua;
+  right: 5%;
+  position: absolute;
+  
+}
+.info {
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 9%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 7.4%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */
+  color: white; 
+  text-decoration: underline;
+}
+.info2 {
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 20%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 10%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white; 
+}
+.info3 {
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 40%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 10%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white; 
+}
+.info4 {
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 60%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 10.2%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white; 
+}
+
+.meist {
+  color: aqua;
+  right: 5%;
+  position: absolute;
+}
+.pealk {
+  font-weight: bold;
+  font-size: 40px;
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 9%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 20.3%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white; 
+}
+.meieinfo {
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 20%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 30%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white; 
+}
+.pealk1 {
+  font-weight: bold;
+  font-size: 40px;
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 38%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 32.8%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white;  
+}
+.meieinfo1 {
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 50%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 50%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white;  
+}
+.pealk2 {
+  font-weight: bold;
+  font-size: 40px;
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 69%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 11.9%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white;  
+}
+.meieinfo2 {
+  position: absolute; /* Absoluutne positsioneerimine */
+  top: 80%; /* Paigutamine 50% kaugusele ülemisest servast */
+  left: 35%; /* Paigutamine 50% kaugusele vasakust servast */
+  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
+  color: white;  
+}
