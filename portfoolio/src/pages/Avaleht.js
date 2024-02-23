@@ -3,7 +3,7 @@ function Avaleht() {
     <div>
       <div className='main-link-list'>
         <div className='main-link'>
-          <img src='/pc.jpg' alt='Pilt' />
+          <img className="pilt" src='/pc.jpg' alt='Pilt' />
           <p>Test</p>
         </div>
       </div>

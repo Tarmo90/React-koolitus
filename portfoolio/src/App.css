@@ -27,3 +27,8 @@
 .main-link p {
   font-family: 'roboto'; /* Vahemaa ülevalt pildist */
 }
+
+.pilt {
+  width: 250; /* Muutke vastavalt soovile */
+  height: 160px;
+}
