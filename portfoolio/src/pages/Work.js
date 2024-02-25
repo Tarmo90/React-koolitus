@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Work() {
   return (
-    <div>Work</div>
-  )
+    <div className="background">
+      <Link to='/' >
+        <button className='nupp'>Tagasi</button>
+      </Link>
+
+      <div>Tere tulemast kursusele</div>
+    </div>
+  );
 }
 
-export default Work ;
+export default Work;
