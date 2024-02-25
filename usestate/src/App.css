@@ -1,0 +1,65 @@
+.pakett {
+  margin: 20px;
+}
+.pakett:hover {
+  border: 3px solid purple
+}
+.pakett-aktiivne {
+  margin: 20px ;
+  border: 3px solid purple;
+}
+
+.must-ring {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.kuldne-ring {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(255, 209, 5);
+}
+.sinine-ring {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(17, 0, 255);
+}
+.punane-ring {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(250, 0, 0);
+}
+.lilla-ring {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(129, 5, 212);
+}
+.aktiivne {
+  text-decoration: underline;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 3px solid #ced4da; /* Lisame piirjoone */
+  cursor: pointer; /* Lisa kursori tüüp, et näidata, et nupp on aktiivne */
+  padding: 3px 20px; /* Lisa polster */
+  margin-right: 10px; /* Lisa veidi vahemikku nuppude vahele */
+  border-radius: 10px;
+}
+.m2lukaart-nupp{
+  background-color: #f8f9fa; /* Vaikimisi taustavärv */
+    color: #000000; /* Vaikimisi teksti värv */
+    border: 3px solid #ced4da; /* Lisame piirjoone */
+    padding: 3px 20px; /* Lisa polster */
+    margin-right: 10px; /* Lisa veidi vahemikku nuppude vahele */
+    cursor: pointer; /* Lisa kursori tüüp, et näidata, et nupp on aktiivne */
+    border-radius: 10px;
+}
+.m2lukaart-nupp:hover {
+  background-color: rgb(235, 253, 75);
+}
