@@ -13,9 +13,10 @@ import NotFound from './Pages/NotFound';
 function App() {
   return (
     <div className="App">
-      <Link to="avaleht">     
+
+      <Link to="/">     
       <img className="pilt" src="https://upload.wikimedia.org/wikipedia/en/9/99/Nobe_GT100.jpg" alt="" />
-</Link>   
+      </Link>   
      
 
      <Link to="/esindused">
@@ -44,7 +45,7 @@ function App() {
 
      <Routes>
     
-      <Route path="avaleht" element={ <Avaleht /> } />
+      <Route path="" element={ <Avaleht /> } />
       <Route path="esindused" element={<Esindused /> } />
       <Route path="osta-kinkekaart" element={<Kinkekaart /> } />
       <Route path="arikliendile" element={<Arikliendile /> } />
