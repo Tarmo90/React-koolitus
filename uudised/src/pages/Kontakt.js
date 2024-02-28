@@ -1,38 +1,29 @@
 import React, { useState } from 'react'
 
 function Kontakt() {
-   
-    const [kontakt, n2itaKontakt] = useState('');
+    const [n2itaTelTallinn, muudaN2itaTelTallinn] = useState(false)
+    const [n2itaTelYlemiste, muudaN2itaYlemiste] = useState(false)
+    const [n2itaTelTasku, muudaN2itaTasku] = useState(false)
+    // const [kontakt, n2itaKontakt] = useState('');
     return ( 
-        <div className="konteiner">
-        <div className="kontaktid">See on kontaktide leht</div>
-        <div className= "info">Võta meiega ühendust:</div> <br />
+        // <div className="konteiner">
+        // <div className="kontaktid">See on kontaktide leht</div>
+        <div>
+        <div>Meie tootajad</div>
+        <br />
+        <div onClick={() => muudaN2itaTelTallinn(!n2itaTelTallinn)}> Kristiine keskus</div>
+        {n2itaTelTallinn && <div>+3728903499</div> }
+        <div>Endla 45</div>
+        <br />
+        <div onClick={() => muudaN2itaYlemiste(!n2itaTelYlemiste)}>Ylemiste keskus</div>
+        {n2itaTelYlemiste && <div>+3728903499</div> }
+        <div>Suur-S6jam2e 4</div>
+        <br />
+        <div onClick={() => muudaN2itaTasku(!n2itaTelTasku)}>Tasku keskus</div>
+        {n2itaTelTasku && <div>+3728903499</div> }
+        <div>Riia 2</div>
 
-        <div className= "info2">nimi: 'Jaan Tamm',<br />
-        email: 'jaan.tamm@example.com',<br />
-      
-       
-        ametikoht: 'Müügijuht',<br />
-        asukoht: 'Tallinn' <br />
-        <button onClick={() => n2itaKontakt('+372 54643234')}>Vota yhendust</button> <br />
-        { kontakt !== '' && <div>Tema kontakt: {kontakt}</div> }
-        </div>
-
-        <div className="info3">nimi: 'Mari Mets',<br />
-        email: 'mari.mets@example.com',<br />
-        
-        <button onClick={() => n2itaKontakt('+372 54643234')}>Vota yhendust</button> <br />
-        { kontakt !== '' && <div>Tema kontakt: {kontakt}</div> }
-        </div>
-
-        <div className="info4">nimi: 'Peeter Puu',<br />
-        email: 'peeter.puu@example.com',<br />
-        
-        <button onClick={() => n2itaKontakt('+372 54643234')}>Vota yhendust</button> <br />
-        { kontakt !== '' && <div>Tema kontakt: {kontakt}</div> }
-        </div>
-
-        </div> );
+    </div> );
 }
 
 export default Kontakt ;
