@@ -98,6 +98,9 @@ function App() {
                 <Route path='kontakt' element={<Kontakt />} />
                 <Route path='seaded' element={<Seaded />} />
             </Routes>
+
+            <Leht /> {/* Lisa Leht komponent */}
+            
             <ToastContainer
             position="bottom-right"
             autoClose={2500}
