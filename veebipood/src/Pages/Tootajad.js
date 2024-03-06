@@ -1,11 +1,109 @@
-import React from 'react'
+import React, { useState } from 'react';
+import tootajateNimed from '../data/tootajad.json';
 
 function Tootajad() {
+  const [tootajad, setTootajad] = useState(tootajateNimed);
 
-// Kuva välja kõik töötajad:
-// ["Urmet", "Kaido", "Liina", "Maiki", "Heidi", "Epp", "Kaire", "Anet", "Maarja", "Ave", "Annika"]
-// Näita välja koguarv
-// Võimalda tühjendada
+  // Tühjendab töötajate nimekirja
+  const tyhjendaTootajad = () => {
+    setTootajad([]);
+  };
+
+  const sorteeriAZ = () => {
+    const sorteeriTootajad = [...tootajad].sort((a, b) => a.localeCompare(b))
+    setTootajad(sorteeriTootajad)
+  }
+
+  const sorteeriZA = () => {
+    const sorteeriTootajad = [...tootajad].sort((a, b) => b.localeCompare(a))
+    setTootajad(sorteeriTootajad)
+  }
+
+  const sorteeriTahedKasvavalt = () => {
+    const sorteeriTootajad = [...tootajad].sort((a, b) => a.length - b.length)
+    setTootajad(sorteeriTootajad)
+  }
+
+  const sorteeriTahedKahanevalt = () => {
+    const sorteeriTootajad = [...tootajad].sort((a, b) => b.length - a.length)
+    setTootajad(sorteeriTootajad)
+  }
+
+  const sorteeriKolmasTahtAZ = () => {
+    const sorteeriTootajad = [...tootajad].sort((a, b) => a[2].localeCompare(b[2]))
+    setTootajad(sorteeriTootajad)
+  }
+
+  const sorteeriKolmasTahtZA = () => {
+    const sorteeriTootajad = [...tootajad].sort((a, b) => b[2].localeCompare(a[2]))
+    setTootajad(sorteeriTootajad)
+  }
+
+  const filtreeri3T2helised = () => {
+    const vastus = tootajad.filter(tootaja => tootaja.length === 3);
+    setTootajad(vastus);
+  };
+
+  const filtreeriRohT2helised = () => {
+    const vastus = tootajad.filter(tootaja => tootaja.length >= 5);
+    setTootajad(vastus);
+  };
+
+  const filtreeriAiSisaldavad = () => {
+    const vastus = tootajad.filter(tootaja => tootaja.includes('ai'));
+    setTootajad(vastus);
+  };
+
+  const filtreeriKelKolmasT2htI = () => {
+    const vastus = tootajad.filter(tootaja => tootaja[2] === 'i')
+    setTootajad(vastus);
+  };
+
+  const filtreeriAlgabTahtA = () => {
+    const vastus = tootajad.filter(tootaja => tootaja.startsWith('A'))
+    setTootajad(vastus);
+  }
+
+  const arvutaKokku = () => {
+    let summa = 0;
+    tootajad.forEach(tootaja => summa = summa + tootaja.length)
+    return summa;
+  }
+
+  return (
+    <div>
+      <div>Töötajad</div>
+      {/* Kuvab kõik töötajad */}
+      <ul>
+        {tootajad.map((tootaja, index) => (
+          <div key={index}>{tootaja}</div>
+        ))}
+      </ul>
+
+      <div>Kokku on tootajate peale {arvutaKokku()} t2hem2rki</div>
+      {/* Näitab töötajate koguarvu */}
+      <div>Kokku on {tootajad.length} töötajat.</div>
+
+      {/* Nupp töötajate tühjendamiseks */}
+      <button onClick={tyhjendaTootajad}>Tühjenda</button>
+      <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
+      <button onClick={sorteeriZA}>Sorteeri Z-A</button>
+      <button onClick={sorteeriTahedKasvavalt}>Sorteeri t2hed kasvavalt</button>
+      <button onClick={sorteeriTahedKahanevalt}>Sorteeri t2hed kahanevalt</button>
+      <button onClick={sorteeriKolmasTahtAZ}>Sorteeri kolmas t2ht AZ</button>
+      <button onClick={sorteeriKolmasTahtZA}>Sorteeri kolmas t2ht ZA</button>
+
+      <button onClick={filtreeri3T2helised}>J2ta alles 3 t2helised</button>
+      <button onClick={filtreeriRohT2helised}>J2ta alles rohkem kui 5 t2helised</button>
+      <button onClick={filtreeriAiSisaldavad}>J2ta alles kes sisaldavad 'ai' lyhendit</button>
+      <button onClick={filtreeriKelKolmasT2htI}>J2ta alles kellel on kolmas t2ht 'i'</button>
+      <button onClick={filtreeriAlgabTahtA}>J2ta alles kes algab A-ga'</button>
+    </div>
+  );
+}
+
+export default Tootajad;
+
 
 // sorteeri: A-Z
 // sorteeri: Z-A
@@ -25,10 +123,3 @@ function Tootajad() {
 
 // Saab lisada läbi inputi (ref)
 // Igaüht saab kustutada
-
-  return (
-    <div>Tootajad</div>
-  )
-}
-
-export default Tootajad

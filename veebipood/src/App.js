@@ -12,6 +12,13 @@ import NotFound from './Pages/NotFound';
 import Hinnad from './Pages/Hinnad';
 import Tootajad from './Pages/Tootajad';
 import Tooted from './Pages/Tooted';
+import HaldaTooted from './Pages/HaldaTooted';
+import HaldaEsindused from './Pages/HaldaEsindused';
+import HaldaHinnad from './Pages/HaldaHinnad';
+import HaldaTootajad from './Pages/HaldaTootajad';
+import LisaHind from './Pages/LisaHind';
+import LisaEsindus from './Pages/LisaEsindus';
+import LisaTootja from './Pages/LisaTootja';
 
 function App() {
   return (
@@ -34,9 +41,7 @@ function App() {
       <button className="nupp">ärikliendile</button>
      </Link>
 
-     <Link to='/lisa-toode'>
-        <button className='nupp'>Lisa toode</button>
-      </Link>
+     
 
       <Link to='/ostukorv'>
         <button className='nupp'>Ostukorv</button>
@@ -52,12 +57,40 @@ function App() {
       <Link to='/tooted'>
         <button className='nupp'>Tooted</button>
       </Link>
+     
+
       <Link to='/tootajad'>
         <button className='nupp'>Tootajad</button>
       </Link>
+      <br /><br />
+
+      <Link to='/halda-tooted'>
+        <button className='nupp'>Halda tooteid</button>
+      </Link>
+      <Link to='/halda-esindused'>
+        <button className='nupp'>Halda esindusi</button>
+      </Link>
+      <Link to='/halda-hinnad'>
+        <button className='nupp'>Halda hindu</button>
+      </Link>
+      <Link to='/halda-tootajad'>
+        <button className='nupp'>Halda tootajaid</button>
+      </Link>
+
+      <Link to='/lisa-hind'>
+        <button className='nupp'>Lisa hind</button>
+      </Link>
+      <Link to='/lisa-esindus'>
+        <button className='nupp'>Lisa esindus</button>
+      </Link>
+      <Link to='/lisa-tootja'>
+        <button className='nupp'>Lisa tootja</button>
+      </Link>
+      <Link to='/lisa-toode'>
+        <button className='nupp'>Lisa toode</button>
+      </Link>
 
      <Routes>
-    
       <Route path="" element={ <Avaleht /> } />
       <Route path="esindused" element={<Esindused /> } />
       <Route path="osta-kinkekaart" element={<Kinkekaart /> } />
@@ -68,6 +101,13 @@ function App() {
       <Route path="hinnad" element={<Hinnad /> } />
       <Route path="Tooted" element={<Tooted /> } />
       <Route path="Tootajad" element={<Tootajad /> } />
+      <Route path="halda-tooted" element={<HaldaTooted /> } />
+      <Route path="halda-esindused" element={<HaldaEsindused /> } />
+      <Route path="halda-hinnad" element={<HaldaHinnad /> } />
+      <Route path="halda-tootajad" element={<HaldaTootajad /> } />
+      <Route path="lisa-hind" element={<LisaHind/> } />
+      <Route path="lisa-esindus" element={<LisaEsindus/> } />
+      <Route path="lisa-tootja" element={<LisaTootja/> } />
       <Route path="*" element={<NotFound /> } />
      </Routes>
     

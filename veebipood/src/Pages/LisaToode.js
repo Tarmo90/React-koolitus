@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react"; // Imporditakse Reacti ja Reacti hook'id useRef ja useState
-import { Link } from "react-router-dom"; // Imporditakse React Router'i Link komponent
+import { Link } from "react-router-dom";
+import tootedFailist from '../data/tooted.json' // Imporditakse React Router'i Link komponent
 
 function LisaToode() { // Defineeritakse funktsioonikomponent LisaToode
   const [sonum, uuendaSonum] = useState(""); // Tekitatakse state sonum ja selle uuendamise funktsioon uuendaSonum ning kasutatakse Reacti hook'i useState
@@ -16,6 +17,7 @@ function LisaToode() { // Defineeritakse funktsioonikomponent LisaToode
         '. Kategooria - ' + // Lisatakse tekst ". Kategooria - "
         kategooriaLuger.current.value // Lisatakse kategooria input välja väärtus
       );
+      tootedFailist.push(inputiluger.current.value);
     }   
   }
 

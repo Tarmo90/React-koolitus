@@ -34,7 +34,7 @@ function Ostukorv() {
 
       {/* Kuvab iga eseme ostukorvis koos eemaldamise nupuga */}
       <div>{ostukorv.map((toode,index) => 
-        <div>
+        <div key={index}>
           {toode}
           <button onClick={() => kustutaOstukorvist(index)}>x</button> {/* Nupp eseme eemaldamiseks */}
         </div> )}

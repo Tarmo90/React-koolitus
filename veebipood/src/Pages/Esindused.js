@@ -4,6 +4,10 @@ import tallinnadKeskused from '../data/tallinn.json'; // Impordime tallinna kesk
 
 function Esindused() {
   const [linn, muudaLinn] = useState("Tallinn"); // Seisundi deklareerimine valitud linna jaoks
+
+
+  // Renderdamine -> HTMLi väljakuvamine
+  // Re-renderdamine -> HTMLi uuendus    useState-i funktsioon setBLABLA
   const [keskused, setKeskused] = useState(tallinnadKeskused); // Seisundi deklareerimine keskuste andmete jaoks, vaikimisi Tallinna jaoks
 
   // Funktsioon orginaalsete keskuste taastamiseks
@@ -71,6 +75,12 @@ function Esindused() {
     setKeskused(vastus);
   };
 
+  const kustutaEsindus = (index) => {
+    keskused.splice(index, 1);
+    setKeskused(keskused.slice());
+  }
+
+  // Esindused t2hem2rkide kokkuliitmine
   return (
     <div>
       <div>Esindused</div> {/* Pealkiri esinduste lehele */}
@@ -97,7 +107,12 @@ function Esindused() {
           <button onClick={filtreeriVah7T2helised}>J2ta alles v2hemalt 7 t2helised</button> {/* Nupp keskuste filtreerimiseks, et jätta alles need, mis koosnevad vähemalt 7 tähemärgist */}
           <button onClick={filtreeriIsSisaldavad}>J2ta alles kes sisaldavad 'is' lyhendit</button> {/* Nupp keskuste filtreerimiseks, et jätta alles need, mis sisaldavad "is" lühendit */}
           <button onClick={filtreeriKelKolmasT2htI}>J2ta alles kellel on kolmas t2ht 'i'</button> {/* Nupp keskuste filtreerimiseks, et jätta alles need, mille kolmas tähemärk on "i" */}
-          {keskused.map(keskus => <div>{keskus}</div> )} {/* Kuvatakse keskused */}
+          
+          {keskused.map((keskus, index) => 
+            <div key={index}>
+              {index}.{keskus}
+              <button onClick={() => kustutaEsindus(index)}>x</button>
+            </div> )} {/* Kuvatakse keskused */}
       </div>}
 
       {/* Kui valitud linn on Tartu, kuvatakse järgmised elemendid */}
