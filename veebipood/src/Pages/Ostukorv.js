@@ -18,6 +18,7 @@ function Ostukorv() {
     <div>
       <div>Ostukorv</div> {/* Pealkiri ostukorvile */}
       <div>Ostukorvis on: {ostukorv.length} eset</div> {/* Kuvab ostukorvis olevate esemete arvu */}
+      
       {/* Kuvab sõnumi ja pildi, kui ostukorv on tühi */}
       {ostukorv.length === 0 && 
       <div className='ostukorv'>

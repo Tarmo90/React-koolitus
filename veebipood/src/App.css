@@ -13,8 +13,6 @@
   text-decoration: underline;
 }
 
-
-
 .nupp:active{
   font-style: italic;
   border: 3px dotted green;
@@ -22,13 +20,11 @@
 
 .pilt {
   width: 100px;
-
 }
 
 .pilt:hover {
   opacity: 70%;
   cursor: pointer;
-
 }
 
 .pilt:active {
@@ -94,4 +90,20 @@ transform: scale(0.9);
 
 .ostukorv img {
   width: 100px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left ;
+  padding: 4px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

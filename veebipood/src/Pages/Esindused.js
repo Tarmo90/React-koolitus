@@ -75,22 +75,35 @@ function Esindused() {
     setKeskused(vastus);
   };
 
-  const kustutaEsindus = (index) => {
-    keskused.splice(index, 1);
-    setKeskused(keskused.slice());
+// Esindused t2hem2rkide kokkuliitmine
+  const arvutaKokku = () => {
+    let summa = 0;
+    keskused.forEach(esindus => summa = summa + esindus.length)
+    return summa;
   }
 
-  // Esindused t2hem2rkide kokkuliitmine
+
+  
   return (
     <div>
-      <div>Esindused</div> {/* Pealkiri esinduste lehele */}
+      <div>Esindused</div> 
       {/* Lingid erinevate linnade vahel, millele klikkimisel muudetakse aktiivne linna seisund */}
       <span className={linn === "Tallinn" ? "linn-aktiivne" : "linn"} onClick={() => muudaLinn("Tallinn")}>Tallinn (7)</span>
       <span className={linn === "Tartu" ? "linn-aktiivne" : "linn"} onClick={() => muudaLinn("Tartu")}>Tartu (2)</span>
       <span className={linn === "Narva" ? "linn-aktiivne" : "linn"} onClick={() => muudaLinn("Narva")}>Narva (1)</span>
       <span className={linn === "Pärnu" ? "linn-aktiivne" : "linn"} onClick={() => muudaLinn("Pärnu")}>Pärnu (1)</span>
       <br /><br />
+
       <div>Aktiivne linn on: {linn}</div> {/* Näitab aktiivset linna */}
+
+      <ul>
+        {keskused.map((tootaja, index) => (
+          <div key={index}>{tootaja}</div>
+        ))}
+      </ul>
+
+      <div>Kokku on keskuste peale {arvutaKokku()} t2hem2rki</div>
+      <div>Kokku on {keskused.length} keskust.</div>
 
       {/* Kui valitud linn on Tallinn, kuvatakse järgmised elemendid */}
       { linn === "Tallinn" &&
@@ -107,13 +120,7 @@ function Esindused() {
           <button onClick={filtreeriVah7T2helised}>J2ta alles v2hemalt 7 t2helised</button> {/* Nupp keskuste filtreerimiseks, et jätta alles need, mis koosnevad vähemalt 7 tähemärgist */}
           <button onClick={filtreeriIsSisaldavad}>J2ta alles kes sisaldavad 'is' lyhendit</button> {/* Nupp keskuste filtreerimiseks, et jätta alles need, mis sisaldavad "is" lühendit */}
           <button onClick={filtreeriKelKolmasT2htI}>J2ta alles kellel on kolmas t2ht 'i'</button> {/* Nupp keskuste filtreerimiseks, et jätta alles need, mille kolmas tähemärk on "i" */}
-          
-          {keskused.map((keskus, index) => 
-            <div key={index}>
-              {index}.{keskus}
-              <button onClick={() => kustutaEsindus(index)}>x</button>
-            </div> )} {/* Kuvatakse keskused */}
-      </div>}
+        </div>}
 
       {/* Kui valitud linn on Tartu, kuvatakse järgmised elemendid */}
       {linn === "Tartu" &&

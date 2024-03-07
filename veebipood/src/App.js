@@ -18,7 +18,7 @@ import HaldaHinnad from './Pages/HaldaHinnad';
 import HaldaTootajad from './Pages/HaldaTootajad';
 import LisaHind from './Pages/LisaHind';
 import LisaEsindus from './Pages/LisaEsindus';
-import LisaTootja from './Pages/LisaTootja';
+import LisaTootaja from './Pages/LisaTootaja';
 
 function App() {
   return (
@@ -28,20 +28,13 @@ function App() {
       <img className="pilt" src="https://upload.wikimedia.org/wikipedia/en/9/99/Nobe_GT100.jpg" alt="" />
       </Link>   
      
-
-     <Link to="/esindused">
-      <button className="nupp">Esindused</button>
-     
-     </Link>
      <Link to="/osta-kinkekaart">
       <button className="nupp">Osta kinkekaart</button>
-     
-     </Link>
-     <Link to="/arikliendile">
-      <button className="nupp">ärikliendile</button>
      </Link>
 
-     
+     <Link to="/arikliendile">
+      <button className="nupp">2rikliendile</button>
+     </Link>
 
       <Link to='/ostukorv'>
         <button className='nupp'>Ostukorv</button>
@@ -50,15 +43,18 @@ function App() {
       <Link to='/seaded'>
         <button className='nupp'>Seaded</button>
       </Link>
+      <br /><br />
 
+      <Link to="/esindused">
+      <button className="nupp">Esindused</button>
+     </Link>
+     
       <Link to='/hinnad'>
         <button className='nupp'>Hinnad</button>
       </Link>
       <Link to='/tooted'>
         <button className='nupp'>Tooted</button>
       </Link>
-     
-
       <Link to='/tootajad'>
         <button className='nupp'>Tootajad</button>
       </Link>
@@ -76,6 +72,7 @@ function App() {
       <Link to='/halda-tootajad'>
         <button className='nupp'>Halda tootajaid</button>
       </Link>
+      <br /><br />
 
       <Link to='/lisa-hind'>
         <button className='nupp'>Lisa hind</button>
@@ -83,8 +80,8 @@ function App() {
       <Link to='/lisa-esindus'>
         <button className='nupp'>Lisa esindus</button>
       </Link>
-      <Link to='/lisa-tootja'>
-        <button className='nupp'>Lisa tootja</button>
+      <Link to='/lisa-tootaja'>
+        <button className='nupp'>Lisa tootaja</button>
       </Link>
       <Link to='/lisa-toode'>
         <button className='nupp'>Lisa toode</button>
@@ -107,7 +104,7 @@ function App() {
       <Route path="halda-tootajad" element={<HaldaTootajad /> } />
       <Route path="lisa-hind" element={<LisaHind/> } />
       <Route path="lisa-esindus" element={<LisaEsindus/> } />
-      <Route path="lisa-tootja" element={<LisaTootja/> } />
+      <Route path="lisa-tootaja" element={<LisaTootaja/> } />
       <Route path="*" element={<NotFound /> } />
      </Routes>
     

@@ -20,7 +20,8 @@ function LisaHind() {
 
   return (
     <div>
-      <label>Uus hind</label>
+      <h2>Hinna lisamine</h2>
+      <label>Uus hind: </label>
       <input onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} ref={hindRef} type="number" />
       <button onClick={lisaHind}>Lisa</button>
 

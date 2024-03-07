@@ -10,33 +10,33 @@ function Tootajad() {
   };
 
   const sorteeriAZ = () => {
-    const sorteeriTootajad = [...tootajad].sort((a, b) => a.localeCompare(b))
-    setTootajad(sorteeriTootajad)
+    tootajad.sort((a, b) => a.localeCompare(b))
+    setTootajad(tootajad.slice)
   }
 
   const sorteeriZA = () => {
-    const sorteeriTootajad = [...tootajad].sort((a, b) => b.localeCompare(a))
-    setTootajad(sorteeriTootajad)
+    tootajad.sort((a, b) => b.localeCompare(a))
+    setTootajad(tootajad.slice)
   }
 
   const sorteeriTahedKasvavalt = () => {
-    const sorteeriTootajad = [...tootajad].sort((a, b) => a.length - b.length)
-    setTootajad(sorteeriTootajad)
+    tootajad.sort((a, b) => a.length - b.length)
+    setTootajad(tootajad.slice)
   }
 
   const sorteeriTahedKahanevalt = () => {
-    const sorteeriTootajad = [...tootajad].sort((a, b) => b.length - a.length)
-    setTootajad(sorteeriTootajad)
+    tootajad.sort((a, b) => b.length - a.length)
+    setTootajad(tootajad.slice)
   }
 
   const sorteeriKolmasTahtAZ = () => {
-    const sorteeriTootajad = [...tootajad].sort((a, b) => a[2].localeCompare(b[2]))
-    setTootajad(sorteeriTootajad)
+    tootajad.sort((a, b) => a[2].localeCompare(b[2]))
+    setTootajad(tootajad.slice)
   }
 
   const sorteeriKolmasTahtZA = () => {
-    const sorteeriTootajad = [...tootajad].sort((a, b) => b[2].localeCompare(a[2]))
-    setTootajad(sorteeriTootajad)
+    tootajad.sort((a, b) => b[2].localeCompare(a[2]))
+    setTootajad(tootajad.slice)
   }
 
   const filtreeri3T2helised = () => {
