@@ -107,3 +107,8 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.pilt-mitteaktiivne {
+  width: 100px;
+  filter: grayscale(100%);
+}

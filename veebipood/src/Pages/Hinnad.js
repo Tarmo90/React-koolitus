@@ -19,30 +19,30 @@ function Hinnad() {
   }
  
   const sorteeriKasvavalt = () => {
-    hinnad.sort((a, b) => a - b)
+    hinnad.sort((a, b) => a.number - b.number)
     setHinnad(hinnad.slice());
   }
  
   const sorteeriKahanevalt = () => {
-    hinnad.sort((a, b) => b - a);
+    hinnad.sort((a, b) => b.number - a.number);
     //hinnad.sort((a, b) => -1 * (a - b));
     // hinnad.reverse();
     setHinnad(hinnad.slice());
   }
  
   const filtreeriSuuremKui50 = () => {
-    const vastus = hinnad.filter(hind => hind > 50);
+    const vastus = hinnad.filter(hind => hind.number > 50);
     setHinnad(vastus);
   }
  
   const filtreeriVaiksemKui20 = () => {
-    const vastus = hinnad.filter(hind => hind < 20);
+    const vastus = hinnad.filter(hind => hind.number < 20);
     setHinnad(vastus);
   }
  
   const arvutaKokku = () => {
     let summa = 0;
-    hinnad.forEach(hind => summa = summa + hind)
+    hinnad.forEach(hind => summa = summa + hind.number)
     return summa;
   
   }
@@ -69,7 +69,8 @@ function Hinnad() {
       
       {hinnad.map((hind,index) => 
         <div key={index}>
-          {hind}
+          {hind.number}
+          
         </div> )}
     </div>
   )

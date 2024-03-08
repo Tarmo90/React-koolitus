@@ -5,7 +5,10 @@ import tootedFailist from '../data/tooted.json'
 function LisaToode() { 
   const [sonum, uuendaSonum] = useState(""); 
   const inputiluger = useRef(); 
-  const kategooriaLuger = useRef(); 
+  const hindLuger = useRef();
+  const piltRef = useRef(); 
+  const aktiivneRef = useRef(); 
+ 
 
   const lisa = () => { 
     if (inputiluger.current.value === "") { 
@@ -14,11 +17,16 @@ function LisaToode() {
       uuendaSonum( 
         "Toode lisatud:" + 
         inputiluger.current.value +
-        '. Kategooria - ' + 
-        kategooriaLuger.current.value 
+        '. Hind - ' + 
+        hindLuger.current.value 
       );
-      tootedFailist.push(inputiluger.current.value);
-    }   
+      tootedFailist.push({
+        "nimi": inputiluger.current.value, 
+        "hind": Number(hindLuger.current.value), 
+        'aktiivne': aktiivneRef.current.checked,
+        "pilt": piltRef.current.value 
+    } )
+  }
   }
 
   return ( 
@@ -29,10 +37,16 @@ function LisaToode() {
         <label >Toote nimi: </label>
         <input ref={inputiluger} type='text' />
         <br /> <br />
-       
-        <label >Toote kategooria: </label>
-        <input ref={kategooriaLuger} type="text"  />
+        <label >Toote hind: </label>
+        <input ref={hindLuger} type="number"  />
         <br /> <br />
+        <label >Toote pilt: </label>
+        <input ref={piltRef} type='text' />
+        <br /> <br />
+        <label >Toote aktiivsus: </label>
+        <input ref={hindLuger} type="checkbox"  />
+        <br /> <br />
+
         
         <button onClick={lisa} >Sisesta</button>
         

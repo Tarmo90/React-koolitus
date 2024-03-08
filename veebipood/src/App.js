@@ -19,6 +19,14 @@ import HaldaTootajad from './Pages/HaldaTootajad';
 import LisaHind from './Pages/LisaHind';
 import LisaEsindus from './Pages/LisaEsindus';
 import LisaTootaja from './Pages/LisaTootaja';
+import YksTootja from './Pages/YksTootja';
+import YksEsindus from './Pages/YksEsindus';
+import YksHind from './Pages/YksHind';
+import YksToode from './Pages/YksToode';
+import MuudaTootaja from './Pages/MuudaTootaja';
+import MuudaEsindus from './Pages/MuudaEsindus';
+import MuudaHind from './Pages/MuudaHind';
+import MuudaToode from './Pages/MuudaToode';
 
 function App() {
   return (
@@ -105,6 +113,17 @@ function App() {
       <Route path="lisa-hind" element={<LisaHind/> } />
       <Route path="lisa-esindus" element={<LisaEsindus/> } />
       <Route path="lisa-tootaja" element={<LisaTootaja/> } />
+
+      <Route path="tootaja/:index" element={<YksTootja/> } />
+      <Route path="esindus/:index" element={<YksEsindus/> } />
+      <Route path="hind/:index" element={<YksHind/> } />
+      <Route path="toode/:index" element={<YksToode/> } />
+
+      <Route path="muuda-tootaja/:indeks" element={<MuudaTootaja/> } />
+      <Route path="muuda-esindus/:indeks" element={<MuudaEsindus/> } />
+      <Route path="muuda-hind/:indeks" element={<MuudaHind/> } />
+      <Route path="muuda-toode/:indeks" element={<MuudaToode/> } />
+
       <Route path="*" element={<NotFound /> } />
      </Routes>
     

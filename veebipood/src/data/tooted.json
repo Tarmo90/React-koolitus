@@ -1,1 +1,9 @@
-["Nobe", "Tesla", "Bmw"]
+[{"nimi": "Nobe", "hind": 2500, "aktiivne": true, "pilt": "https://visionest.institute/wp-content/uploads/2023/07/i_6_NOBE-3.jpg"},
+{"nimi": "Tesla", "hind": 2500, "aktiivne": false, "pilt": "https://cars.usnews.com/static/images/Auto/izmo/i159615630/2023_nissan_sentra_angularfront.jpg"},
+{"nimi": "Bmw", "hind": 2500, "aktiivne": true, "pilt": "https://www.bmw.ee/content/dam/bmw/common/all-models/m-series/m3-sedan/2023/highlights/bmw-3-series-cs-m-automobiles-sp-desktop.jpg"},
+{"nimi": "Toyota", "hind": 2500, "aktiivne": false, "pilt": "https://global.toyota/pages/news/images/2021/08/02/1330/001.jpg"},
+{"nimi": "Bently", "hind": 2500, "aktiivne": true, "pilt": "https://tallinn.bentleymotors.com/picserver1/userdata/1/31595/3FAdVwEMPE/dws%20600x300%20king%20fisher%20flying%20spur%20mulliner.png"},
+{"nimi": "Audi", "hind": 2500, "aktiivne": false, "pilt": "https://uploads.audi-mediacenter.com/system/production/media/91178/images/1f201fd6f5fcbd78b452dd0ff4907b1cc4dc0a8c/A202506_web_2880.jpg?1698425163"},
+{"nimi": "Ford", "hind": 2500, "aktiivne": true, "pilt": "https://media.ed.edmunds-media.com/ford/ranger/2024/oem/2024_ford_ranger_crew-cab-pickup_raptor_fq_oem_1_600.jpg"}
+  
+]

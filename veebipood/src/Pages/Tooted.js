@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import tootedFailist from '../data/tooted.json'
+import { Link } from 'react-router-dom';
 
 function Tooted() {
   // Andmete algväärtus
@@ -23,7 +24,17 @@ function Tooted() {
       {/* Väljastame tooted */}
       <ul>
         {tooted.map((toode, index) => (
-          <div key={index}>{toode}</div>
+          <div key={index}>
+          <img className={toode.aktiivne ?'pilt' : 'pilt-mitteaktiivne'} src={toode.pilt} alt="" />
+            <div> {toode.nimi}</div>
+            <div>{toode.hind}</div>
+            <div>{toode.aktiivne}</div>
+
+
+            <Link to={"/toode/" + index}>
+            <button>Vaata l2hemalt</button>
+            </Link>
+            </div>
         ))}
       </ul>
       {/* Näitame toodete kogust */}
