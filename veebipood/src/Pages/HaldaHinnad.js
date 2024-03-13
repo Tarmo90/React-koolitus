@@ -53,3 +53,8 @@ function HaldaHinnad() {
 }
 
 export default HaldaHinnad
+
+
+
+
+

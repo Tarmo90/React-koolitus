@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import andjateFail from '../data/Nimed.json';
+import { Link } from 'react-router-dom';
 
 function TagasisideAndjad() {
   const [andjad, uuendaAndjad] = useState(andjateFail);
@@ -52,12 +53,17 @@ function TagasisideAndjad() {
       <button onClick={filterEndingY}>Filtreeri ehk jäta kõik Y-tähega lõppevad nimed alles</button>
       <button onClick={sortZA}>Sorteeri Z-A</button>
       <button onClick={insertEST}>Proovi .map funktsiooni - kirjuta iga nime ette 'EST'</button>
+      
       {andjad.map((element, index) => (
         <div key={index}>
           <span>{element}</span>
           <button onClick={() => kustuta(index)}>Võimalda kustutada igaüht</button>
+          <Link to={'/yks-andja/' + index}>
+            <button>Vaata detailsemalt</button>
+          </Link>
         </div>
       ))}
+
       <label>Võimalda uut nime kõige lõppu lisada</label>
       <input ref={andjaRef} type="text" /> <br />
       <button onClick={lisa}>Lisa</button>

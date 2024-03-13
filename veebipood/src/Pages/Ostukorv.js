@@ -1,25 +1,33 @@
-import React, { useState } from "react"; // Impordime React'i ja useState'i haagi
-import { Link } from "react-router-dom"; // Impordime Link komponendi react-router-dom'ist
+import React, { useState } from "react"; 
+import { Link } from "react-router-dom"; 
+import ostukorvFailist from '../data/ostukorv.json'
 
 function Ostukorv() {
-  // Seisundi deklareerimine ostukorvi esemete jaoks
-  const [ostukorv, setOstukorv] = useState(['Coca', 'Fanta', 'Sprite']);
+  
+  const [ostukorv, setOstukorv] = useState(ostukorvFailist)
 
-  // Funktsioon ühe eseme eemaldamiseks ostukorvist
-  const kustutaOstukorvist = (index) => {
-    // Eemalda element massiivist
-    ostukorv.splice(index,1);
-    // Värskenda olekut uue massiiviga (slice funktsioon loomaks koopia)
-    setOstukorv(ostukorv.slice());
+  const kustutaOstukorvist = (index) => { 
+    ostukorvFailist.splice(index,1);  
+    setOstukorv(ostukorvFailist.slice());
   }
 
-  // JSX komponenti renderdamiseks
+  const lisaOstukorvi = (toode) => {
+    ostukorvFailist.push(toode);
+    setOstukorv(ostukorvFailist.slice());
+  }
+
+  const arvutaKogusumma = () => {
+    let summa = 0;
+    ostukorv.forEach(toode => summa = summa + toode.hind);
+    return summa;
+  }
+ 
   return (
     <div>
-      <div>Ostukorv</div> {/* Pealkiri ostukorvile */}
-      <div>Ostukorvis on: {ostukorv.length} eset</div> {/* Kuvab ostukorvis olevate esemete arvu */}
+      <div>Ostukorv</div> 
+      <div>Ostukorvis on: {ostukorv.length} eset</div> 
       
-      {/* Kuvab sõnumi ja pildi, kui ostukorv on tühi */}
+    
       {ostukorv.length === 0 && 
       <div className='ostukorv'>
         <img
@@ -29,17 +37,21 @@ function Ostukorv() {
         <p>Ostukorv on hetkel tühi.</p>
       </div>}
 
-      {/* Nupud ostukorvi manipuleerimiseks */}
-      <button onClick={() => setOstukorv(['Coca', 'Fanta'])}>J2ta alles Coca ja Fanta</button> {/* Nupp, et jätta alles ainult Coca ja Fanta */}
-      <button onClick={() => setOstukorv([])}>Tyhjenda</button> {/* Nupp ostukorvi tühjendamiseks */}
+      
+      
+      <button onClick={() => setOstukorv([])}>Tyhjenda</button> 
 
-      {/* Kuvab iga eseme ostukorvis koos eemaldamise nupuga */}
+      
       <div>{ostukorv.map((toode,index) => 
         <div key={index}>
-          {toode}
-          <button onClick={() => kustutaOstukorvist(index)}>x</button> {/* Nupp eseme eemaldamiseks */}
+          {toode.nimi} {toode.hind}$
+          <button onClick={() => kustutaOstukorvist(index)}>x</button> 
+          <button onClick={() => lisaOstukorvi(toode)}>Lisa l6ppu</button> 
+
         </div> )}
       </div>
+
+      <div>Summa: {arvutaKogusumma()} $</div>
 
       {/* Link tagasi pealehele */}
       <Link to='/'>
@@ -49,4 +61,4 @@ function Ostukorv() {
   );
 }
 
-export default Ostukorv; // Ekspordib komponendi
+export default Ostukorv; 

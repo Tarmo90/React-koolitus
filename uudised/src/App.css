@@ -177,3 +177,7 @@
   transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */ 
   color: white;  
 }
+
+.valitud {
+  font-weight: bold;
+}

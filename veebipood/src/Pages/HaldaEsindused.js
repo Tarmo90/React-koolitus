@@ -1,13 +1,6 @@
 import React, { useState } from "react"; 
-import keskusedFailist from '../data/tallinn.json'; // Impordime tallinna keskuste andmed
-
-// ÄRGE TEHKE TABELIT
-// 1. Copy-paste import
-// 2. Copy-paste useState
-// 3. Copy-paste .map()
-// 4. Cut kustutamise funktsioon
-// 5. Esindused.js sees kustuta Button mis funktsiooni välja kutsub
-// 6. keskused.splice() asemel halda sees, tuleb panna keskusedFailist.splice()
+import { Link } from "react-router-dom";
+import keskusedFailist from '../data/tallinn.json'; 
 
 function HaldaEsindused() {
   const [keskused, setKeskused] = useState(keskusedFailist);
@@ -20,20 +13,30 @@ function HaldaEsindused() {
   return (
     <div>
       <h2>Keskuste nimekiri</h2>
-      <table className="table"></table>
-      <thead>
-        <tr>
-          <th>Nimi</th>
-          <th>Eemalda</th>
-        </tr>
-      </thead>
-      {keskused.map((keskus, index) => 
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Nimi</th>
+            <th>Eemalda</th>
+            <th>Muuda</th> {/* Lisatud muutmise nupp */}
+          </tr>
+        </thead>
+        <tbody>
+          {keskused.map((keskus, index) => 
             <tr key={index}>
               <td>{keskus}</td>
               <td><button onClick={() => kustutaEsindus(index)}>x</button></td>
-            </tr> )} 
+              <td>
+                <Link to={'/muuda-esindus/' + index}>
+                  <button>Muuda</button>
+                </Link>
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   )
 }
 
-export default HaldaEsindused
+export default HaldaEsindused;

@@ -11,10 +11,10 @@ function App() {
         <button>Avalehele</button> 
       </Link>
       <Link to='/lisa-tegelane'>
-        <button>Avalehele</button> 
+        <button>Lisa tegelane</button> 
       </Link>
       <Link to='/valitud-tegelased'>
-        <button>Avalehele</button> 
+        <button>Vali tegelane</button> 
       </Link>
       <Routes>
         <Route path='' element={<Avaleht /> } />

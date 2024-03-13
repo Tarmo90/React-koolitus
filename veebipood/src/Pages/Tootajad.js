@@ -105,21 +105,3 @@ function Tootajad() {
 export default Tootajad;
 
 
-// sorteeri: A-Z
-// sorteeri: Z-A
-// tähemärgid kasvavalt
-// tähemärgid kahanevalt
-// teine täht A-Z
-// kolmas täht Z-A
-
-// filtreeri:
-// Kolmetähelised
-// Rohkem kui 5 tähelised
-// "ai" lühendit sisaldavad
-// Kellel on kolmas täht "i"
-// 'A' tähega algavad
-
-// Huvitav: Paarisarv tähti
-
-// Saab lisada läbi inputi (ref)
-// Igaüht saab kustutada

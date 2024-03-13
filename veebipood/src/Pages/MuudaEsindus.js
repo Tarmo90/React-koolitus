@@ -2,7 +2,11 @@ import React from 'react'
 
 function MuudaEsindus() {
   return (
-    <div>MuudaEsindus</div>
+    <div>
+      <label>Nimi</label><br />
+      <input type="text" /><br />
+      <button>Muuda</button>
+    </div>
   )
 }
 
