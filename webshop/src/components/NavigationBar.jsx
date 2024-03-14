@@ -7,13 +7,11 @@ import { useTranslation } from 'react-i18next';
 function NavigationBar() {
   const { t, i18n } = useTranslation();
 
-  const changeLangEe = () => {
-    i18n.changeLanguage('ee')
+  const changeLang = (lang) => {
+    i18n.changeLanguage(lang);
   }
 
-  const changeLangEn = () => {
-    i18n.changeLanguage('en')
-  }
+ 
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -29,8 +27,10 @@ function NavigationBar() {
           </Nav>
 
           <Nav>
-            <img onClick={changeLangEn} className='lang' src="/english.png" alt="" />
-            <img onClick={changeLangEe} className='lang' src="/estonian.png" alt="" />
+            <img onClick={() => changeLang('ee')} className='lang' src="/estonian.png" alt="" />  
+            <img onClick={() => changeLang('en')} className='lang' src="/english.png" alt="" />
+            <img onClick={() => changeLang('fi')} className='lang' src="/finland.png" alt="" />
+            <img onClick={() => changeLang('lv')} className='lang' src="/latvia.png" alt="" />
 
             <Nav.Link as={Link} to='/login'>{t("login")}</Nav.Link>
             <Nav.Link as={Link} to='/signup'>{t("signup")}</Nav.Link>

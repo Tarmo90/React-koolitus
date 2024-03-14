@@ -31,6 +31,34 @@ const resources = {
       "login": "Login",
       "signup": "Loo konto"
     }
+  },
+
+  fi: {
+    translation: {
+      "maintain-categories" : "Hallitse kategorioita",
+      "maintain-shops" : "Hallitse kauppoja",
+      "add-product" : "Lisää tuote",
+      "maintain-products" : "Hallitse tuotteita",
+      "shops": "Kauppamme",
+      "contact": 'Ota yhteyttä meihin',
+      "cart": "Ostoskori",
+      "login": "Kirjaudu sisään",
+      "signup": "Rekisteröidy"
+    }
+  },
+
+  lv: {
+    translation: {
+      "maintain-categories" : "Pārvaldīt kategorijas",
+      "maintain-shops" : "Pārvaldīt veikalus",
+      "add-product" : "Pievienot produktu",
+      "maintain-products" : "Pārvaldīt produktus",
+      "shops": "Mūsu veikali",
+      "contact": 'Sazinies ar mums',
+      "cart": "Iepirkumu grozs",
+      "login": "Pieteikties",
+      "signup": "Izveidot kontu"
+    }
   }
 };
 

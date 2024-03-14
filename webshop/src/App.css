@@ -6,13 +6,35 @@
   width: 30px;
   height: 30px;
   margin: 5px;
+  transition: transform 0.3s ease;
 }
 
 .lang:hover {
   cursor: pointer;
-  opacity: 70%;
+  transform: scale(1.1);
 }
 
 .lan:active {
   padding: 1px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #c2f4f8; /* Muutke taustavärvi vastavalt soovile */
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 5px;
+}
+
+
+.delete-btn {
+  font-size: 8px;
+  border-radius: 7px;
+  
+  
 }
