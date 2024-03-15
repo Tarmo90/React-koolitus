@@ -9,6 +9,7 @@ function NavigationBar() {
 
   const changeLang = (lang) => {
     i18n.changeLanguage(lang);
+    localStorage.setItem('language', lang);
   }
 
  
