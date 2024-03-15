@@ -40,7 +40,7 @@ function AddProduct() {
   }
   
   return (
-    <div>
+    <div className='textAligin'>
       <h2>Add product</h2>
       <br />
       <div>

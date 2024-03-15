@@ -1,51 +1,55 @@
-import React, { useEffect } from 'react'
-// import cartFile from '../../data/cart.json'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 function Cart() {
-  
-
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || [])
-  const [parcelMachines, setParcelMachines] = useState([])
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+  const [parcelMachines, setParcelMachines] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState('EE');
 
   useEffect(() => {
     fetch("https://www.omniva.ee/locations.json")
-    .then(res => res.json())
-    .then(body => setParcelMachines(body))
+      .then(res => res.json())
+      .then(body => setParcelMachines(body));
   }, []);
 
-  const deleteOfCart = (index) => {
-    cart.splice(index, 1);
-    setCart(cart.slice()); //HTML uuenduseks
-    localStorage.setItem('cart', JSON.stringify(cart)); //LocalStorage salvestuseks
-  }
+  const deleteFromCart = (index) => {
+    const updatedCart = [...cart];
+    updatedCart.splice(index, 1);
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
 
   const decreaseQuantity = (index) => {
-    cart[index].quantity = cart[index].quantity - 1;
-    if (cart[index].quantity === 0) {
-      cart.splice(index, 1)
+    const updatedCart = [...cart];
+    updatedCart[index].quantity--;
+    if (updatedCart[index].quantity === 0) {
+      updatedCart.splice(index, 1);
     }
-    setCart(cart.slice());
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
 
   const increaseQuantity = (index) => {
-    cart[index].quantity = cart[index].quantity + 1;
-    setCart(cart.slice());
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
+    const updatedCart = [...cart];
+    updatedCart[index].quantity++;
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
 
   const calculateTotal = () => {
     let sum = 0;
-    cart.forEach(cp => sum = sum + cp.product.price * cp.quantity)
+    cart.forEach(cp => sum += cp.product.price * cp.quantity);
     return sum.toFixed(2);
-  }
+  };
 
   const averageRating = () => {
     let sum = 0;
-    cart.forEach(cp => sum = sum + cp.product.rating.rate)
-    return (sum/cart.length).toFixed(2);
-  }
+    cart.forEach(cp => sum += cp.product.rating.rate);
+    return (sum / cart.length).toFixed(2);
+  };
+
+  const filterParcelMachines = (countryCode) => {
+    return parcelMachines.filter(pm => pm.A0_NAME === countryCode);
+  };
 
   return (
     <div className='textAligin'>
@@ -53,17 +57,32 @@ function Cart() {
       <div>Carts is: {cart.length} product</div>
 
       {cart.length === 0 && 
-      <div className='cart'>
-        <p>The shopping cart ise currently empty.</p>
-      </div>}
+        <div className='cart'>
+          <p>The shopping cart is currently empty.</p>
+        </div>
+      }
 
       <button onClick={() => setCart([])}>Clean</button> 
 
-      
-      <div>{cart.map((cp,index) => 
+      {cart.length > 0 &&
+        <>
+          <div>Sum: {calculateTotal()} $</div>
+          <div>Average: {averageRating()}</div>
+
+          <button onClick={() => setSelectedCountry('EE')}>Estonia</button>
+          <button onClick={() => setSelectedCountry('LV')}>Latvia</button>
+          <button onClick={() => setSelectedCountry('LT')}>Lithuania</button>
+
+          <select>
+            {filterParcelMachines(selectedCountry).map(pm => <option>{pm.NAME}</option>)}
+          </select>
+        </>
+      }
+
+      {cart.map((cp, index) => (
         <div key={index}>
           <div>{cp.product.title}</div> 
-          <img src={cp.product.image} alt={cp.product.title} style={{width: "100px", heigth: "100px"}} />
+          <img src={cp.product.image} alt={cp.product.title} style={{ width: "100px", height: "100px" }} />
           <div>{cp.product.rating.rate} *</div>
           <div>{cp.product.price}$</div>
           <br />
@@ -72,25 +91,11 @@ function Cart() {
           <button onClick={() => increaseQuantity(index)}>+</button>
           <div>{(cp.product.price * cp.quantity).toFixed(2)}$</div>
           <br />
-          <button onClick={() => deleteOfCart(index)}>Delete</button> 
-        </div> )}
-      </div>
-
-    {
-      cart.length > 0 &&
-      <React.Fragment>
-    <div>Sum: {calculateTotal()} $</div>
-      <div>Average: {averageRating()}</div>
-
-      <select>
-        {parcelMachines
-        .filter(pm => pm.A0_NAME === 'EE')
-        .map(pm =><option>{pm.NAME}</option>)}  
-      </select>
-    </React.Fragment>
-    }
+          <button onClick={() => deleteFromCart(index)}>Delete</button> 
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Cart
+export default Cart;

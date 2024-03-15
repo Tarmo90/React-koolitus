@@ -14,7 +14,7 @@ if (products.length === 0) {
 
 }
   return (
-    <div>
+    <div className='textAligin'>
       <div>{products.length} tk</div>
       {products.map((product, index) => 
         <div key={product.id}>
