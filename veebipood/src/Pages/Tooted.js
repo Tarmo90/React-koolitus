@@ -73,7 +73,7 @@ function Tooted() {
       
       <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
       <button onClick={sorteeriZA}>Sorteeri Z-A</button>
-      <ToastContainer/>
+      <ToastContainer className={'toast'}/>
     </div>
   );
 }

@@ -27,11 +27,14 @@ function HomePage() {
     
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    toast.success('Product successfully added to the cart');
+    toast.success(`${addedProduct.title} successfully added to the cart`, {
+      position: 'bottom-right'
+    });
   }
 
+
   return (
-    <div>
+    <div className='textAligin'>
       <div>
       <div>{products.length} tk</div>
 

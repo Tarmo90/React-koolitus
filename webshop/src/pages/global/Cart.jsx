@@ -48,7 +48,7 @@ function Cart() {
   }
 
   return (
-    <div>
+    <div className='textAligin'>
       <div>Cart</div>
       <div>Carts is: {cart.length} product</div>
 
@@ -63,9 +63,10 @@ function Cart() {
       <div>{cart.map((cp,index) => 
         <div key={index}>
           <div>{cp.product.title}</div> 
-          
+          <img src={cp.product.image} alt={cp.product.title} style={{width: "100px", heigth: "100px"}} />
           <div>{cp.product.rating.rate} *</div>
           <div>{cp.product.price}$</div>
+          <br />
           <button onClick={() => decreaseQuantity(index)}>-</button>
           <div>{cp.quantity}</div>
           <button onClick={() => increaseQuantity(index)}>+</button>
