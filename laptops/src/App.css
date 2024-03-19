@@ -5,6 +5,13 @@
 .avaleht-text {
   margin-top: 100px;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
+}
+
+.text {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 30px;
+  font-weight:lighter;
 }

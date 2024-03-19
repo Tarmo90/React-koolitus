@@ -5,13 +5,13 @@ function Kontakt() {
     const [kontakt, n2itaKontakt] = useState('');
     const tootajad = [
         {"Nimi": "Arvo", "Ala": "Muusika", "Telefon": "+3725435006"},
-        {"Nimi": "Kelly","Ala": "Reporter","Telefon": "+3725435006"},
-        {"Nimi": "Edward","Ala": "Kujundus","Telefon": "+3725435006"},
-        {"Nimi": "Kerli","Ala": "Ajakirjanik","Telefon": "+3725435006"},
-        {"Nimi": "Arvo", "Ala": "Muusika", "Telefon": "+3725435006"},
-        {"Nimi": "Kelly","Ala": "Reporter","Telefon": "+3725435006"},
-        {"Nimi": "Edward","Ala": "Kujundus","Telefon": "+3725435006"},
-        {"Nimi": "Kerli","Ala": "Ajakirjanik","Telefon": "+3725435006"}
+        {"Nimi": "Kelly","Ala": "Reporter","Telefon": "+3725556446"},
+        {"Nimi": "Edward","Ala": "Kujundus","Telefon": "+3725875465"},
+        {"Nimi": "Liina","Ala": "Ajakirjanik","Telefon": "+3725456473"},
+        {"Nimi": "Peeter", "Ala": "Muusika", "Telefon": "+3725564543"},
+        {"Nimi": "Mari","Ala": "Reporter","Telefon": "+3725455455"},
+        {"Nimi": "Andres","Ala": "Kujundus","Telefon": "+372555334"},
+        {"Nimi": "Kerli","Ala": "Ajakirjanik","Telefon": "+3725423454"}
     ];
 
     const [valitud, uuendaValikud] = useState('');
@@ -21,12 +21,16 @@ function Kontakt() {
         uuendaValikud(tootaja.Nimi)
     }
     return ( 
-        <div>
+        <div className='konteiner'>
+            <div className='kontaktide-text'>
+          
             <div>Meie tootajad</div>
+            <br />
             VALITUD INIMENE: {valitud}
             {kontakt !== '' && <div>Tema kontakt: {kontakt}</div>}
             <br />
-            <div>
+            </div>
+            <div className='kontaktide-text'>
                 {tootajad.map(tootaja =>
                      <div className={tootaja.Nimi === valitud ? 'valitud' : undefined}>
                         
@@ -36,6 +40,7 @@ function Kontakt() {
                             <button onClick={() => v6taYhendust(tootaja)}>Võta ühendust</button>
                         </div>
                     </div>
+                    
                 )}
             </div> 
            

@@ -28,16 +28,12 @@
   text-align: center;
   top: 6%;
   left: 44%;
-  color: rgb(168, 255, 6);
-  text-shadow: 2px 2px 5px rgba(208, 255, 0, 0.863);
+  color: aqua;
+  /* text-shadow: 2px 2px 5px rgba(208, 255, 0, 0.863); */
   font-weight: bold;
    
 }
-.uudised {
-  color:aqua;
-  right: 5%;
-  position: absolute;
-}
+
 .pilt {
   width: 30%; 
   height: 40%;
@@ -54,17 +50,17 @@
   top: 15%;
   border: 3px solid #f5f10b; 
 }
-.uudised-pealkiri{
+/* .uudised-pealkiri{
   position: absolute;
   text-transform: uppercase;
   text-align: center;
   top: 6%;
   left: 30%;
-  color: rgb(168, 255, 6);
-  text-shadow: 2px 2px 5px rgba(208, 255, 0, 0.863);
+  color: aqua;
+  text-shadow: 2px 2px 5px aqua;
   font-weight: bold;
    
-}
+} */
 
 .avaleht-tekst {
   text-align: center;
@@ -77,23 +73,35 @@
     transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */
     text-align: center; /* Teksti keskjoondamine */ 
 }
-.uudised-tekst {
+
+.uudised-text {
   text-align: center;
   color: rgb(255, 255, 255);
-  text-shadow: 2px 2px 5px rgba(0, 217, 255, 0.863);
   position: absolute; /* Absoluutne positsioneerimine */
-  top: 70%; /* Paigutamine 50% kaugusele ülemisest servast */
+  top: 20%; /* Paigutamine 50% kaugusele ülemisest servast */
   left: 50%;
-  transform: translate(-50%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */
+  transform: translate(-20%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */
   text-align: center; /* Teksti keskjoondamine */ 
 }
 
-.kontaktid {
-  color: aqua;
-  right: 5%;
-  position: absolute;
-  
+.uudised {
+  color: aqua
 }
+
+.uudised:hover {
+  color: red;
+}
+
+.kontaktide-text {
+  color: aqua;
+  text-align: center;
+}
+
+.valitud {
+  font-weight: bold;
+  color: rgb(250, 198, 168);
+}
+
 .info {
   position: absolute; /* Absoluutne positsioneerimine */
   top: 11%; /* Paigutamine 50% kaugusele ülemisest servast */
@@ -178,6 +186,10 @@
   color: white;  
 }
 
-.valitud {
-  font-weight: bold;
+.lisa-uudised-text {
+  color: aqua;
 }
+
+
+
+
