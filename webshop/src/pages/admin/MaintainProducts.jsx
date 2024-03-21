@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import productsFromFile from '../../data/products.json';
+import { Link } from 'react-router-dom';
 
 function MaintainProducts() {
   const [products, setProducts] = useState(productsFromFile);
 
   const deleteProduct = (index) => {
     productsFromFile.splice(index, 1);
-    setProducts(productsFromFile.slice()); // Kopeerige massiiv enne uuendamist
+    setProducts(productsFromFile.slice()); 
+  }
+
+  const searchRef = useRef();
+
+  const searchFromProducts = () => {
+    const result = productsFromFile.filter(product => product.title.includes(searchRef.current.value));
+    setProducts(result);
   }
 
   return (
 <div>
-  <h2>Maintain products</h2>
-  <table className='table'>
+  <input ref={searchRef} onChange={searchFromProducts} type="text" />
+  <span>{products.length}</span>
+
+  <table>
     <tbody>
       <tr>
         <th>Name</th>
@@ -22,6 +32,7 @@ function MaintainProducts() {
         <th>Rating</th>
         <th>Rating count</th>
         <th>Delete</th>
+        <th>Change</th>
       </tr>
       {products.map((product, index) => (
         <tr key={index}>
@@ -31,7 +42,11 @@ function MaintainProducts() {
           <td>{product.description}</td>
           <td>{product.rating.rate}</td>
           <td>{product.rating.count}</td>
-          <td><button className='delete-btn' onClick={() => deleteProduct(index)}>x</button></td>
+          <td><button className='delete-btn' onClick={() => deleteProduct(index)}>Delete</button></td>
+    
+          <td><Link to={'/admin/edit-product/' + index}>
+          <button className='delete-btn' >Change</button>
+          </Link></td>
         </tr>
       ))}
     </tbody>

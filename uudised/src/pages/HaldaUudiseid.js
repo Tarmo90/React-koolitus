@@ -7,16 +7,16 @@ function HaldaUudiseid() {
 
   const kustuta = (index) => {
     uudised.splice(index, 1);
-    muudaUudised(uudised.splice())
+    muudaUudised(uudised.slice())
     localStorage.setItem('uudised', JSON.stringify(uudised))
   }
 
 
   return (
-    <div>
+    <div className='konteiner'>
       {uudised.map((uudis, index) => 
-      <div>
-        <div> {uudis} </div>
+      <div key={index}>
+        <div className='halda'> {uudis} </div>
         <button onClick={() => kustuta(index)}>Kustuta</button>
         <Link to={'/muuda/' + index}>
           <button>Muuda</button>

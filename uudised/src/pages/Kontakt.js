@@ -26,13 +26,13 @@ function Kontakt() {
           
             <div>Meie tootajad</div>
             <br />
-            VALITUD INIMENE: {valitud}
-            {kontakt !== '' && <div>Tema kontakt: {kontakt}</div>}
+            VALITUD INIMENE: <div className='valitud'>{valitud}</div> 
+            {kontakt !== '' && <div>Tema kontakt: <span className='valitud'>{kontakt}</span> </div>}
             <br />
             </div>
             <div className='kontaktide-text'>
                 {tootajad.map(tootaja =>
-                     <div className={tootaja.Nimi === valitud ? 'valitud' : undefined}>
+                     <div key={tootaja.Nimi} className={tootaja.Nimi === valitud ? 'valitud' : undefined}>
                         
                         <div>
                             <div>{tootaja.Nimi}</div>

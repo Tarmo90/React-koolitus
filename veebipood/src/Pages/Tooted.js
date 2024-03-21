@@ -11,14 +11,14 @@ function Tooted() {
 
   // Funktsioon A-Z järgi sorteerimiseks
   const sorteeriAZ = () => {
-    const sortedTooted = [...tooted].sort((a, b) => a.localeCompare(b));
-    setTooted(sortedTooted);
+    tooted.sort((a, b) => a.localeCompare(b));
+    setTooted(tooted.slice);
   };
 
   // Funktsioon Z-A järgi sorteerimiseks
   const sorteeriZA = () => {
-    const sortedTooted = [...tooted].sort((a, b) => b.localeCompare(a));
-    setTooted(sortedTooted);
+    tooted.sort((a, b) => b.localeCompare(a));
+    setTooted(tooted.slice);
   };
 
   // const filtreeriNgaAlgavad = () => {

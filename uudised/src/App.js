@@ -9,6 +9,8 @@ import LisaUudis from './pages/LisaUudis';
 import HaldaUudiseid from './pages/HaldaUudiseid';
 import YksUudis from './pages/YksUudis'
 import Muuda from './pages/MuudaUudiseid'
+import KasutajaPostitus from './pages/KasutajaPostitus';
+import YksPostitus from './pages/YksPostitus';
 
 
 
@@ -43,6 +45,9 @@ function App() {
         <Route path='halda' element={ <HaldaUudiseid />} />
         <Route path='uudis/:index' element={ <YksUudis />} />
         <Route path='muuda/:index' element={ <Muuda />} />
+        <Route path='kasutaja-postitus/:kasutajaId' element={ <KasutajaPostitus />} />
+        <Route path='vaata-postitus/:postituseId' element={ <YksPostitus />} />
+
 
 
       </Routes>

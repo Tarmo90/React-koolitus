@@ -4,16 +4,21 @@
 
 .avaleht {
   color: aqua;
-  right: 5%;
-  position: absolute;
 }
 
-.konteiner {
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #000000 50%, #ff0000d2 100%);
+  background-size: cover;
+  min-height: 100vh;
+}
+/* .konteiner {
   background: linear-gradient(to bottom, #000000 50%, #ff0000d2 100%);
   background-size: cover;
   height: 98vh;
   
-} 
+}  */
 .uudised-pilt {
   width: 30%; 
   height: 35%;
@@ -38,8 +43,8 @@
   width: 30%; 
   height: 40%;
   position: relative;
-  left: 34%;
-  top: 15%;
+  left: 54%;
+  top: 0%;
   border: 3px solid #f5f10b; 
 }
 .pilt2 { 
@@ -78,7 +83,7 @@
   text-align: center;
   color: rgb(255, 255, 255);
   position: absolute; /* Absoluutne positsioneerimine */
-  top: 20%; /* Paigutamine 50% kaugusele ülemisest servast */
+  top: 50%; /* Paigutamine 50% kaugusele ülemisest servast */
   left: 50%;
   transform: translate(-20%, -50%); /* Nihutamine tagasi 50% ulatuses nii horisontaalselt kui ka vertikaalselt */
   text-align: center; /* Teksti keskjoondamine */ 
@@ -99,7 +104,7 @@
 
 .valitud {
   font-weight: bold;
-  color: rgb(250, 198, 168);
+  color: rgb(240, 127, 99);
 }
 
 .info {
@@ -190,6 +195,8 @@
   color: aqua;
 }
 
-
+.halda {
+  color: aqua;
+}
 
 

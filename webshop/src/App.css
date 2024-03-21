@@ -26,7 +26,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  background-color: #c2f4f8; /* Muutke taustavärvi vastavalt soovile */
+  background-color: #c2f4f8; 
 }
 
 td, th {
@@ -35,12 +35,14 @@ td, th {
   padding: 5px;
 }
 
-
 .delete-btn {
   font-size: 8px;
+  border-radius: 7px; 
+}
+
+.edit-btn {
+  font-size: 15px;
   border-radius: 7px;
-  
-  
 }
 
 .toast {

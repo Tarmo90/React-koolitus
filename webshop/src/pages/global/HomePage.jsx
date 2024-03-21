@@ -8,33 +8,33 @@ function HomePage() {
   const [products, setProducts] = useState(productsFromFile);
 
   const sortedAZ = () => {
-    const sortedProducts = [...products].sort((a, b) => a.title.localeCompare(b.title));
-    setProducts(sortedProducts);
+   products.sort((a, b) => a.title.localeCompare(b.title));
+    setProducts(products.slice());
   }
 
   const sortedZA = () => {
-    const sortedProducts = [...products].sort((b, a) => a.title.localeCompare(b.title));
-    setProducts(sortedProducts);
+    products.sort((b, a) => a.title.localeCompare(b.title));
+    setProducts(products.slice());
   }
 
   const sortedLowToHigh = () => {
-    const sortedProducts = [...products].sort((a, b) => a.price - b.price);
-    setProducts(sortedProducts);
+    products.sort((a, b) => a.price - b.price);
+    setProducts(products.slice());
   }
 
   const sortedHightoLow = () => {
-    const sortedProducts = [...products].sort((b, a) => a.price - b.price);
-    setProducts(sortedProducts);
+    products.sort((b, a) => a.price - b.price);
+    setProducts(products.slice());
   }
 
   const sortedRatingLowtoHigh = () => {
-    const sortedProducts = [...products].sort((a, b) => a.rating.rate - b.rating.rate);
-    setProducts(sortedProducts);
+    products.sort((a, b) => a.rating.rate - b.rating.rate);
+    setProducts(products.slice());
   }
 
   const sortedRatingHightoLow = () => {
-    const sortedProducts = [...products].sort((b, a) => a.rating.rate - b.rating.rate);
-    setProducts(sortedProducts);
+    products.sort((a, b) => b.rating.rate - a.rating.rate);
+    setProducts(products.slice());
   }
 
   const filterByStartingLetter = (startLetter) => {
@@ -92,14 +92,14 @@ function HomePage() {
       <button onClick={() => filterByWomen("women's clothing")}>women's clothing</button>
         <button onClick={() => filterByJewelery("jewelery")}>jewelery</button>
         <button onClick={() => filterByElectronics("electronics")}>electronics</button>
-        <br />
+        <br /><br />
         <button onClick={sortedAZ}>Sorted A-Z</button>
         <button onClick={sortedZA}>Sorted Z-A</button>
         <button onClick={sortedLowToHigh}>Sorted low to high</button>
         <button onClick={sortedHightoLow}>Sorted high to low</button>
         <button onClick={sortedRatingLowtoHigh}>Sorted by rating low to high</button>
         <button onClick={sortedRatingHightoLow}>Sorted by rating high to low</button>
-        <br />
+        <br /><br />
         <button onClick={() => filterByStartingLetter('A')}>Keep products starting with A</button>
         <button onClick={() => filterByStartingLetter('B')}>Keep products starting with B</button>
         {/* Add more buttons here as needed */}
