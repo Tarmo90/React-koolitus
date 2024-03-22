@@ -3,6 +3,8 @@ import productsFromFile from '../../data/products.json';
 // import cartFile from '../../data/cart.json';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
+import '../../css/Homepage.css';
 
 function HomePage() {
   const [products, setProducts] = useState(productsFromFile);
@@ -88,25 +90,26 @@ function HomePage() {
       <div>
       <div>{products.length} tk</div>
 
-      <button onClick={() => filterByMen("men's clothing")}>men's clothing</button>
-      <button onClick={() => filterByWomen("women's clothing")}>women's clothing</button>
-        <button onClick={() => filterByJewelery("jewelery")}>jewelery</button>
-        <button onClick={() => filterByElectronics("electronics")}>electronics</button>
+        <Button variant='contained' onClick={() => filterByMen("men's clothing")}>men's clothing</Button>
+        <Button variant='contained' onClick={() => filterByWomen("women's clothing")}>women's clothing</Button>
+        <Button variant='contained' onClick={() => filterByJewelery("jewelery")}>jewelery</Button>
+        <Button variant='contained' onClick={() => filterByElectronics("electronics")}>electronics</Button>
         <br /><br />
-        <button onClick={sortedAZ}>Sorted A-Z</button>
-        <button onClick={sortedZA}>Sorted Z-A</button>
-        <button onClick={sortedLowToHigh}>Sorted low to high</button>
-        <button onClick={sortedHightoLow}>Sorted high to low</button>
-        <button onClick={sortedRatingLowtoHigh}>Sorted by rating low to high</button>
-        <button onClick={sortedRatingHightoLow}>Sorted by rating high to low</button>
+        <Button onClick={sortedAZ}>Sorted A-Z</Button>
+        <Button onClick={sortedZA}>Sorted Z-A</Button>
+        <Button onClick={sortedLowToHigh}>Sorted low to high</Button>
+        <Button onClick={sortedHightoLow}>Sorted high to low</Button>
+        <Button onClick={sortedRatingLowtoHigh}>Sorted by rating low to high</Button>
+        <Button onClick={sortedRatingHightoLow}>Sorted by rating high to low</Button>
         <br /><br />
-        <button onClick={() => filterByStartingLetter('A')}>Keep products starting with A</button>
-        <button onClick={() => filterByStartingLetter('B')}>Keep products starting with B</button>
+        <Button variant='outlined' onClick={() => filterByStartingLetter('A')}>Keep products starting with A</Button>
+        <Button variant='outlined' onClick={() => filterByStartingLetter('B')}>Keep products starting with B</Button>
         {/* Add more buttons here as needed */}
       </div>
       
+      <div className='products'>
       {products.map((product, index) => 
-        <div key={product.id}>
+        <div className='home-product' key={product.id}>
           <img style={{ width: '100px' }} src={product.image} alt="" />
           <div>{product.title}</div>
           <div>{product.price}</div>
@@ -114,11 +117,12 @@ function HomePage() {
           <div>{product.rating.rate}</div>
          
           <Link to={"/product/" + index}>
-            <button>See more</button>
+            <Button variant='outlined'>See more</Button>
           </Link>
-          <button disabled={product.active} onClick={() => addToCart(product)}>Add to cart</button>
+          <Button variant='contained' disabled={product.active === false} onClick={() => addToCart(product)}>Add to cart</Button>
         </div>
       )}
+      </div>
       <ToastContainer/>
     </div>
   );

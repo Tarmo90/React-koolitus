@@ -13,10 +13,18 @@ function MaintainProducts() {
   const searchRef = useRef();
 
   const searchFromProducts = () => {
-    const result = productsFromFile.filter(product => product.title.includes(searchRef.current.value));
+    const result = productsFromFile.filter(product => 
+    product.title.toLowerCase().includes(searchRef.current.value.toLowerCase()) ||
+    product.description.toLowerCase().includes(searchRef.current.value.toLowerCase()) ||
+    product.id === Number(searchRef.current.value)
+    );
     setProducts(result);
   }
 
+  const changeActive = (index) => {
+    productsFromFile[index].active = !productsFromFile[index].active;
+    setProducts(productsFromFile.slice())
+  }
   return (
 <div>
   <input ref={searchRef} onChange={searchFromProducts} type="text" />
@@ -25,6 +33,7 @@ function MaintainProducts() {
   <table>
     <tbody>
       <tr>
+      <th>ID</th>
         <th>Name</th>
         <th>Category</th>
         <th>Price</th>
@@ -35,7 +44,8 @@ function MaintainProducts() {
         <th>Change</th>
       </tr>
       {products.map((product, index) => (
-        <tr key={index}>
+        <tr onClick={() => changeActive(index)} key={index} className={product.active ? 'active' : 'inactive'}>
+          <td>{product.id}</td>
           <td>{product.title}</td>
           <td>{product.category}</td>
           <td>{product.price}$</td>

@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Table } from 'react-bootstrap';
-import validator from 'validator'; // Lisatud validatori importeerimine
+import validator from 'validator'; 
 
 function Employees() {
-  // State'i kasutamine töötajate ja sõnumi jaoks
-  const [employees, setEmployees] = useState([]); // Olek töötajate hoidmiseks
-  const [message, updateMessage] = useState(''); // Sõnumi olek, et teavitada kasutajat tegevustest
+  
+  const [employees, setEmployees] = useState([]); 
+  const [message, updateMessage] = useState(''); 
 
-  // Viited sisendväljadele
-  const idRef = useRef(); // Viide ID sisendväljale
-  const first_nameRef = useRef(); // Viide eesnime sisendväljale
-  const last_nameRef = useRef(); // Viide perekonnanime sisendväljale
-  const emailRef = useRef(); // Viide e-posti sisendväljale
-  const avatarRef = useRef(); // Viide avatar URL-i sisendväljale
+  
+  const idRef = useRef();
+  const first_nameRef = useRef(); 
+  const last_nameRef = useRef(); 
+  const emailRef = useRef(); 
+  const avatarRef = useRef(); 
 
   useEffect(() => {
     fetch('https://reqres.in/api/users')
@@ -23,32 +23,30 @@ function Employees() {
   const deleteEmployee = (index) => {
     // Uute töötajate massiivi loomine, kus kustutatakse töötaja, kelle indeks on antud
     const newEmployees = employees.filter((_, i) => i !== index);
-    // Uute töötajate seadmine olekusse
     setEmployees(newEmployees);
     localStorage.setItem('employees', JSON.stringify(newEmployees));
   };
   
   function validation()  {
-    // Funktsioon, mis kontrollib, kas ID sisaldab ainult numbreid
+    
     const isValidID = (id) => {
       return /^\d+$/.test(id); // Kontrollib, kas ID koosneb ainult numbrite hulgast
     };
 
-    // Funktsioon, mis kontrollib, kas nimi sisaldab ainult tähti
     const isValidFirstName = (first_name) => {
       return /^[A-Za-z]+$/.test(first_name); // Kontrollib, kas nimi koosneb ainult tähtedest
     };
-    // Funktsioon, mis kontrollib, kas nimi sisaldab ainult tähti
+    
     const isValidLastName = (last_name) => {
       return /^[A-Za-z]+$/.test(last_name); // Kontrollib, kas nimi koosneb ainult tähtedest
     };
 
-    // Funktsioon, mis kontrollib, kas e-posti aadress vastab praegusele mustrile
+    
     const isValidEmail = (email) => {
       return validator.isEmail(email); // Kasutab validator teeki e-posti aadressi kontrollimiseks
     };
 
-    // Funktsioon, mis kontrollib, kas avatar on määratud
+    
     const isValidAvatar = (avatar) => {
       return avatar.trim() !== ''; // Kontrollib, kas avatar on määratud (mitte tühi string)
     };
