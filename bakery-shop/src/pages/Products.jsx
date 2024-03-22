@@ -29,7 +29,8 @@ function Products() {
     products.push(newProduct);
     setProducts(products.slice());
   }
-
+ products.sort((a, b) => a.price - b.price)
+  
   return (<div>
     <div className="container">
       <h2 className="mb-4">Products</h2>
@@ -46,10 +47,10 @@ function Products() {
         {/* TODO: Order the products by price */}
         {products.map(product => 
             <tr key={product.name + product.price}>
-              <td>{product.name}</td>
+              <td className="first-column">{product.name}</td>
               <td>{product.price}</td>
               {/*  TODO: Display the quantity in red if it is lower than 3 */}
-              <td>{product.quantity}</td> 
+              <td style={{ color: product.quantity < 3 ? 'red' : 'black'}}>{product.quantity}</td> 
               <td>{product.store}</td>
             </tr>
           )}

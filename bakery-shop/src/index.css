@@ -11,5 +11,7 @@ a {
   margin-top: 50px;
 }
 
-
+.first-column {
+  font-weight: bold;
+}
 /*TODO: Set the font weight of the first table column to bold*/
