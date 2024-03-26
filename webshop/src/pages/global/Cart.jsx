@@ -91,14 +91,15 @@ function Cart() {
           <div className='title'>{cp.product.title} *</div>
           <div className='rate'>{cp.product.rating.rate} <Grade/></div>
           <div className='price'>{cp.product.price}$</div>
-          <br />
+          
           <div className='quantity'>
           <img className='button' onClick={() => decreaseQuantity(index)} src="/minus.png" alt="" />
           <div >{cp.quantity}tk </div>
           <img className='button' onClick={() => increaseQuantity(index)} src="/plus.png" alt="" />
           </div>
+          
           <div className='total'>{(cp.product.price * cp.quantity).toFixed(2)}$</div>
-          <br />
+          
           <img className='button' onClick={() => deleteFromCart(index)} src="/remove.png" alt="" />
         </div>
       ))}

@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 10%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(2, 2, 2);
   padding: 10px 0;
 }
 
@@ -38,6 +38,7 @@
   width: 120px;
   justify-content: space-between;
   border: 1px solid lightgrey;
+  background-color: rgb(223, 223, 228);
   height: 40px;
   border-radius: 18px;
   padding: 4px;
