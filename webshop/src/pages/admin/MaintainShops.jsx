@@ -7,3 +7,5 @@ function MaintainShops() {
 }
 
 export default MaintainShops
+
+//name: '', latitude: 22, longitude: 22, openTime: ''

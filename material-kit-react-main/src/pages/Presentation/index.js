@@ -18,14 +18,15 @@ import BuiltByDevelopers from "pages/Presentation/components/BuiltByDevelopers";
 import routes from "routes";
 import footerRoutes from "footer.routes";
 import bgImage from "assets/images/bg-presentation.jpg";
-
+import fileIcon from "assets/images/file.png";
+import fileIconDelete from "assets/images/delete.png";
 function Presentation() {
   const [shipments, setShipments] = useState(shipmentsFromFile);
 
   const deleteShipment = (index) => {
-    const updatedShipments = shipments.filter((_, i) => i !== index);
-    setShipments(updatedShipments);
-    localStorage.setItem("shipment", JSON.stringify(updatedShipments));
+    console.log("Deleting shipment at index:", index);
+    shipmentsFromFile.splice(index, 1);
+    setShipments(shipmentsFromFile.slice());
   };
 
   return (
@@ -117,14 +118,14 @@ function Presentation() {
                   <div className="container-detail">
                     <Link to={"yks-detail/" + index}>
                       <Button>
-                        <img className="button-detail" src="/file.png" alt="" />
+                        <img className="button-detail" src={fileIcon} alt="" />
                       </Button>
                     </Link>
                   </div>
                 </td>
                 <td>
                   <div className="container-delete" onClick={() => deleteShipment(index)}>
-                    <img className="button-delete" src="/delete.png" alt="" />
+                    <img className="button-delete" src={fileIconDelete} alt="" />
                   </div>
                 </td>
               </tr>

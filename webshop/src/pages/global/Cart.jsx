@@ -83,8 +83,6 @@ function Cart() {
       <button onClick={() => setCart([])}>Clean</button> 
       </div>
 
-      
-
       {cart.map((cp, index) => (
         <div className='product' key={index}>
           <img className='image' src={cp.product.image} alt=''/>
@@ -117,11 +115,13 @@ function Cart() {
 
           <LocalShipping/>
           <input ref={searchRef} onChange={searchFromPMs} type="text" />
-          <span>{filterParcelMachines(selectedCountry).length}</span>
+          <span>{filterParcelMachines(selectedCountry).length} pcs</span>
 
-          <select>
+
+          {parcelMachines.length === 0 ? <div>Loading...</div> : <select>
             {filterParcelMachines(selectedCountry).map(pm => <option>{pm.NAME}</option>)}
-          </select>
+          </select>}
+          
         </>
       }
      </div>

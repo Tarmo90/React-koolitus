@@ -22,12 +22,11 @@ function Employees() {
   
   const deleteEmployee = (index) => {
     // Uute töötajate massiivi loomine, kus kustutatakse töötaja, kelle indeks on antud
-    const newEmployees = employees.filter((_, i) => i !== index);
+    const newEmployees = employees.filter(index, 1);
     setEmployees(newEmployees);
-    localStorage.setItem('employees', JSON.stringify(newEmployees));
   };
   
-  function validation()  {
+  function addEmployee()  {
     
     const isValidID = (id) => {
       return /^\d+$/.test(id); // Kontrollib, kas ID koosneb ainult numbrite hulgast
@@ -91,7 +90,6 @@ function Employees() {
     };
     const newEmployees = [...employees, newEmployee];
     setEmployees(newEmployees);
-    localStorage.setItem('employees', JSON.stringify(newEmployees));
     updateMessage('Employee added');
   };
 
@@ -127,7 +125,7 @@ function Employees() {
             <td><input type="email" ref={emailRef} placeholder="Email" className="form-control" /></td>
             <td><input type="url" ref={avatarRef} placeholder="Avatar url" className="form-control" /></td>
             <td></td>
-            <td><Button type="submit" variant="success" onClick={validation}>Add</Button></td>
+            <td><Button type="submit" variant="success" onClick={addEmployee}>Add</Button></td>
           </tr>
         </tbody>
       </Table>

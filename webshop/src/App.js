@@ -2,7 +2,7 @@ import './App.css';
 import NavigationBar from './components/NavigationBar';
 import {Route, Routes} from 'react-router-dom'
 import HomePage from './pages/global/HomePage';
-import ContactUs from './pages/global/ContactUs';
+import {ContactUs} from './pages/global/ContactUs';
 import Shops from './pages/global/Shops';
 import Cart from './pages/global/Cart';
 import SingleProduct from './pages/global/SingleProduct';

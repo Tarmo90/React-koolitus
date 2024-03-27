@@ -82,6 +82,7 @@ table {
   display: flex; 
   flex-direction: column;
   justify-content: center; 
+  align-items: center;
 }
 
 .container th {
@@ -90,14 +91,15 @@ table {
   padding-top: 30px;
 }
 
-.container td {
+.container td input {
   border: 1px solid lightgray;
   border-radius: 6px;
   background-color: rgb(233, 233, 233);
-  height: 30px;
-  width: 2px;
+  height: 40px;
+  width: 600px;
   padding: 8px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  font-size: 16px;
   
 }
 
@@ -112,5 +114,23 @@ table {
 .inner-container {
   border-top: 1px solid lightgrey; /* Ülemine joon */
   border-bottom: 1px solid lightgrey; /* Alumine joon */
-  margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 70px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.change-button {
+  justify-content: center;
+  display: flex;
+  width: 60px;
+  height: 25px;
+  border-radius: 6px;
+  padding-top: 3px;
+  background-color: #93e9ff;
+  cursor: pointer;
+}
+
+.change-button:hover {
+  transform: scale(1.05);
 }
