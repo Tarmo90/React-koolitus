@@ -20,16 +20,17 @@ function MaintainShops() {
       'name': shopRef.current.value,
       'latitude': Number(latitudeRef.current.value),
       'longitude': Number(longitudeRef.current.value),
-      'openTime': openTimeRef.current.value
-    };
-    setShops([...shops, newShop]); 
-    fetch(process.env.REACT_APP_SHOPS_URL, {'method': 'PUT', 'body': JSON.stringify(shops)})
+      'openTime': openTimeRef.current.value,
+    }
+      shops.push(newShop)
+      setShops(shops.slice())
+      fetch(process.env.REACT_APP_SHOPS_URL, {'method': 'PUT', 'body': JSON.stringify(shops)})
   }
-
+  
   const remove = (index) => {
-    shops.splice(index, 1)
-    setShops(shops.slice())
-    fetch(process.env.REACT_APP_SHOPS_URL, {'method': 'PUT', 'body': JSON.stringify(shops)})
+      shops.splice(index, 1)
+      setShops(shops.slice())
+      fetch(process.env.REACT_APP_SHOPS_URL, {'method': 'PUT', 'body': JSON.stringify(shops)})
   }
 
   return (

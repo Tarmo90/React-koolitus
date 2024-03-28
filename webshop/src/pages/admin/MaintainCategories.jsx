@@ -16,7 +16,8 @@ function MaintainCategories() {
   }, []);
 
 const add = () => {
-  const newCategory = {'name' : categoryRef.current.value}
+  const newCategory = {
+  'name' : categoryRef.current.value}
   categories.push(newCategory);
   setCategories(categories.slice())
   fetch(process.env.REACT_APP_CATEGORIES_URL, {'method': 'PUT', 'body': JSON.stringify(categories)})
