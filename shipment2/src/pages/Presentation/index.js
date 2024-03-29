@@ -30,7 +30,6 @@ function Presentation() {
   // }, []);
 
   const deleteShipment = (index) => {
-    console.log("Deleting shipment at index:", index);
     shipmentsFromFile.splice(index, 1);
     setShipments(shipmentsFromFile.slice());
   };
@@ -97,7 +96,7 @@ function Presentation() {
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        {/* Siin algab teie tabelikood */}
+        {/* Siin algab tabelikood */}
         <table className="custom-table-head">
           <thead>
             <tr>
@@ -138,7 +137,7 @@ function Presentation() {
             ))}
           </tbody>
         </table>
-        {/* Siin lõpeb teie tabelikood */}
+        {/* Siin lõpeb tabelikood */}
         <Counters />
         <Information />
         <DesignBlocks />

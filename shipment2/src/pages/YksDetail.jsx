@@ -12,10 +12,6 @@ function YksDetail() {
   const consigneeRef = useRef();
   const statusRef = useRef();
 
-  if (!leitud) {
-    return <div>Ei leitud</div>;
-  }
-
   const change = () => {
     shipmentsFromFile[index] = {
       orderNo: orderNoRef.current.value,
@@ -25,8 +21,8 @@ function YksDetail() {
       status: statusRef.current.value,
       consignee: consigneeRef.current.value,
     };
-    console.log(shipmentsFromFile);
   };
+
   return (
     <div className="container">
       <div className="inner-container">
