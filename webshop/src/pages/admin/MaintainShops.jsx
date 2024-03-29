@@ -40,14 +40,15 @@ function MaintainShops() {
       <TextField label='longitude' inputRef={longitudeRef}/>
       <TextField label='open-time' inputRef={openTimeRef}/>
       <Button variant='contained' onClick={add}>Sisesta</Button>
+      
       {shops.map((newShop, index) =>
-      <div key={index}>
-        <span>{newShop.name}; </span>
-        <span>{newShop.latitude}; </span>
-        <span>{newShop.longitude}; </span>
-        <span>{newShop.openTime}; </span>
-        <BButton variant='danger' onClick={() => remove(index)}>Kustuta</BButton>
-      </div>
+        <div key={index}>
+          <span>{newShop.name}; </span>
+          <span>{newShop.latitude}; </span>
+          <span>{newShop.longitude}; </span>
+          <span>{newShop.openTime}; </span>
+          <BButton variant='danger' onClick={() => remove(index)}>Kustuta</BButton>
+        </div>
       )}
     </div>
   )

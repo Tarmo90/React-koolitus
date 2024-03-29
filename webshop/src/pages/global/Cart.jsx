@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useRef } from 'react';
+import React, { useState } from 'react';
 import '../../css/Cart.css';
 // import Icon from '@mui/material/Icon';
 import Grade from '@mui/icons-material/Grade';
-import LocalShipping from '@mui/icons-material/LocalShipping';
-import { Button } from '@mui/material';
+import ParcelMachines from '../../components/ParcelMachines';
+
 
 function Cart() {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
-  const [parcelMachines, setParcelMachines] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState('EE');
-  const [originalPMs, setOriginalPMs] = useState([])
-
-  useEffect(() => {
-    fetch("https://www.omniva.ee/locations.json")
-      .then(res => res.json())
-      .then(body => {
-        setParcelMachines(body);
-        setOriginalPMs(body);
-      })
-  }, []);
+  
 
   const deleteFromCart = (index) => {
     const updatedCart = [...cart];
@@ -56,17 +44,6 @@ function Cart() {
     cart.forEach(cp => sum += cp.product.rating.rate);
     return (sum / cart.length).toFixed(2);
   };
-
-  const filterParcelMachines = (countryCode) => {
-    return parcelMachines.filter(pm => pm.A0_NAME === countryCode);
-  };
-
-  const searchRef = useRef();
-
-  const searchFromPMs = () => {
-   const result = originalPMs.filter(pm => pm.NAME.toLowerCase().includes(searchRef.current.value.toLowerCase()));
-   setParcelMachines(result)
-  }
 
   return (
     <div className='textAligin'>
@@ -108,20 +85,8 @@ function Cart() {
           <div>Sum: {calculateTotal()} $</div>
           <div>Average: {averageRating()} <Grade/></div>
 
-         
-          <Button variant='outlined' onClick={() => setSelectedCountry('EE')}>EE</Button>
-          <Button variant='outlined' onClick={() => setSelectedCountry('LV')}>LV</Button>
-          <Button variant='outlined' onClick={() => setSelectedCountry('LT')}>LT</Button>
+         <ParcelMachines/>
 
-          <LocalShipping/>
-          <input ref={searchRef} onChange={searchFromPMs} type="text" />
-          <span>{filterParcelMachines(selectedCountry).length} pcs</span>
-
-
-          {parcelMachines.length === 0 ? <div>Loading...</div> : <select>
-            {filterParcelMachines(selectedCountry).map(pm => <option>{pm.NAME}</option>)}
-          </select>}
-          
         </>
       }
      </div>

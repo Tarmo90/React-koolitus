@@ -14,6 +14,8 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 function Map(props) { 
 
+  //useEffect teha
+
   return (
   <div>
 

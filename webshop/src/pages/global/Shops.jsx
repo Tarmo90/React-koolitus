@@ -17,3 +17,6 @@ function Shops() {
 }
 
 export default Shops;
+
+
+//useEffect = v6tta poed andmebaasist

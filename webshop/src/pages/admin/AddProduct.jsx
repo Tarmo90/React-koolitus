@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Spinner } from 'react-bootstrap';
 import { ToastContainer} from 'react-toastify'
-import productFile from '../../data/products.json'
+// import productFile from '../../data/products.json'
 
 
 function AddProduct() {
@@ -15,6 +16,27 @@ function AddProduct() {
   const descriptionRef = useRef();
   const categoryRef = useRef();
 
+  const [categories, setCategories] = useState([])
+
+  const[dbProducts, setDbProducts] = useState([])
+  const [isLoading, setLoading] = useState(true);
+ 
+  useEffect(() => {
+    fetch(process.env.REACT_APP_PRODUCTS_URL)
+    .then(res => res.json())
+    .then(data => {
+      setDbProducts(data || []);
+      setLoading(false);
+    })
+  }, []);
+ 
+  useEffect(() => {
+    fetch(process.env.REACT_APP_CATEGORIES_URL)
+    .then(res => res.json())
+    .then(data => setCategories(data || []))
+  }, []);
+
+
   const addProduct = () => { 
     if (titleRef.current.value === "") { 
       updateMessage('Cannot add a product with an empty name!');
@@ -26,7 +48,7 @@ function AddProduct() {
       return;
     } 
 
-    productFile.push({
+    dbProducts.push({
 			id: Number(idRef.current.value),
 			title: titleRef.current.value,
 			price: Number(priceRef.current.value),
@@ -38,16 +60,21 @@ function AddProduct() {
 				count: 0,
 			},
 		});
+    fetch(process.env.REACT_APP_PRODUCTS_URL, {'method': 'PUT', 'body': JSON.stringify(dbProducts)})
   }
 
   const checkIdUniqueness = () => {
-    const index = productFile.findIndex(product => product.id === Number(idRef.current.value));
+    const index = dbProducts.findIndex(product => product.id === Number(idRef.current.value));
     if (index >= 0) { //teine varjant index >=0
       setIdUnique(true)  //ei ole disabled
 
     } else {
       setIdUnique(false); // on disabled
     }
+  }
+
+  if (isLoading) {
+    return <div><Spinner/> Loading...</div>
   }
 
   return (
@@ -71,7 +98,11 @@ function AddProduct() {
         <input ref={descriptionRef} type='text' />
         <br /> <br />
         <label >Category: </label>
-        <input ref={categoryRef} type='text' />
+        {/* <input  type='text' /> */}
+        
+        <select ref={categoryRef}>
+          {categories.map (category => <option>{category.name}</option>)}
+        </select>
         <br /> <br />
         
         <br /> <br />

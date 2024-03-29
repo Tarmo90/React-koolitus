@@ -23,6 +23,7 @@ import fileIconDelete from "assets/images/delete.png";
 
 function Presentation() {
   const [shipments, setShipments] = useState(shipmentsFromFile);
+
   //  useEffect(() => {
   //   fetch('https://my.api.mockaroo.com/shipments.json?key=5e0b62d0')
   //     .then(res => res.json())
