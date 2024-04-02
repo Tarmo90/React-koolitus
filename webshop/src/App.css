@@ -36,8 +36,15 @@ td, th {
 }
 
 .delete-btn {
-  font-size: 8px;
+  font-size: 12px;
   border-radius: 7px; 
+  background-color: rgba(247, 138, 14, 0.452);
+}
+
+.change-btn {
+  font-size: 12px;
+  border-radius: 7px; 
+  background-color: rgba(14, 232, 247, 0.452);
 }
 
 .edit-btn {

@@ -1,11 +1,12 @@
-import React, { useRef } from 'react';
-import productsFromFile from '../../data/products.json';
+import React, { useEffect, useRef, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
+// import productsFromFile from '../../data/products.json';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function EditProduct() {
   const { productId } = useParams();
-  const product = productsFromFile.find(product => product.id === Number(productId));
-
+  // const product = productsFromFile.find(product => product.id === Number(productId));
+  const idRef = useRef();
   const titleRef = useRef();
   const categoryRef = useRef();
   const priceRef = useRef();
@@ -16,21 +17,39 @@ function EditProduct() {
 
   const navigate = useNavigate();
 
+  const [categories, setCategories] = useState([])
+
+  const[dbProducts, setDbProducts] = useState([])
+  const [isLoading, setLoading] = useState(true);
     // 1. Peab algama use eesliidesega
   // 2. Peab olema imporditud
   // 3. Alati sulud lõpus - see käivitatakse
   // 4. Ei tohi olla funktsiooni sees tehtud
   // 5. Ei tohi olla tingimuslikult tehtud
   
-  if (product === undefined) {
-    return <div>Toodet ei leitud</div>;
-  }
+  useEffect(() => {
+    fetch(process.env.REACT_APP_PRODUCTS_URL)
+    .then(res => res.json())
+    .then(data => {
+      setDbProducts(data || []);
+      setLoading(false);
+    })
+  }, [dbProducts]);
+ 
+  useEffect(() => {
+    fetch(process.env.REACT_APP_CATEGORIES_URL)
+    .then(res => res.json())
+    .then(data => setCategories(data || []))
+  }, []);
+  // if (product === undefined) {
+  //   return <div>Toodet ei leitud</div>;
+  // }
 
   const change = () => {
-    const index = productsFromFile.findIndex(product => product.id === Number(productId))
+    const index = dbProducts.findIndex(product => product.id === Number(productId))
 
-    productsFromFile[index] = {
-      "id": product.id,
+    dbProducts[index] = {
+      "id": idRef.current.value,
       "title": titleRef.current.value,
       "price": Number(priceRef.current.value),
       "description": descriptionRef.current.value,
@@ -42,24 +61,38 @@ function EditProduct() {
       }
     };
     navigate("/admin/maintain-products")
+    fetch(process.env.REACT_APP_PRODUCTS_URL, {'method': 'PUT', 'body': JSON.stringify(dbProducts)})
+
   };
+
+  if (isLoading) {
+    return <div><Spinner/> Loading...</div>
+  }
+
 
   return (
     <div className='App'>
+      <label>ID</label><br />
+      <input ref={idRef} defaultValue={dbProducts?.id} type="number" /><br />
       <label>Name</label><br />
-      <input ref={titleRef} defaultValue={product.title} type="text" /><br />
+      <input ref={titleRef} defaultValue={dbProducts?.title} type="text" /><br />
       <label>Category</label><br />
-      <input ref={categoryRef} defaultValue={product.category} type="text" /><br />
+      <input ref={categoryRef} defaultValue={dbProducts?.category} type="text" /><br />
       <label>Price</label><br />
-      <input ref={priceRef} defaultValue={product.price} type="number" /><br />
+      <input ref={priceRef} defaultValue={dbProducts?.price} type="number" /><br />
       <label>Description</label><br />
-      <input ref={descriptionRef} defaultValue={product.description} type="text" /><br />
+      <input ref={descriptionRef} defaultValue={dbProducts?.description} type="text" /><br />
       <label>Image</label><br />
-      <input ref={imageRef} defaultValue={product.image} type="text" /><br />
+      <input ref={imageRef} defaultValue={dbProducts?.image} type="text" /><br />
       <label>Rating</label><br />
-      <input ref={ratingRef} defaultValue={product.rating.rate} type="number" /><br />
+      <input ref={ratingRef} defaultValue={dbProducts?.rating?.rate || ''} type="number" /><br />
       <label>Rating count</label><br />
-      <input ref={ratingCountRef} defaultValue={product.rating.count} type="number" /><br /><br />
+      <input ref={ratingCountRef} defaultValue={dbProducts?.rating?.count || ''} type="number" /><br /><br />
+      <label>Category: </label>
+      <select ref={categoryRef}>
+        {categories.map(category => (<option key={category.name}>{category.name}</option>))}
+      </select>
+      <br /> <br />
       <button onClick={change} className='edit-btn'>Muuda</button>
     </div>
   );

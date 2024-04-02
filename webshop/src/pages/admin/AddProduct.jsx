@@ -101,12 +101,13 @@ function AddProduct() {
         {/* <input  type='text' /> */}
         
         <select ref={categoryRef}>
-          {categories.map (category => <option>{category.name}</option>)}
+          {categories.map(category => (<option key={category.name}>{category.name}</option>
+        ))}
         </select>
         <br /> <br />
         
         <br /> <br />
-        <button disabled={idUnique === false} onClick={addProduct}>Add</button>
+        <button disabled={idUnique === true} onClick={addProduct}>Add</button>
 
         <p style={{ color:'red', background: 'lightgray' }}>
           {message}

@@ -12,7 +12,7 @@ function HomePage() {
 
   const [categories, setCategories] = useState([])
   const [isLoading, setLoading] = useState(true);
- 
+
   useEffect(() => {
     fetch(process.env.REACT_APP_CATEGORIES_URL)
     .then(res => res.json())
@@ -160,10 +160,3 @@ function HomePage() {
 
 export default HomePage;
 
-
-// sorteerimine A-Z, Z-A, hind kasvavalt, hind kahanevalt
-  // sorteerimine reitingu alusel
-
-  // filtreerimine -> kategooria alusel
-
-  // lisage toast, mis ütleb toote nimetuse, mis läheb ostukorvi

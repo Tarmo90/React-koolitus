@@ -1,5 +1,5 @@
 import { TextField, Button } from '@mui/material';
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 import { Button as BButton } from 'react-bootstrap';
 
 function MaintainShops() {
@@ -9,11 +9,6 @@ function MaintainShops() {
   const longitudeRef = useRef();
   const openTimeRef = useRef();
 
-  useEffect(() => {
-    fetch(process.env.REACT_APP_SHOPS_URL)
-    .then(res => res.json())
-    .then(data => setShops(data || []))
-  }, []);
 
   const add = () => {
     const newShop = {

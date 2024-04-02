@@ -42,4 +42,4 @@ const remove = (index) => {
   )
 }
 
-export default MaintainCategories
+export default MaintainCategories 
