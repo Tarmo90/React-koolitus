@@ -57,18 +57,28 @@ td, th {
   right: 20px;
 }
 
-.active {
-  background-color: rgb(231, 245, 231);
-  border: 1px solid green;
-}
- .inactive {
-  background-color: rgb(253, 230, 230);
-  border: 1px solid red;
- }
-
  .map {
   height: 300px;
   margin: 3%;
   border-radius: 10px;
  }
+
+ .shop {
+  margin-bottom: 10px;
+  
+ }
+ .shop_container {
+  width: calc(20% - 80px);
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  background-color: rgb(238, 238, 238);
+  text-align: center;
+  padding: 10px;
+  margin: 40px;
+ }
+
+ 
+ 
+
+ 
  

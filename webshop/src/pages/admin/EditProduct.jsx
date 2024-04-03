@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Spinner } from 'react-bootstrap';
 // import productsFromFile from '../../data/products.json';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -20,8 +19,9 @@ function EditProduct() {
   const [categories, setCategories] = useState([])
 
   const[dbProducts, setDbProducts] = useState([])
-  const [isLoading, setLoading] = useState(true);
-    // 1. Peab algama use eesliidesega
+  
+
+  // 1. Peab algama use eesliidesega
   // 2. Peab olema imporditud
   // 3. Alati sulud lõpus - see käivitatakse
   // 4. Ei tohi olla funktsiooni sees tehtud
@@ -32,7 +32,7 @@ function EditProduct() {
     .then(res => res.json())
     .then(data => {
       setDbProducts(data || []);
-      setLoading(false);
+     
     })
   }, [dbProducts]);
  
@@ -42,7 +42,7 @@ function EditProduct() {
     .then(data => setCategories(data || []))
   }, []);
   // if (product === undefined) {
-  //   return <div>Toodet ei leitud</div>;
+  // return <div>Toodet ei leitud</div>;
   // }
 
   const change = () => {
@@ -64,11 +64,6 @@ function EditProduct() {
     fetch(process.env.REACT_APP_PRODUCTS_URL, {'method': 'PUT', 'body': JSON.stringify(dbProducts)})
 
   };
-
-  if (isLoading) {
-    return <div><Spinner/> Loading...</div>
-  }
-
 
   return (
     <div className='App'>

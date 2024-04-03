@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
-import '../../css/Homepage.css';
+import styles from '../../css/Homepage.module.css';
 import { Spinner } from 'react-bootstrap';
+import CarouselGallery from '../../components/CarouselGallery';
 
 function HomePage() {
   const [products, setProducts] = useState([]);
@@ -110,6 +111,8 @@ function HomePage() {
 
   return (
     <div className='textAligin'>
+
+      <CarouselGallery/>
       <div>
       <div>{products.length} tk</div>
 
@@ -137,9 +140,10 @@ function HomePage() {
         {/* Add more buttons here as needed */}
       </div>
       
-      <div className='products'>
+      <div className={styles.products}>
       {products.map((product, index) => 
-        <div className='home-product' key={product.id}>
+        <div className={styles.product}
+        key={product.id}>
           <img style={{ width: '100px' }} src={product.image} alt="" />
           <div>{product.title}</div>
           <div>{product.price}</div>

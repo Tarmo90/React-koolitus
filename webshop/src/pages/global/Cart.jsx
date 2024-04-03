@@ -45,6 +45,31 @@ function Cart() {
     return (sum / cart.length).toFixed(2);
   };
 
+  const pay = () => {
+    const paymentUrl = "https://igw-demo.every-pay.com/api/v4/payments/oneoff"
+    const paymentData = {
+        "api_username": "92ddcfab96e34a5f",
+        "account_name": "EUR3D1",
+        "amount": calculateTotal(),
+        "order_reference": Math.random() * 9999999,
+        "nonce": "a9b7f" + new Date() + Math.random() * 9999999,
+        "timestamp": new Date(),
+        "customer_url": "https://tarmo-webshop.web.app"  
+    }
+
+    const paymentHeaders = {
+      "Authorization": "Basic OTJkZGNmYWI5NmUzNGE1Zjo4Y2QxOWU5OWU5YzJjMjA4ZWU1NjNhYmY3ZDBlNGRhZA==",
+      "Content-Type": "application/json"
+    }
+
+    fetch(paymentUrl, {
+      "method": "POST", 
+      "body": JSON.stringify(paymentData), 
+      "headers": paymentHeaders
+    }).then(res => res.json())
+      .then(json => window.location.href = json.payment_link)
+  }
+
   return (
     <div className='textAligin'>
       <div className='cart-top'>
@@ -86,7 +111,7 @@ function Cart() {
           <div>Average: {averageRating()} <Grade/></div>
 
          <ParcelMachines/>
-
+          <button onClick={pay}>Maksa</button>
         </>
       }
      </div>

@@ -50,32 +50,18 @@ function App() {
 
 export default App;
 
+// KOJU:
+// Cart.css --> keerata Cart.module.css-ks ja Cart.jsx sees vastavalt muudatused
+// Uus fail: MaintainPictures.jsx -> lisada andmebaasi, kustutada andmebaasist, vaadata
+//  Pildil on järgmised omadused: {src: "", alt: "", header: "", text: ""}
 
-// Koju: muuta index.html sees rakenduse nime ja pisipilti
-// Koju: Loo siia projekti ka 3s ja 4s keel (võid tõlkida chatGPT abiga)
-// Koju: changeLangEe ja teise 3 asemel tehke üks funktsioon, mida taaskasutatakse
-//          changeLang   -> onClick={() => changeLang("ee")}
-// Saab võtta põhja kuidas tegime eesti keelsel veebipoel 
-//        Tooted.js sees esitähe järgi filtreerimist
+// 12. 03.04
+// 13. 05.04 Alamkomponente ja andmete saatmist nende vahel (props), useContext -> globaalne muutuja
+// 14. 10.04 Sisselogimist/registreerumist / Firebase
+// 15. 12.04 Disainer
+// 16. 17.04 Redux, Custom Hook
+// 17. 19.04 1h45min, TypeScript
+// 18. 03.05  --> lõpuprojekti esitlemine
 
-// NotFound.jsx lehe korrektseks tegemine
 
-// MaintainProducts.jsx vaade tabeli kujul, 
-//    kuvades välja kõik toote omadused (rating võib olla huvitav)
-//    Täpselt samamoodi nagu eesti keelses
-// Kustutada failist
 
-// Cart.jsx
-// On võimalik lisada ostukorvi HomePage.jsx lehelt
-// Ostukorvis kuvatakse kõik tooted välja
-// Saab kustutada, saab tühjendada, saab lõppu juurde panna
-// Kokkuarvutus, mitu tk on
-// -----------------------
-
-// AddProduct.jsx
-// Võimalda toodet lisada
-
-// SingleProduct.jsx tegemine
-//    HomePage.jsx sisse tehke nupp "Vt lähemalt", 
-//          millega läheb SingleProduct.jsx vaatesse
-// SingleProduct.jsx lehel kuvage välja kõik toote omadused
