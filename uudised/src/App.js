@@ -12,8 +12,6 @@ import Muuda from './pages/MuudaUudiseid'
 import KasutajaPostitus from './pages/KasutajaPostitus';
 import YksPostitus from './pages/YksPostitus';
 
-
-
 function App() {
   return (
     <div>
