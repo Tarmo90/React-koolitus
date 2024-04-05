@@ -1,18 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 // import cartFile from '../../data/cart.json';
-import { ToastContainer, toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import { Button } from '@mui/material';
 import styles from '../../css/Homepage.module.css';
 import { Spinner } from 'react-bootstrap';
-import CarouselGallery from '../../components/CarouselGallery';
+import CarouselGallery from '../../components/home/CarouselGallery';
+import SortButtons from '../../components/home/SortButtons';
+import Product from '../../components/home/Product';
+import Pagination from 'react-bootstrap/Pagination';
 
 function HomePage() {
-  const [products, setProducts] = useState([]);
-  const [dbProducts, setDbProducts] = useState([]);
+  const [products, setProducts] = useState([]); //3
+  const [catProducts, setCatProducts] = useState([]); //5
+  const [dbProducts, setDbProducts] = useState([]); //20
 
   const [categories, setCategories] = useState([])
   const [isLoading, setLoading] = useState(true);
+  const [pageNumbers, setPageNumbers] = useState([])
+  const [activePage, setActivePage] = useState(1)
 
   useEffect(() => {
     fetch(process.env.REACT_APP_CATEGORIES_URL)
@@ -22,87 +27,39 @@ function HomePage() {
     fetch(process.env.REACT_APP_PRODUCTS_URL)
     .then(res => res.json())
     .then(data => {
-      setProducts(data || []);
+      setProducts(data.slice(0,3) || []);
+      setCatProducts(data || []);
       setDbProducts(data || []);
-
-      setLoading(false)
+      setLoading(false);
+      // const totalPages = Math.ceil(data.length / 3);
+      // const pageArray = Array.from({ length: totalPages }, (_, index) => index + 1);
+      const totalPages = Math.ceil(data.length / 3);
+      const pagesArray = [];
+      for (let i = 1; i <= totalPages; i++) {
+        pagesArray.push(i);
+      }
+    setPageNumbers(pagesArray);
     })
   }, []);
 
-  
-  const sortedAZ = () => {
-   products.sort((a, b) => a.title.localeCompare(b.title));
-    setProducts(products.slice());
-  }
-
-  const sortedZA = () => {
-    products.sort((b, a) => a.title.localeCompare(b.title));
-    setProducts(products.slice());
-  }
-
-  const sortedLowToHigh = () => {
-    products.sort((a, b) => a.price - b.price);
-    setProducts(products.slice());
-  }
-
-  const sortedHightoLow = () => {
-    products.sort((b, a) => a.price - b.price);
-    setProducts(products.slice());
-  }
-
-  const sortedRatingLowtoHigh = () => {
-    products.sort((a, b) => a.rating.rate - b.rating.rate);
-    setProducts(products.slice());
-  }
-
-  const sortedRatingHightoLow = () => {
-    products.sort((a, b) => b.rating.rate - a.rating.rate);
-    setProducts(products.slice());
-  }
-
-  // const filterByStartingLetter = (startLetter) => {
-  //   const result = productsFromFile.filter(product => product.title.startsWith(startLetter));
-  //   setProducts(result);
-  // }
-
+ 
   const filterByCategory = (category) => {
-    const result = dbProducts.filter(product => product.category === category)
-    setProducts(result)
+    const result = dbProducts.filter(product => product.category === category);
+    setCatProducts(result);
+    setProducts(result.slice(0,3))
+
+    const totalPages = Math.ceil(result.length / 3);
+      const pagesArray = [];
+      for (let i = 1; i <= totalPages; i++) {
+        pagesArray.push(i);
+      }
+    setPageNumbers(pagesArray);
+    setActivePage(1)
   };
 
-  // const filterByWomen = (category) => {
-  //   const result = productsFromFile.filter(product => product.category === category)
-  //   setProducts(result)
-  // }
-
-  // const filterByJewelery = (category) => {
-  //   const result = productsFromFile.filter(product => product.category === category)
-  //   setProducts(result)
-  // }
-
-  // const filterByElectronics = (category) => {
-  //   const result = productsFromFile.filter(product => product.category === category)
-  //   setProducts(result)
-  // }
-
-  const addToCart = (addedProduct) => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-
-    //kui on ostukorvis olemas, siis suurendan kogust
-    const index = cart.findIndex(cp => cp.product.id === addedProduct.id)
-    if (index !== -1) { //kui ei leia siis on index -1
-      cart[index].quantity = cart[index].quantity + 1
-
-    } else {
-    cart.push({"product":addedProduct, 'quantity': 1});
-    }
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    toast.success(`${addedProduct.title} successfully added to the cart`, {
-      position: 'bottom-right'
-    });
+  const changePage = (newPage) => {
+    setActivePage(newPage)
+    setProducts(catProducts.slice(newPage*3 - 3, newPage*3))
   }
 
   if (isLoading) {
@@ -114,7 +71,8 @@ function HomePage() {
 
       <CarouselGallery/>
       <div>
-      <div>{products.length} tk</div>
+      <div>Total: {dbProducts.length} tk</div>
+      <div>In category{catProducts.length} tk</div>
 
         {categories.map (category => 
         <Button key={category.name} 
@@ -122,39 +80,28 @@ function HomePage() {
           onClick={() => filterByCategory(category.name)}>
           {category.name}
         </Button>)}
-      
-        {/* <Button variant='contained' onClick={() => filterByMen("men's clothing")}>men's clothing</Button>
-        <Button variant='contained' onClick={() => filterByWomen("women's clothing")}>women's clothing</Button>
-        <Button variant='contained' onClick={() => filterByJewelery("jewelery")}>jewelery</Button>
-        <Button variant='contained' onClick={() => filterByElectronics("electronics")}>electronics</Button> */}
+            
         <br /><br />
-        <Button onClick={sortedAZ}>Sorted A-Z</Button>
-        <Button onClick={sortedZA}>Sorted Z-A</Button>
-        <Button onClick={sortedLowToHigh}>Sorted low to high</Button>
-        <Button onClick={sortedHightoLow}>Sorted high to low</Button>
-        <Button onClick={sortedRatingLowtoHigh}>Sorted by rating low to high</Button>
-        <Button onClick={sortedRatingHightoLow}>Sorted by rating high to low</Button>
-        <br /><br />
-        {/* <Button variant='outlined' onClick={() => filterByStartingLetter('A')}>Keep products starting with A</Button>
-        <Button variant='outlined' onClick={() => filterByStartingLetter('B')}>Keep products starting with B</Button> */}
-        {/* Add more buttons here as needed */}
+        <SortButtons
+        products={products}
+        setProducts={setProducts}
+        />
+        <br /><br />  
       </div>
-      
+
+      <Pagination>
+     {pageNumbers.map(pageNumber => 
+     <Pagination.Item key={pageNumber} onClick={() => changePage(pageNumber)} 
+     active={pageNumber === activePage}>
+      {pageNumber}
+    </Pagination.Item>)}
+      </Pagination>
       <div className={styles.products}>
       {products.map((product, index) => 
-        <div className={styles.product}
-        key={product.id}>
-          <img style={{ width: '100px' }} src={product.image} alt="" />
-          <div>{product.title}</div>
-          <div>{product.price}</div>
-          <div>{product.category}</div>
-          <div>{product.rating.rate}</div>
-         
-          <Link to={"/product/" + product.id}>
-            <Button variant='outlined'>See more</Button>
-          </Link>
-          <Button variant='contained' disabled={product.active === false} onClick={() => addToCart(product)}>Add to cart</Button>
-        </div>
+        <Product
+        key={product.id}
+        product={product}
+        />
       )}
       </div>
       <ToastContainer/>

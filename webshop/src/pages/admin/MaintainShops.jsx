@@ -1,5 +1,5 @@
 import { TextField, Button } from '@mui/material';
-import React, {  useRef, useState } from 'react'
+import React, {  useEffect, useRef, useState } from 'react'
 import { Button as BButton } from 'react-bootstrap';
 
 function MaintainShops() {
@@ -9,6 +9,13 @@ function MaintainShops() {
   const longitudeRef = useRef();
   const openTimeRef = useRef();
 
+  
+  // useEffect, et laadida andmed shops muutujasse
+  useEffect(() => {
+    fetch(process.env.REACT_APP_SHOPS_URL)
+    .then(res => res.json())
+    .then(data => setShops(data || []))
+  }, []);
 
   const add = () => {
     const newShop = {
@@ -38,7 +45,7 @@ function MaintainShops() {
       
       {shops.map((newShop, index) =>
         <div key={index}>
-          <span>{newShop.name}; </span>
+          <span>{newShop.name}; </span><br />
           <span>{newShop.latitude}; </span>
           <span>{newShop.longitude}; </span>
           <span>{newShop.openTime}; </span>

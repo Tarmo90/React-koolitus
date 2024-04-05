@@ -7,59 +7,61 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
-      "maintain-categories" : "Maintain categories",
-      "maintain-shops" : "Maintain categories",
-      "add-product" : "Maintain categories",
-      "maintain-products" : "Maintain categories",
-      "shops": "Our shops",
-      "contact": 'Contact with us',
-      "cart": "To cart",
-      "login": "Login",
-      "signup": "Sign up"
-
+        "maintain-categories": "Maintain categories",
+        "maintain-shops": "Maintain categories",
+        "add-product": "Maintain categories",
+        "maintain-products": "Maintain categories",
+        "maintain-pictures": "Maintain pictures",
+        "shops": "Our shops",
+        "contact": "Contact with us",
+        "cart": "To cart",
+        "login": "Login",
+        "signup": "Sign up"
     }
-  },
-  ee: {
+},
+ee: {
     translation: {
-      "maintain-categories" : "Halda kategooriaid",
-      "maintain-shops" : "Halda poode",
-      "add-product" : "Lisa toode",
-      "maintain-products" : "Halda tooteid",
-      "shops": "Meie poed",
-      "contact": 'Kontakteeru meiega',
-      "cart": "Ostukorvi",
-      "login": "Login",
-      "signup": "Loo konto"
+        "maintain-categories": "Halda kategooriaid",
+        "maintain-shops": "Halda poode",
+        "add-product": "Lisa toode",
+        "maintain-products": "Halda tooteid",
+        "maintain-pictures": "Halda pilte",
+        "shops": "Meie poed",
+        "contact": "Kontakteeru meiega",
+        "cart": "Ostukorvi",
+        "login": "Login",
+        "signup": "Loo konto"
     }
-  },
-
-  fi: {
+},
+fi: {
     translation: {
-      "maintain-categories" : "Hallitse kategorioita",
-      "maintain-shops" : "Hallitse kauppoja",
-      "add-product" : "Lisää tuote",
-      "maintain-products" : "Hallitse tuotteita",
-      "shops": "Kauppamme",
-      "contact": 'Ota yhteyttä meihin',
-      "cart": "Ostoskori",
-      "login": "Kirjaudu sisään",
-      "signup": "Rekisteröidy"
+        "maintain-categories": "Hallitse kategorioita",
+        "maintain-shops": "Hallitse kauppoja",
+        "add-product": "Lisää tuote",
+        "maintain-products": "Hallitse tuotteita",
+        "maintain-pictures": "Hallitse kuvia",
+        "shops": "Kauppamme",
+        "contact": "Ota yhteyttä meihin",
+        "cart": "Ostoskori",
+        "login": "Kirjaudu sisään",
+        "signup": "Rekisteröidy"
     }
-  },
-
-  lv: {
+},
+lv: {
     translation: {
-      "maintain-categories" : "Pārvaldīt kategorijas",
-      "maintain-shops" : "Pārvaldīt veikalus",
-      "add-product" : "Pievienot produktu",
-      "maintain-products" : "Pārvaldīt produktus",
-      "shops": "Mūsu veikali",
-      "contact": 'Sazinies ar mums',
-      "cart": "Iepirkumu grozs",
-      "login": "Pieteikties",
-      "signup": "Izveidot kontu"
+        "maintain-categories": "Pārvaldīt kategorijas",
+        "maintain-shops": "Pārvaldīt veikalus",
+        "add-product": "Pievienot produktu",
+        "maintain-products": "Pārvaldīt produktus",
+        "maintain-pictures": "Pārvaldīt attēlus",
+        "shops": "Mūsu veikali",
+        "contact": "Sazinies ar mums",
+        "cart": "Iepirkumu grozs",
+        "login": "Pieteikties",
+        "signup": "Izveidot kontu"
     }
-  }
+}
+
 };
 
 i18n
