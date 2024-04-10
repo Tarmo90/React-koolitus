@@ -7,16 +7,16 @@ import { faFileAlt, faTable } from '@fortawesome/free-solid-svg-icons';
 
 function CollapsibleExample() {
   return (
-    <Navbar className="navbar-left-top">
+    <Navbar className="navbar_left_top">
       <Container>
-        <div className="logo-container">
+        <div className="logo_container">
           <Navbar.Brand as={Link} to='/' className='logo'>
-            <img src="logo.png" alt="Logo" className="logo-image" />
+            <img src="logo.png" alt="Logo" className="logo_image" />
           </Navbar.Brand>
         </div>
       </Container>
       <Container>
-        <div className="button-container">
+        <div className="button_container">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className='button_container flex-column'>

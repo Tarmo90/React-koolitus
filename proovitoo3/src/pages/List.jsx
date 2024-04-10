@@ -1,72 +1,116 @@
 import React, { useState } from 'react';
 import data from '../data/Tabel.json';
+import Pagination from 'react-bootstrap/Pagination';
+import { Link } from 'react-router-dom';
 
 function List() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const [itemsPerPage] = useState(10); // Muuda lehekülgede suurust siin
+  const [selectedRow, setSelectedRow] = useState(null); // Uus state valitud rea hoidmiseks
+  const [pageNumbers, setPageNumbers] = useState([]); // Lisatud
 
-  // Leia hetkelehe andmed
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.list.slice(indexOfFirstItem, indexOfLastItem);
+  // Andmete massiiviks muutmine, kui need on objekti kujul
+  const dataList = Object.values(data.list);
 
-  // veeru pealkiri
-  const tableHeader = () => {
-    return (
-      <tr className="table-header">
-        <th>Eesnimi</th>
-        <th>Perekonnanimi</th>
-        <th>Sugu</th>
-        <th>Sünnikuupäev</th>
-        <th>Telefon</th>
-      </tr>
-    );
+  // Arvutab välja lehekülgede arvu vastavalt andmetele ja lehekülgede suurusele
+  const totalPages = Math.ceil(dataList.length / itemsPerPage);
+  
+
+  // Loob massiivi lehekülgede arvuga, piirab seda 5 numbriga
+  const generatePageNumbers = () => {
+    const totalPageNumbers = Math.min(totalPages, 5);
+    const numbers = [];
+    for (let i = 1; i <= totalPageNumbers; i++) {
+      numbers.push(i);
+    }
+    setPageNumbers(numbers);
   };
 
-  // tabeli read
-  const tableRows = () => {
-    return currentItems.map((item, index) => {
-      const { firstname, surname, sex, date, phone } = item;
-      return (
-        <tr key={index}>
-          <td>{firstname}</td>
-          <td>{surname}</td>
-          <td>{sex}</td>
-          <td>{new Date(date).toLocaleDateString()}</td>
-          <td>{phone}</td>
-        </tr>
-      );
-    });
+  // Funktsioon, mis käivitatakse, kui lehekülge muudetakse
+  const changePage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    // Uuendame lehekülgede numbreid vastavalt valitud leheküljele
+    generatePageNumbers();
   };
 
-  // j2rgmine leht
-  const nextPage = () => {
-    setCurrentPage(prevPage => prevPage + 1);
-  };
+  // Genereerime esialgsed lehekülgede numbrid
+  useState(() => {
+    generatePageNumbers();
+  }, []);
 
-  // eelmine leht
-  const prevPage = () => {
-    setCurrentPage(prevPage => prevPage - 1);
+  // Funktsioon rea valimiseks
+  const selectRow = (index) => {
+    if (selectedRow === index) {
+      setSelectedRow(null); // Kui sama rida uuesti klõpsatakse, tühjendame valitud rea
+    } else {
+      setSelectedRow(index); // Valime uue rea
+    }
   };
 
   return (
-    <div className="table-title">
+    <div className="table_title">
       <h2>Nimekiri</h2>
-      <div className="table-container">
-        <div className="table-wrapper">
+      <div className="table_container">
+        <div className="table_wrapper">
           <table>
             <thead>
-              {tableHeader()}
+              <tr className="table_header">
+                <th>Eesnimi</th>
+                <th>Perekonnanimi</th>
+                <th>Sugu</th>
+                <th>Sünnikuupäev</th>
+                <th>Telefon</th>
+              </tr>
             </thead>
             <tbody>
-              {tableRows()}
+              {dataList.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((item, index) => (
+                <React.Fragment key={index}>
+                  <tr onClick={() => selectRow(index)}>
+                    <td>{item.firstname}</td>
+                    <td>{item.surname}</td>
+                    <td>{item.sex}</td>
+                    <td>{new Date(item.date).toLocaleDateString()}</td>
+                    <td>{item.phone}</td>
+                  </tr>
+                  {selectedRow === index && ( // Kui rida on valitud, näita täiendavat teavet
+                    <tr>
+                      <td colSpan="5">
+                        {/* Siin saad lisada täiendava teabe või pildi */}
+                        <div className='raw_border'>
+                          <img className='raw_img' src={item.image.small} alt="" />
+                          <span className='raw_info' >
+                          {item.body.length > 50 ? item.body.substring(0, 500) + '...' : item.body}
+                          </span>
+                          <br />
+                          <Link to={"/details/" + ((currentPage - 1) * itemsPerPage + index)}>
+                          <button>LOE ROHKEM</button>
+                          </Link>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              ))}
             </tbody>
           </table>
+
+         {/* Paginatsioon */}
+          <div className='pagination'>
+          <Pagination>
+            <Pagination.Prev onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1} />
+            {pageNumbers.map(pageNumber => 
+              <Pagination.Item 
+                key={pageNumber} 
+                onClick={() => changePage(pageNumber)} 
+                active={pageNumber === currentPage}
+              >
+                {pageNumber}
+              </Pagination.Item>
+            )}
+            <Pagination.Next onClick={() => changePage(currentPage + 1)} disabled={currentPage === totalPages} />
+          </Pagination>
+          </div>
         </div>
-      </div>
-      <div className="buttons">
-        <button onClick={prevPage} disabled={currentPage === 1}>Eelmine</button>
-        <button onClick={nextPage} disabled={indexOfLastItem >= data.list.length}>Järgmine</button>
       </div>
     </div>
   );

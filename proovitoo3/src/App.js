@@ -4,6 +4,7 @@ import Homepage from './pages/Homepage';
 import Article from './pages/Article';
 import  List  from './pages/List';
 import NavigationBar from './components/NavigationBar';
+import UserDetails from './pages/UserDetails';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="" element={<Homepage />}/>
         <Route path="article" element={<Article />}/>
         <Route path="list" element={<List />}/>
+        <Route path="details/:index" element={<UserDetails />}/>
       </Routes>
     </div>
   );

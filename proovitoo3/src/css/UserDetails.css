@@ -1,0 +1,69 @@
+.userDetail_container {
+  text-align: center;
+  max-width: 900px;
+  margin-top: 0px;
+  margin: 100px auto 50px;
+}
+
+.userArticle_title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 45px;
+  color: #e8e6e3;
+}
+
+.userIntro {
+  color: #e8e6e3;
+  display: block;
+  unicode-bidi: isolate;
+  font-weight: 700;
+  text-align: left;
+}
+
+.userArticle_text {
+  color: #e8e6e3;
+  text-align: left;
+  position: relative; 
+  bottom: 400px;
+}
+
+.userImage_container {
+  margin-top: 50px;
+  margin-bottom: 0;
+  display: block;
+  padding-bottom: 50%; 
+  position: relative;
+  overflow: hidden; 
+  transition: transform 0.5s ease;
+}
+
+.userImage {
+  width: 100%; 
+  height: auto; 
+}
+
+.userImage_container:hover {
+  transform: scale(1.1); 
+}
+
+.userImage_text {
+  color: white;
+  position: absolute;
+  bottom: 450px;
+  left: 0;
+  width: 100%;
+  padding: 10px 24px;
+  z-index: 8;
+  background: rgba(0, 0, 0, .4);
+}
+
+.tags {
+  position: absolute;
+  left: 30%; 
+  transform: translateX(-50%); 
+  background-color: rgb(152, 0, 68);
+  padding: 10px 20px; 
+  color: white; 
+  border-radius: 5px; 
+  margin-top: -300px;
+}
