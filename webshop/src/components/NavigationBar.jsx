@@ -22,6 +22,7 @@ function NavigationBar() {
   const logout = () => {
     setLoggedIn(false)
     navigate('/')
+    sessionStorage.removeItem('token')
   }
 
   return (
