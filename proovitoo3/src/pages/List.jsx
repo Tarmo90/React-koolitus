@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 function List() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10); // Muuda lehekülgede suurust siin
-  const [selectedRow, setSelectedRow] = useState(null); // Uus state valitud rea hoidmiseks
+  const [selectedRow, setSelectedRow] = useState(-1); // Uus state valitud rea hoidmiseks
   const [pageNumbers, setPageNumbers] = useState([]); // Lisatud
 
   
-  const dataList = Object.values(data.list);
+  const [dataList, setDataList] = useState(data.list.slice())
 
   const totalPages = Math.ceil(dataList.length / itemsPerPage);
   
@@ -41,6 +41,33 @@ function List() {
     }
   };
 
+  const [sortFirstName, setSortFirstName] = useState('default');
+
+  const sortName = () => {
+    if (sortFirstName === 'default') {
+      setSortFirstName('asc');
+      dataList.sort((a, b) => a.firstname.localeCompare(b.firstname))
+      setDataList(dataList.slice());
+      return;
+    }
+    if (sortFirstName === 'asc') {
+      setSortFirstName('desc');
+      dataList.sort((a, b) => b.firstname.localeCompare(a.firstname))
+      setDataList(dataList.slice());
+      return;
+    }
+    if (sortFirstName === 'desc') {
+      setSortFirstName('default');
+      setDataList(data.list.slice());
+      return;
+    }
+  }
+
+ const getBirthDate = (personalCode) => {
+  const birthDay = personalCode.toString().slice(5,7)
+  return birthDay + '.12.2022'
+ }
+
   return (
     <div className="table_title">
       <h2>Nimekiri</h2>
@@ -49,7 +76,7 @@ function List() {
           <table>
             <thead>
               <tr className="table_header">
-                <th>Eesnimi</th>
+                <th onClick={sortName}>Eesnimi</th>
                 <th>Perekonnanimi</th>
                 <th>Sugu</th>
                 <th>Sünnikuupäev</th>
@@ -63,17 +90,16 @@ function List() {
                     <td>{item.firstname}</td>
                     <td>{item.surname}</td>
                     <td>{item.sex}</td>
-                    <td>{new Date(item.date).toLocaleDateString()}</td>
+                    <td>{getBirthDate(item.personal_code)}</td>
                     <td>{item.phone}</td>
                   </tr>
-                  {selectedRow === index && ( // Kui rida on valitud, näita täiendavat teavet
+                  {selectedRow === index && ( 
                     <tr>
                       <td colSpan="5">
-                        {/* Siin saad lisada täiendava teabe või pildi */}
+                        
                         <div className='raw_border'>
                           <img className='raw_img' src={item.image.small} alt="" />
-                          <span className='raw_info' >
-                          {item.body.length > 50 ? item.body.substring(0, 500) + '...' : item.body}
+                          <span className='raw_info' dangerouslySetInnerHTML={{__html:(item.body.length > 50 ? item.body.substring(0, 500) + '...' : item.body)}} >
                           </span>
                           <br />
                           <Link to={"/details/" + ((currentPage - 1) * itemsPerPage + index)}>
@@ -88,7 +114,6 @@ function List() {
             </tbody>
           </table>
 
-         {/* Paginatsioon */}
           <div className='pagination'>
           <Pagination>
             <Pagination.Prev onClick={() => changePage(currentPage - 1)} disabled={currentPage === 1} />
