@@ -9,14 +9,11 @@ function List() {
   const [selectedRow, setSelectedRow] = useState(null); // Uus state valitud rea hoidmiseks
   const [pageNumbers, setPageNumbers] = useState([]); // Lisatud
 
-  // Andmete massiiviks muutmine, kui need on objekti kujul
+  
   const dataList = Object.values(data.list);
 
-  // Arvutab välja lehekülgede arvu vastavalt andmetele ja lehekülgede suurusele
   const totalPages = Math.ceil(dataList.length / itemsPerPage);
   
-
-  // Loob massiivi lehekülgede arvuga, piirab seda 5 numbriga
   const generatePageNumbers = () => {
     const totalPageNumbers = Math.min(totalPages, 5);
     const numbers = [];
@@ -26,14 +23,11 @@ function List() {
     setPageNumbers(numbers);
   };
 
-  // Funktsioon, mis käivitatakse, kui lehekülge muudetakse
   const changePage = (pageNumber) => {
     setCurrentPage(pageNumber);
-    // Uuendame lehekülgede numbreid vastavalt valitud leheküljele
     generatePageNumbers();
   };
 
-  // Genereerime esialgsed lehekülgede numbrid
   useState(() => {
     generatePageNumbers();
   }, []);

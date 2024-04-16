@@ -1,0 +1,32 @@
+.gamepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.game > div {
+  height: 90px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  font-size: 90px;
+  cursor: pointer;
+}
+
+.x {
+  color: red; 
+}
+
+.o {
+  color: blue;
+}

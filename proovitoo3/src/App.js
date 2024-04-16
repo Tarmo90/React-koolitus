@@ -11,7 +11,6 @@ function App() {
     <div>
       <NavigationBar/>
     
-
       <Routes>
         <Route path="" element={<Homepage />}/>
         <Route path="article" element={<Article />}/>

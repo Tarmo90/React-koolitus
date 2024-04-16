@@ -1,6 +1,6 @@
 import './App.css';
 import NavigationBar from './components/NavigationBar';
-import {Route, Routes} from 'react-router-dom'
+import {Navigate,Route, Routes} from 'react-router-dom'
 import HomePage from './pages/global/HomePage';
 import {ContactUs} from './pages/global/ContactUs';
 import Shops from './pages/global/Shops';
@@ -18,8 +18,13 @@ import Signup from './pages/auth/Signup';
 import Supplier from './pages/admin/Supplier';
 import MaintainPictures from './pages/admin/MaintainPictures';
 import OnePictures from './pages/admin/OnePictures';
+import { useContext } from 'react';
+import { AuthContext } from './store/AuthContext';
 
 function App() {
+
+  const {loggedIn} = useContext(AuthContext);
+
   return (
     <div>
       <NavigationBar />
@@ -31,6 +36,7 @@ function App() {
         <Route path='cart' element={<Cart/>}/>
         <Route path='product/:productId' element={<SingleProduct/>}/>
 
+        {loggedIn === true ? <>
         <Route path='admin' element={<AdminHome/>}/>
         <Route path='admin/add-product' element={<AddProduct/>}/>
         <Route path='admin/edit-product/:productId' element={<EditProduct/>}/>
@@ -39,7 +45,10 @@ function App() {
         <Route path='admin/maintain-shops' element={<MaintainShops/>}/>
         <Route path='admin/maintain-pictures' element={<MaintainPictures/>}/>
         <Route path='admin/supplier' element={<Supplier/>}/>
+        </> :
+            <Route path='admin/*' element={<Navigate to='/login'/>}/>
 
+        }
         <Route path='picture/:index' element={<OnePictures/>}/>
 
 

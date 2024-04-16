@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-
+import '../css/HomePage.css'
 
 function Homepage() {
   const [s6num, uuendaS6num] = useState('')
@@ -21,9 +21,9 @@ function Homepage() {
     }
   }
   return (
-    <div>
+    <div className='homepage'>
       <h2><label>M2ngija nimi</label></h2>
-      <input ref={m2ngijaNimiRef} type="text" />
+      <input ref={m2ngijaNimiRef} type="text" /><br />
       <button onClick={lisaUusM2ngija}>Lisa m2ngija</button><br /><br />
       <Link to={'/game/' + 1}>
       <button>Alusta m2ngu</button>

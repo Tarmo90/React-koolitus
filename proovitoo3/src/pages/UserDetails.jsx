@@ -22,9 +22,6 @@ function UserDetails() {
       <div className='tags'>
       {find[index].tags.join(' ')}
       </div>
-
-
-
     </div>
   );
 }
