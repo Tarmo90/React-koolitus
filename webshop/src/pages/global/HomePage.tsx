@@ -5,51 +5,49 @@ import styles from '../../css/Homepage.module.css';
 import { Spinner } from 'react-bootstrap'; 
 import CarouselGallery from '../../components/home/CarouselGallery'; 
 import SortButtons from '../../components/home/SortButtons'; 
-import Product from '../../components/home/Product'; 
+import ProductComponent from '../../components/home/Product'; 
 import Pagination from 'react-bootstrap/Pagination'; 
+import useFetchProducts from '../../util/UseFetchProducts';
+import { Product, } from '../../models/Product';
 
 function HomePage() {
+  const [products, setProducts] = useState<Product[]>([]); 
+  const [catProducts, setCatProducts] = useState<Product[]>([]); 
   
-  const [products, setProducts] = useState([]); 
-  const [catProducts, setCatProducts] = useState([]); 
-  const [dbProducts, setDbProducts] = useState([]); 
-
-  const [categories, setCategories] = useState([]); 
-  const [isLoading, setLoading] = useState(true); 
+  const [categories, setCategories] = useState<any[]>([]); 
   
-  const [pageNumbers, setPageNumbers] = useState([]); 
-  const [activePage, setActivePage] = useState(1); 
+  const [pageNumbers, setPageNumbers] = useState<number[]>([]); 
+  const [activePage, setActivePage] = useState<number>(1); 
+  const {dbProducts, isLoading} = useFetchProducts()
 
   
   useEffect(() => {
-    
-    fetch(process.env.REACT_APP_CATEGORIES_URL)
+    const url = process.env.REACT_APP_CATEGORIES_URL
+    if (url === undefined) {
+      return
+    }
+    fetch(url)
+   
       .then(res => res.json())
       .then(data => setCategories(data || []));
 
-    
-    fetch(process.env.REACT_APP_PRODUCTS_URL)
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data.slice(0, 3) || []); 
-        setCatProducts(data || []);
-        setDbProducts(data || []); 
-        setLoading(false); 
-
-        const totalPages = Math.ceil(data.length / 3); // Kogu lehekülgede arv
+        setCatProducts(dbProducts || []);
+        setProducts(dbProducts.slice(0,3)|| []); 
+        const totalPages = Math.ceil(dbProducts.length / 3); // Kogu lehekülgede arv
         const pagesArray = [];
         for (let i = 1; i <= totalPages; i++) {
           pagesArray.push(i);
         }
         setPageNumbers(pagesArray); // Lehtede arvu määramine
-      });
-  }, []);
+    //   });
+  }, [dbProducts]);
 
-  const filterByCategory = (category) => {
+
+  const filterByCategory = (category: string) => {
     const result = dbProducts.filter(product => product.category === category); 
-    setCatProducts(result); // Määra kategooria järgi filtreeritud tooted
-    setProducts(result.slice(0, 3)); // Määra esimesed 3 kategooria järgi filtreeritud toodet
-    const totalPages = Math.ceil(result.length / 3); // Lehekülgede arv
+    setCatProducts(result); 
+    setProducts(result.slice(0, 3)); 
+    const totalPages = Math.ceil(result.length / 3); 
     const pagesArray = [];
     for (let i = 1; i <= totalPages; i++) {
       pagesArray.push(i);
@@ -59,7 +57,7 @@ function HomePage() {
   };
 
   // Funktsioon lehe vahetamiseks paginatsiooni abil
-  const changePage = (newPage) => {
+  const changePage = (newPage: number) => {
     setActivePage(newPage); // Määra aktiivne leht
     setProducts(catProducts.slice(newPage * 3 - 3, newPage * 3)); // Määra lehekülje järgi filtreeritud tooted
   }
@@ -107,7 +105,7 @@ function HomePage() {
 
       <div className={styles.products}>
         {products.map((product, index) => 
-          <Product
+          <ProductComponent
             key={product.id}
             product={product}
           />

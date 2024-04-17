@@ -5,7 +5,7 @@ import Grade from '@mui/icons-material/Grade';
 import ParcelMachines from '../../components/cart/ParcelMachines';
 import Payment from '../../components/cart/Payment';
 import { CartSumContext } from '../../store/CartSumContext';
-
+import { calculateTotal } from '../../util/CalculatationUtil';
 
 
 function Cart() {
@@ -19,7 +19,7 @@ function Cart() {
     updatedCart.splice(index, 1);
     setCart(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-    setCartSum(calculateTotal());
+    setCartSum(calculateTotal(cart));
   };
 
   const decreaseQuantity = (index) => {
@@ -30,7 +30,7 @@ function Cart() {
     }
     setCart(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-    setCartSum(calculateTotal());
+    setCartSum(calculateTotal(cart));
   };
 
   const clearCart = () => {
@@ -46,11 +46,7 @@ function Cart() {
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
-  const calculateTotal = () => {
-    let sum = 0;
-    cart.forEach(cp => sum += cp.product.price * cp.quantity);
-    return sum.toFixed(2);
-  };
+
 
   const averageRating = () => {
     let sum = 0;
@@ -97,11 +93,11 @@ function Cart() {
      <div className={styles.cart_bottom}>
      {cart.length > 0 &&
         <>
-          <div>Sum: {calculateTotal()} $</div>
+          <div>Sum: {calculateTotal(cart)} $</div>
           <div>Average: {averageRating()} <Grade/></div>
 
          <ParcelMachines/>
-          <Payment sum={calculateTotal()}/>
+          <Payment sum={calculateTotal(cart)}/>
         </>
       }
      </div>
