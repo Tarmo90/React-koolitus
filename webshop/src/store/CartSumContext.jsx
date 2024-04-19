@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { calculateTotal } from '../util/CalculatationUtil';
+// import { calculateTotal } from '../util/CalculatationUtil';
 
 // Step 1: Create a context
 export const CartSumContext = createContext();
@@ -10,10 +10,10 @@ export const CartSumContextProvider = ({ children }) => {
 
   const calculateInitial = () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    // let sum = 0;
-    // cart.forEach(cp => sum += cp.product.price * cp.quantity);
-    // return sum.toFixed(2);
-    return calculateTotal(cart)
+    let sum = 0;
+    cart.forEach(cp => sum += cp.product.price * cp.quantity);
+    return sum.toFixed(2);
+    // return calculateTotal(cart)
   };
   const [cartSum, setCartSum] = useState(calculateInitial());
   return (
