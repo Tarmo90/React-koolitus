@@ -1,8 +1,26 @@
-.order {
-  color: rgb(187, 184, 184);
+.order-container {
+  display: flex;
+  justify-content: space-between; /* Algne joondamine - sisu vahele jätmine */
+  border: 1px solid #ccc;
+  padding: 20px;
+  
 }
 
-input[type='radio'].custom-radio {
-  /* Sinu kohandatud stiilireeglid siin */
-  color: rgb(255, 9, 9);
+.order {
+  color: #ccc;
+  align-self: center; /* Ülemine osa keskjoondus vertikaalselt */
+}
+
+
+.radio {
+  text-align: center; /* Horisontaalne keskjoondus */
+}
+
+.radio label {
+  display: block; 
+}
+
+
+input[type="checkbox"]:focus {
+  box-shadow: 0 0 3px 2px rgba(12, 12, 12, 0.2); 
 }

@@ -7,22 +7,22 @@ function BuyOrder() {
   const [selectedBillingCycle, setSelectedBillingCycle] = useState('monthly'); // vaikeväärtusena valime kuumakse
 
   useEffect(() => {
+    const loadSubscriptions = async () => {
+      const standard = subscribeData.find(sub => sub.type === 'standard');
+      setStandardSubscription(standard);
+    };
+  
     loadSubscriptions();
-  }, []);
-
-  const loadSubscriptions = () => {
-    const standard = subscribeData.find(sub => sub.type === 'standard');
-    setStandardSubscription(standard);
-  };
-
+  }, []); // Tühjad sõltuvused tähendavad, et see hook käivitub ainult komponendi esmakordsel renderdamisel
+  
   const handleBillingCycleChange = (cycle) => {
     setSelectedBillingCycle(cycle);
   };
 
   return (
-    <div className='order'>
+    <div className="order-container"> {/* Ümbritsev <div> ühise klassinimega */}
       {standardSubscription && (
-        <div>
+        <div className="order">
           <h3>{standardSubscription.title}</h3>
           {selectedBillingCycle === 'monthly' ? (
             <div>
@@ -35,28 +35,29 @@ function BuyOrder() {
               <p>Valitud: Aastamakse</p>
             </div>
           )}
-          <div>
-            <label>
-              <input
-                type='radio'
-                value='monthly'
-                checked={selectedBillingCycle === 'monthly'}
-                onChange={() => handleBillingCycleChange('monthly')}
-              />
-              Kuumakse
-            </label>
-            <label>
-              <input
-                type='radio'
-                value='yearly'
-                checked={selectedBillingCycle === 'yearly'}
-                onChange={() => handleBillingCycleChange('yearly')}
-              />
-              Aastamakse
-            </label>
-          </div>
         </div>
       )}
+
+      <div className='radio'> {/* Alumised <input> elemendid */}
+        <label>
+          <input
+            type='checkbox'
+            name='monthly'
+            checked={selectedBillingCycle === 'monthly'}
+            onChange={() => handleBillingCycleChange('monthly')}
+          />
+          Kuumakse
+        </label>
+        <label>
+          <input
+            type='checkbox'
+            name='yearly'
+            checked={selectedBillingCycle === 'yearly'}
+            onChange={() => handleBillingCycleChange('yearly')}
+          />
+          Aastamakse
+        </label>
+      </div>
     </div>
   );
 }
