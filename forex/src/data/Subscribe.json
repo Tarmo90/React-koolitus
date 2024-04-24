@@ -1,0 +1,36 @@
+[
+  {
+    "type": "standard",
+    "title": "Standartne Tellimus",
+    "pricePerMonth": "25 €/kuus",
+    "pricePerYear": "299,99 €/aastas",
+    "description": "Tugevda oma oskusi ja säästa aega.",
+    "active": true,
+    "benefits": [
+      "Üleilmne juurdepääs 14000+ kursusele, annet võidetud õpetajatega.",
+      "Võta igal ajal ja igal pool õppida.",
+      "Kõigi kursuste sisu, mida soovid jälgida või käsitleda.",
+      "Soodustused sertifikaatidega kursuste eest.",
+      "Jooksvad FutureLearn'i pakkumised, et säilitada kvaliteet olemasolevatele klientidele.",
+      "Täielikult makstud ostetavatele õppimisvahenditele lisaks teisi."
+    ],
+    "note": "Välja arvatud FutureLearni pakutavad kraadiõppekavad"
+  },
+  {
+    "type": "premium",
+    "title": "Premium Tellimus",
+    "pricePerMonth": "30 €/kuus",
+    "pricePerYear": "349,99 €/aastas",
+    "description": "Teine õppeaasta pakett.",
+    "active": false,
+    "benefits": [
+      "Üleilmne juurdepääs valitud kursustele.",
+      "Toetavad materjalid ja ressursid.",
+      "Kõigi kursuste sisu, mida soovid jälgida või käsitleda.",
+      "Soodustused sertifikaatidega kursuste eest.",
+      "Jooksvad FutureLearn'i pakkumised, et säilitada kvaliteet olemasolevatele klientidele.",
+      "Sertifikaadid edukale lõpetamisele."
+    ],
+    "note": "Mõned piirangud võivad kehtida"
+  }
+]

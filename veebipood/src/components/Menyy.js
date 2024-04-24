@@ -1,7 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 function Menyy() {
+  const cartSum = useSelector(state => state.cartSum.value)
+
+
   return (
     <div>
       <Link to="/">     
@@ -66,6 +70,8 @@ function Menyy() {
       <Link to='/lisa-toode'>
         <button className='nupp'>Lisa toode</button>
       </Link>
+
+      <span>Ostukorvi summa: {cartSum} $</span>
     </div>
   )
 }

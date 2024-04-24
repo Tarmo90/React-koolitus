@@ -1,4 +1,8 @@
-[{"nimi": "Nobe", "hind": 2500, "aktiivne": true, "pilt": "https://visionest.institute/wp-content/uploads/2023/07/i_6_NOBE-3.jpg"},
+[{
+  "nimi": "Nobe", 
+  "hind": 2500, 
+  "aktiivne": true, 
+  "pilt": "https://visionest.institute/wp-content/uploads/2023/07/i_6_NOBE-3.jpg"},
 {"nimi": "Tesla", "hind": 2500, "aktiivne": false, "pilt": "https://cars.usnews.com/static/images/Auto/izmo/i159615630/2023_nissan_sentra_angularfront.jpg"},
 {"nimi": "Bmw", "hind": 2500, "aktiivne": true, "pilt": "https://www.bmw.ee/content/dam/bmw/common/all-models/m-series/m3-sedan/2023/highlights/bmw-3-series-cs-m-automobiles-sp-desktop.jpg"},
 {"nimi": "Toyota", "hind": 2500, "aktiivne": false, "pilt": "https://global.toyota/pages/news/images/2021/08/02/1330/001.jpg"},

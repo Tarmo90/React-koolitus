@@ -1,12 +1,23 @@
 import React, { useState } from "react"; 
 import { Link } from "react-router-dom"; 
 import ostukorvFailist from '../data/ostukorv.json'
+import {useDispatch} from 'react-redux'
+import {add} from '../store/kogusumma'
+import {empty} from '../store/kogusumma'
+import {deduct} from '../store/kogusumma'
 
 function Ostukorv() {
-  
   const [ostukorv, setOstukorv] = useState(ostukorvFailist)
+  const dispatch = useDispatch()
+
+  const tyhjenda = () => {
+    ostukorvFailist.splice(0)
+    setOstukorv(ostukorvFailist.slice())
+    dispatch(empty())
+  }
 
   const kustutaOstukorvist = (index) => { 
+    dispatch(deduct(ostukorvFailist[index].hind))
     ostukorvFailist.splice(index,1);  
     setOstukorv(ostukorvFailist.slice());
   }
@@ -14,6 +25,7 @@ function Ostukorv() {
   const lisaOstukorvi = (toode) => {
     ostukorvFailist.push(toode);
     setOstukorv(ostukorvFailist.slice());
+    dispatch(add(toode.hind))
   }
 
   const arvutaKogusumma = () => {
@@ -27,7 +39,6 @@ function Ostukorv() {
       <div>Ostukorv</div> 
       <div>Ostukorvis on: {ostukorv.length} eset</div> 
       
-    
       {ostukorv.length === 0 && 
       <div className='ostukorv'>
         <img
@@ -37,11 +48,8 @@ function Ostukorv() {
         <p>Ostukorv on hetkel tühi.</p>
       </div>}
 
-      
-      
-      <button onClick={() => setOstukorv([])}>Tyhjenda</button> 
+      <button onClick={tyhjenda}>Tyhjenda</button> 
 
-      
       <div>{ostukorv.map((toode,index) => 
         <div key={index}>
           {toode.nimi} {toode.hind}$
@@ -53,7 +61,6 @@ function Ostukorv() {
 
       <div>Summa: {arvutaKogusumma()} $</div>
 
-      {/* Link tagasi pealehele */}
       <Link to='/'>
         <button>Tagasi</button>
       </Link>

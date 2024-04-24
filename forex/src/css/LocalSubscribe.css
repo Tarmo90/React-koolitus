@@ -1,0 +1,102 @@
+.subscribe {
+  width: 40vh;
+  margin: 0 auto;
+  color: aliceblue;
+  position: absolute; 
+  top: 150%; 
+  left: 35%; 
+  transform: translate(-50%, -50%); 
+  background-color: rgba(17, 16, 16, 0.315);
+  box-shadow: 0px 0px 80px rgba(112, 0, 143, 0.993); 
+  padding: 20px; 
+  border: 1px solid #f20cb5;
+  border-radius: 60px; 
+  text-align: left;
+  line-height: 2.5;
+}
+
+.subscribe2 {
+  width: 40vh;
+  height: 75vh;
+  margin: 0 auto;
+  color: aliceblue;
+  position: absolute; 
+  top: 150%; 
+  left: 65%; 
+  transform: translate(-50%, -50%); 
+  background-color: rgba(17, 16, 16, 0);
+  box-shadow: 0px 0px 80px rgba(112, 0, 143, 0.993); 
+  background-color: transparent; /* Läbipaistev taust või eemaldatud tausta määratlus */
+  padding: 20px; 
+  border: 1px solid#f20cb5;
+  border-radius: 60px; 
+  text-align: left;
+  line-height: 2.5;
+}
+
+.subscribe h3,
+.subscribe2 h3 {
+  color: #f20cb5;
+  margin-top: 10px;
+  text-align: center;
+}
+.subscribe h4,
+.subscribe2 h4{
+  margin-top: 10px; /* Lisa veidi ülemist vahekaugust */
+  text-align: center; /* Tekst keskele joondamine */
+}
+.subscribe h6,
+.subscribe h5, 
+.subscribe2 h5,
+.subscribe2 h6 {
+  margin-top: 10px; /* Lisa veidi ülemist vahekaugust */
+  text-align: center; /* Tekst keskele joondamine */
+  position: relative; /* Määrab elemendi suhteliseks */
+}
+.subscribe h6::after,
+.subscribe2 h6::after {
+  content: ''; /* Lisab pseudo-elementile sisu */
+  position: absolute; /* Määrab pseudo-elementi absoluutseks */
+  left: 0; /* Asetab pseudo-elementi vasakule */
+  bottom: -20px; /* Liigutab pseudo-elementi 5 pikslit allapoole teksti alt */
+  width: 100%; /* Täidab kogu elemendi laiuse */
+  border-bottom: 2px solid #f20cb5;
+}
+
+.subscribe2 p,
+.subscribe2 em {
+  margin-top: 10px; /* Lisa veidi ülemist vahekaugust */
+  text-align: center; /* Tekst keskele joondamine */
+}
+
+ul {
+  list-style-type: none; /* Eemalda täpid */
+  padding-left: 20px; /* Veendume, et loendi tase oleks õige */
+ } 
+
+ li {
+  list-style: none; /* Eemaldame punktide märgid */
+  position: relative; /* Määrame positsiooni suhtes */
+  padding-left: 30px; /* Jäta ruumi linnukujulise märgi ja teksti vahel */
+}
+
+li::before {
+  content: '🔹'; /* Unicode sümbol linnukujulise märgi jaoks */
+  position: absolute; /* Absoluutne positsioon suhtes loendi elemendiga */
+  left: 0; /* Liigutame märgi elemendi ette */
+}
+
+.sub_button {
+  font-size: 19px;
+  margin-top: 10px; /* Lisa veidi ülemist vahekaugust */
+  margin-left: 3vh;
+  background-color: #000000;
+  border-color: #f20cb5;
+  border-radius: 20px;
+  color: #f20cb5;;
+  padding: 0px 100px;
+}
+.sub_button:hover {
+  color: rgb(39, 146, 242);
+  border-color: rgb(39, 146, 242) ;
+}

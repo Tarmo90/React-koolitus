@@ -5,6 +5,9 @@ import './index.css';
 import App from './App';
 //import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from 'react-redux'
+import kogusumma from './store/kogusumma'
+
 
 // Navigeerimiseks (route-ing)
 // 1. installeerima react-router-dom mooduli (teek) node_modules kausta
@@ -15,7 +18,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Provider store={kogusumma}>
     <App />
+    </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

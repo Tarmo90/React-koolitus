@@ -1,0 +1,55 @@
+.navbar .nav-item .nav-link::after {
+  display: none; /* Peida nool (caret) */
+}
+
+.outline-icon {
+  color: rgb(255, 255, 255); 
+  padding-left: 30px;
+  margin-left: 20px;
+  font-size: 20px;
+  filter: drop-shadow(1px 1px 1px rgb(245, 245, 245));
+}
+
+.outline-icon:hover {
+  color: rgb(202, 56, 242);
+  transform: scale(1.1);
+}
+
+.custom-navbar {
+  background-color: rgba(230, 230, 230, 0); /* Läbipaistev taustavärv (musta toon) */
+  backdrop-filter: blur(10px); /* Rakendab taustal hägusust (efekt sõltub brauserist) */
+}
+
+/* Muudab teksti värvi punaseks */
+.custom-text-color {
+  color: rgb(255, 255, 255);
+}
+
+.custom-text-color:focus {
+  color: rgb(202, 56, 242);
+}
+
+/* Muudab teksti värvi roosaks, kui hiirega peale liigutatakse */
+.custom-text-color:hover {
+  color: rgb(202, 56, 242);
+  transform: scale(1.0);
+}
+
+/* Eemaldab taustavärvi kasti (läbipaistev) dropdown-menüüst */
+.custom-navbar .dropdown-menu {
+  background-color: rgb(58, 58, 58);
+  border: none;
+  box-shadow: none;
+}
+
+/* Muudab dropdown-menüü teksti värvi valgeks */
+.custom-navbar .dropdown-item {
+  color: rgb(229, 228, 230);
+}
+
+.custom-container {
+  max-width: 80%; /* Maksimaalne laius */
+  width: 100%; /* Täisekraanilaius */
+}
+
+

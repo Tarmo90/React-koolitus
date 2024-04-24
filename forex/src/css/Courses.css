@@ -1,0 +1,22 @@
+.course_txt {
+  transform: translate(1%, 10vh); 
+  font-family: 'Bold';
+  font-size: 70px;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(to right, #2793f2, #f20cb5) text;
+  -webkit-text-fill-color: transparent;
+ }
+
+.video {
+  border: 3px solid #2793f2; 
+  display: block; /* Veenduge, et video oleks blokelemendina */
+  margin: 0 auto; /* Auto marginaal, et paigutada keskele */
+  margin-top: 30px;
+  transform: translate(2vh, 50vh); 
+ }
+
+ .video:hover {
+  border-color: #ca38fa; /* Borderi värv hiirega peale minnes */
+ }
+
