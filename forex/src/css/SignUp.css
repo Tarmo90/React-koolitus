@@ -8,10 +8,10 @@
 .signIn-content {
   text-align: center;
   padding: 60px 70px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   background-color: rgba(17, 16, 16, 0.315);
   box-shadow: 0px 0px 200px rgba(112, 0, 143, 0.993); 
+  border: 1px solid rgb(242, 12, 181);
+  border-radius: 30px;
 }
 
 .signup-content form {

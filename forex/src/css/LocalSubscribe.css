@@ -25,10 +25,10 @@
   left: 65%; 
   transform: translate(-50%, -50%); 
   background-color: rgba(17, 16, 16, 0);
-  box-shadow: 0px 0px 80px rgba(112, 0, 143, 0.993); 
   background-color: transparent; /* Läbipaistev taust või eemaldatud tausta määratlus */
   padding: 20px; 
   border: 1px solid#f20cb5;
+  box-shadow: 0px 0px 80px rgba(112, 0, 143, 0.993); 
   border-radius: 60px; 
   text-align: left;
   line-height: 2.5;

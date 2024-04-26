@@ -13,7 +13,7 @@ function HomePage() {
         <div className="main-link">
           <Link to="/courses">
             <div className="img-container">
-              <img className="pilt1" src="react.jpg" alt="Foto" />
+              <img className="pilt1" src="pictures/Courses.jpg" alt="Foto" />
             </div>
             <div className="text-container">
               <h1>Courses</h1>
@@ -25,10 +25,10 @@ function HomePage() {
         <div className="main-link">
           <Link to="/hobbies">
             <div className="img-container">
-              <img className="pilt2" src="pc.jpg" alt="Foto" />
+              <img className="pilt2" src="pictures/Strategies.jpg" alt="Foto" />
             </div>
             <div className="text-container">
-              <h1>Hobbies</h1>
+              <h1>Strategies</h1>
             </div>
           </Link>
         </div>
@@ -37,7 +37,7 @@ function HomePage() {
         <div className="main-link">
           <Link to="/chart">
             <div className="img-container">
-              <img className="pilt3" src="program.jpg" alt="Foto" />
+            <img className="pilt3" src="pictures/Chart.jpg" alt="Foto" />
             </div>
             <div className="text-container">
               <h1>Chart</h1>
@@ -60,6 +60,7 @@ function HomePage() {
           </a> */}
         </div>
       </div>
+      
     </div>
   );
 }

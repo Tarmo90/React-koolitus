@@ -28,16 +28,21 @@ function NavigationBar() {
           </Nav>
 
           <NavDropdown className='outline-icon' title={<span> <FontAwesomeIcon icon={faUser}  /></span>} id="collapsible-nav-dropdown">          
-          { loggedIn === false && <NavDropdown.Item as={Link} to='/signin'>Sign in</NavDropdown.Item>}
-          { loggedIn === false && <NavDropdown.Item as={Link} to='/signup'>Register</NavDropdown.Item>}
-          { loggedIn === true && <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>}
+          { loggedIn === false &&  <NavDropdown.Item as={Link} className='custom-dropdown-item' to='/signin'>Sign in</NavDropdown.Item>}
+          { loggedIn === false && <NavDropdown.Item as={Link} className='custom-dropdown-item' to='/signup'>Register</NavDropdown.Item>}
+          { loggedIn === true && <NavDropdown.Item onClick={logout} className='custom-dropdown-item'>Logout</NavDropdown.Item>}
           </NavDropdown>
           <NavDropdown className='outline-icon' title={<span> <FontAwesomeIcon icon={faBars}/></span>} id="collapsible-nav-dropdown" >
               <NavDropdown.Item as={Link} to='/' className='custom-dropdown-item'>Action</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to='/' className='custom-dropdown-item'>Another action</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/' className='custom-dropdown-item'>Another</NavDropdown.Item>
               <NavDropdown.Item as={Link} to='/' className='custom-dropdown-item'>Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to='/' className='custom-dropdown-item'>Separated link</NavDropdown.Item>
+              <NavDropdown className='arrow' title={<span className="language-title">Language</span>} id="language-dropdown">
+                <NavDropdown.Item className='custom-dropdown-item'>English</NavDropdown.Item>
+                <NavDropdown.Item className='custom-dropdown-item'>Eesti keel</NavDropdown.Item>
+                <NavDropdown.Item className='custom-dropdown-item'>Русский</NavDropdown.Item>
+                {/* Lisage siia rohkem keelte valikuid vastavalt vajadusele */}
+              </NavDropdown>
             </NavDropdown>
          
         </Navbar.Collapse>

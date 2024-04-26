@@ -59,7 +59,7 @@ function Local() {
             <h6><strong>{standardSubscription.pricePerYear}</strong></h6>
             <br />
             <h5>{standardSubscription.description}</h5>
-            <Link to={"/buy_order"}>
+            <Link to={"/standard_order"}>
               <button className='sub_button'>Telli Standardne</button>
             </Link>
             <br /><br />
@@ -79,7 +79,7 @@ function Local() {
             <h6><strong>{premiumSubscription.pricePerYear}</strong></h6>
             <br />
             <h5>{premiumSubscription.description}</h5>
-            <Link to={"/buy_order"}>
+            <Link to={"/premium_order"}>
               <button className='sub_button'>Telli Premium</button>
             </Link>
             <br/><br />

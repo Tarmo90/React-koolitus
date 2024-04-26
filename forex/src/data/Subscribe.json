@@ -3,7 +3,7 @@
     "type": "standard",
     "title": "Standartne Tellimus",
     "pricePerMonth": "25 €/kuus",
-    "pricePerYear": "299,99 €/aastas",
+    "pricePerYear": "299 €/aastas",
     "description": "Tugevda oma oskusi ja säästa aega.",
     "active": true,
     "benefits": [
@@ -20,7 +20,7 @@
     "type": "premium",
     "title": "Premium Tellimus",
     "pricePerMonth": "30 €/kuus",
-    "pricePerYear": "349,99 €/aastas",
+    "pricePerYear": "349 €/aastas",
     "description": "Teine õppeaasta pakett.",
     "active": false,
     "benefits": [

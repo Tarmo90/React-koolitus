@@ -12,7 +12,9 @@ import SignIn from './pages/auth/SignIn';
 import SignUp from './pages/auth/SignUp';
 import Local from './pages/global/Local';
 import HomePage from './pages/global/HomePage';
-import BuyOrder from './pages/global/BuyOrder';
+import StandardOrder from './components/StandardOrder';
+import PremiumOrder from './components/PremiumOrder';
+import Cart from './pages/global/Cart';
 
 
 function App() {
@@ -45,7 +47,10 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/buy_order" element={<BuyOrder />} />
+        <Route path="/standard_order" element={<StandardOrder />} />
+        <Route path="/premium_order" element={<PremiumOrder />} />
+        <Route path="/cart/:price" element={<Cart />} />
+
       </Routes>
     </div>
   );

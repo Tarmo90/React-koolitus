@@ -38,7 +38,7 @@ function SignUp() {
   }
  
   return (
-    <div className="signup-container background">
+    <div className="signup-container ">
       <div className="signup-content text-color">
         {message}
         <h2>Register</h2><br />

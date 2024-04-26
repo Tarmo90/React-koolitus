@@ -9,8 +9,8 @@
 }
 
 .main-link img {
-  width: 300px; /* Muutke vastavalt vajadusele */
-  height: auto; /* Säilitab pildi proportsioonid */
+  width: 25vh; /* Muutke vastavalt vajadusele */
+  height: 15vh; /* Säilitab pildi proportsioonid */
   border-width: 2px;
   border-style: solid;
   animation: colorChange 5s infinite alternate;
@@ -56,30 +56,29 @@
   transition: transform 1s ease; /* Lisab ülemineku efekti suuruse muutmisel */
 }
 
- /* sosial media */
-.social-media-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px; /* Valige soovitud vahemaa lehe ülaosast */
-  transform: translate(2vh, 50vh); 
-
-}
-.social-media-button {
-  display: flex;
-  align-items: center;
-  margin-right: 20px; /* Soovitud vahemaa ikoonide vahel */
-}
-.social-media-icon {
-  width: 27px; /* Muutke vastavalt soovitud suurusele */
-  height: auto;
-}
-.social-media-link {
-  text-decoration: none; /* Eemaldab lingi vaikimisi stiili */
-}
-.social-media-icon:hover {
-  transform: scale(1.3); /* Muudab pildi suurust 20% võrra suuremaks hiirega peale liikudes */
-  transition: transform 1s ease; /* Lisab ülemineku efekti suuruse muutmisel */
-}
+  /* sosial media */
+  .social-media-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Valige soovitud vahemaa lehe ülaosast */
+    transform: translate(2vh, 50vh); 
+  }
+  .social-media-button {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Soovitud vahemaa ikoonide vahel */
+  }
+  .social-media-icon {
+    width: 27px; /* Muutke vastavalt soovitud suurusele */
+    height: auto;
+  }
+  .social-media-link {
+    text-decoration: none; /* Eemaldab lingi vaikimisi stiili */
+  }
+  .social-media-icon:hover {
+    transform: scale(1.3); /* Muudab pildi suurust 20% võrra suuremaks hiirega peale liikudes */
+    transition: transform 1s ease; /* Lisab ülemineku efekti suuruse muutmisel */
+  }
 
 .container {
   display: flex;
@@ -104,7 +103,7 @@
 .main-link h1 {
   position: absolute;
   top: 50%; /* Paigutage teksti keskele */
-  left: 40%; /* Paigutage teksti keskele */
+  left: 42%; /* Paigutage teksti keskele */
   transform: translate(-50%, -50%); /* Keskpunkt */
   color: white; /* Teksti värv */
   background-color: rgb(5, 17, 242); /* Läbipaistev taust */
@@ -117,3 +116,5 @@
   transform: scale(1.1);
   transition: transform 1s ease;
 }
+
+

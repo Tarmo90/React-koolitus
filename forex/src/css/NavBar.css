@@ -1,5 +1,5 @@
-.navbar .nav-item .nav-link::after {
-  display: none; /* Peida nool (caret) */
+ .nav-link:after {
+  display:flexbox; /* Peida nool (caret) */
 }
 
 .outline-icon {
@@ -12,7 +12,7 @@
 
 .outline-icon:hover {
   color: rgb(202, 56, 242);
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .custom-navbar {
@@ -37,7 +37,7 @@
 
 /* Eemaldab taustavärvi kasti (läbipaistev) dropdown-menüüst */
 .custom-navbar .dropdown-menu {
-  background-color: rgb(58, 58, 58);
+  background-color: rgb(41, 40, 40);
   border: none;
   box-shadow: none;
 }
@@ -46,10 +46,27 @@
 .custom-navbar .dropdown-item {
   color: rgb(229, 228, 230);
 }
-
+.custom-dropdown-item{
+  text-align: left;
+}
+.custom-dropdown-item:hover {
+ color: rgb(202, 56, 242);
+}
 .custom-container {
   max-width: 80%; /* Maksimaalne laius */
   width: 100%; /* Täisekraanilaius */
 }
 
 
+.language-title{
+  text-align: left;
+  margin-left: 15px;
+}
+
+.language-title:hover {
+  color: rgb(202, 56, 242);
+}
+
+.arrow:hover {
+  color: rgb(202, 56, 242);
+}
