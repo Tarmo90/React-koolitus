@@ -1,5 +1,5 @@
 .course_txt {
-  transform: translate(1%, 10vh); 
+  transform: translate(20px, 10vh); 
   font-family: 'Bold';
   font-size: 70px;
   text-align: center;
@@ -13,10 +13,13 @@
   display: block; /* Veenduge, et video oleks blokelemendina */
   margin: 0 auto; /* Auto marginaal, et paigutada keskele */
   margin-top: 30px;
-  transform: translate(2vh, 50vh); 
+  transform: translate(1vh, 20vh); 
  }
 
  .video:hover {
   border-color: #ca38fa; /* Borderi värv hiirega peale minnes */
  }
 
+ body {
+  overflow-x: hidden; /* Peida horisontaalne scrollbar */
+}

@@ -1,0 +1,20 @@
+.chart_img {
+  height: 40%;
+  width: 35%;
+  margin-left: 40px;
+  border: 2px solid; 
+  border-radius: 20px;
+  animation: colorChange 5s infinite alternate;
+ 
+}
+
+@keyframes colorChange {
+  0% { border-color: #2793f2 }
+  50% { border-color: #0511f2 }
+  100% { border-color: #ca38f2 }
+}
+
+.text {
+  color: aliceblue;
+}
+

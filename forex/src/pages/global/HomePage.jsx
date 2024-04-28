@@ -13,7 +13,7 @@ function HomePage() {
         <div className="main-link">
           <Link to="/courses">
             <div className="img-container">
-              <img className="pilt1" src="pictures/Courses.jpg" alt="Foto" />
+              <img className="pilt1" src="images/Courses.jpg" alt="Foto" />
             </div>
             <div className="text-container">
               <h1>Courses</h1>
@@ -23,9 +23,9 @@ function HomePage() {
 
         {/* Teine link koos pildi ja tekstiga */}
         <div className="main-link">
-          <Link to="/hobbies">
+          <Link to="/strategies">
             <div className="img-container">
-              <img className="pilt2" src="pictures/Strategies.jpg" alt="Foto" />
+              <img className="pilt2" src="images/Strategies.jpg" alt="Foto" />
             </div>
             <div className="text-container">
               <h1>Strategies</h1>
@@ -37,7 +37,7 @@ function HomePage() {
         <div className="main-link">
           <Link to="/chart">
             <div className="img-container">
-            <img className="pilt3" src="pictures/Chart.jpg" alt="Foto" />
+            <img className="pilt3" src="images/Chart.jpg" alt="Foto" />
             </div>
             <div className="text-container">
               <h1>Chart</h1>

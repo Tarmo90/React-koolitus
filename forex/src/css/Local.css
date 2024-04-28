@@ -31,4 +31,25 @@
   font-size: 18px;
 }
  
-
+ /* sosial media */
+ .social-media-container {
+  display: flex;
+  justify-content: center;
+  transform: translate(2vh, 200vh); 
+}
+.social-media-button {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Soovitud vahemaa ikoonide vahel */
+}
+.social-media-icon {
+  width: 27px; /* Muutke vastavalt soovitud suurusele */
+  height: auto;
+}
+.social-media-link {
+  text-decoration: none; /* Eemaldab lingi vaikimisi stiili */
+}
+.social-media-icon:hover {
+  transform: scale(1.3); /* Muudab pildi suurust 20% võrra suuremaks hiirega peale liikudes */
+  transition: transform 1s ease; /* Lisab ülemineku efekti suuruse muutmisel */
+}

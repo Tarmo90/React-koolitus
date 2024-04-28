@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "title": "Daily Bias",
+    "title2": "IRL & ERL",
+    "description": "IRL is Internal Range Liquidity, and ERL is External Range Liquidity. To simplify things, we can look at IRL as Fair Value Gaps, and ERL as Highs and Lows.",
+    "description2": "SIGNIFICANCE: The significance lies within how IPDA operates. The market is in a never-ending cycle of alternating between Internal and External Range liquidity. You may have also heard of this as the market only rebalances inefficiencies or reaches for liquidity. We use IRL & ERL to simplify this concept.",
+    "description3": "APPLICATION: The greatest way to apply this concept is to utilize it on the HTFs and time based liquidity. This includes, but is not limited to, the Monthly, Weekly, and Daily charts. Ask yourself, has price tapped into a Fair Value Gap or has price taken out liquidity? Your next draw is most likely the one that hasn’t been tapped into yet. Internal -> External & Internal -> External. Rinse and Repeat.",
+    "image": "images/IRL.png",
+    "image2": "images/ERL.png"
+  },
+  {
+    "id": 1,
+    "title": "Daily Bias",
+    "title2": "IRL & ERL",
+    "description": "IRL is Internal Range Liquidity, and ERL is External Range Liquidity. To simplify things, we can look at IRL as Fair Value Gaps, and ERL as Highs and Lows.",
+    "description2": "SIGNIFICANCE: The significance lies within how IPDA operates. The market is in a never-ending cycle of alternating between Internal and External Range liquidity. You may have also heard of this as the market only rebalances inefficiencies or reaches for liquidity. We use IRL & ERL to simplify this concept.",
+    "description3": "APPLICATION: The greatest way to apply this concept is to utilize it on the HTFs and time based liquidity. This includes, but is not limited to, the Monthly, Weekly, and Daily charts. Ask yourself, has price tapped into a Fair Value Gap or has price taken out liquidity? Your next draw is most likely the one that hasn’t been tapped into yet. Internal -> External & Internal -> External. Rinse and Repeat.",
+    "image": "images/IRL.png",
+    "image2": "images/ERL.png"
+  },
+  {
+    "id": 2,
+    "title": "Daily Bias",
+    "title2": "IRL & ERL",
+    "description": "IRL is Internal Range Liquidity, and ERL is External Range Liquidity. To simplify things, we can look at IRL as Fair Value Gaps, and ERL as Highs and Lows.",
+    "description2": "SIGNIFICANCE: The significance lies within how IPDA operates. The market is in a never-ending cycle of alternating between Internal and External Range liquidity. You may have also heard of this as the market only rebalances inefficiencies or reaches for liquidity. We use IRL & ERL to simplify this concept.",
+    "description3": "APPLICATION: The greatest way to apply this concept is to utilize it on the HTFs and time based liquidity. This includes, but is not limited to, the Monthly, Weekly, and Daily charts. Ask yourself, has price tapped into a Fair Value Gap or has price taken out liquidity? Your next draw is most likely the one that hasn’t been tapped into yet. Internal -> External & Internal -> External. Rinse and Repeat.",
+    "image": "images/IRL.png",
+    "image2": "images/ERL.png"
+  }
+]

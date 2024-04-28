@@ -3,11 +3,11 @@ import { Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
 
 
-
 function SingleProduct() {
 
   const[dbProducts, setDbProducts] = useState([])
   const [isLoading, setLoading] = useState(true);
+  const {productId} = useParams();
  
   useEffect(() => {
     fetch(process.env.REACT_APP_PRODUCTS_URL)
@@ -18,7 +18,7 @@ function SingleProduct() {
     })
   }, []);
 
-  const {productId} = useParams();
+  
   const found = dbProducts.find(product => product.id === Number(productId))
 
   if (isLoading === true)  {
