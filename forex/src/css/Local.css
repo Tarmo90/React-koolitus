@@ -8,6 +8,7 @@
   font-size: 50px;
   background: linear-gradient(to right, #2793f2, #f20cb5) text;
   -webkit-text-fill-color: transparent;
+  
 }
 
 .text-content {
@@ -34,25 +35,34 @@
   text-align: center;
 }
  
-/* Sotsiaalmeedia nupud */
+
 .social-media-container {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px;
+  margin-bottom: 20px;
 }
 
 .social-media-button {
   display: inline-block;
-  margin: 0 10px; /* Soovitud vahe nuppude vahel */
+  margin: 0 10px; 
 }
 
 .social-media-icon {
-  width: 27px; /* Muutke vastavalt soovitud suurusele */
+  width: 27px; 
+  filter: invert(100%) brightness(100%) sepia(0%) saturate(100%) hue-rotate(0deg);
+
 }
 
 .social-media-link {
-  text-decoration: none; /* Eemaldab lingi vaikimisi stiili */
+  text-decoration: none; 
 }
 
 
+.social-media-button:hover {
+  transform: scale(1.1);
+}
+
+.social-media-icon:active {
+  padding: 1px;
+}

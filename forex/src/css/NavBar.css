@@ -48,6 +48,8 @@
 }
 .custom-dropdown-item{
   text-align: left;
+  display: flex;
+  justify-items: center;
 }
 .custom-dropdown-item:hover {
  color: rgb(202, 56, 242);
@@ -71,7 +73,14 @@
 }
 
 .lang {
+  position: absolute;
   width: 30px;
   height: 30px;
-  margin-left: 40px;
+  margin-left: 80px;
+}
+.lang2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-left: 80px;
 }

@@ -31,6 +31,7 @@ function NavigationBar() {
           <Nav className="me-auto ">
             <Nav.Link as={Link} to='/homepage' className='custom-text-color'>{t("features")}</Nav.Link>
             <Nav.Link as={Link} to='/' className='custom-text-color'>{t("pricing")}</Nav.Link>
+            
           </Nav>
           <NavDropdown className='outline-icon' title={<span> <FontAwesomeIcon icon={faUser}  /></span>} id="collapsible-nav-dropdown">          
           { loggedIn === false &&  <NavDropdown.Item as={Link} className='custom-dropdown-item' to='/signin'>{t("sign_in")}</NavDropdown.Item>}
@@ -44,7 +45,7 @@ function NavigationBar() {
               <NavDropdown.Divider />
               <NavDropdown className='arrow' title={<span className="language-title">{t("language")}</span>} id="language-dropdown">
                 <NavDropdown.Item onClick={() => changeLang('en')} className='custom-dropdown-item'>{t("english")} <img className='lang' src="/english.png" alt="" /></NavDropdown.Item>
-                <NavDropdown.Item onClick={() => changeLang('ee')} className='custom-dropdown-item'>{t("estonia")} <img className='lang' src="/estonian.png" alt="" /></NavDropdown.Item>
+                <NavDropdown.Item onClick={() => changeLang('ee')} className='custom-dropdown-item'>{t("estonia")} <img className='lang2' src="/estonian.png" alt="" /></NavDropdown.Item>
               </NavDropdown>
             </NavDropdown>
          
