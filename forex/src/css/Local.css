@@ -34,17 +34,21 @@
   text-align: center;
 }
  
- /* sosial media */
- .social-media-container {
+/* social media */
+.social-media-container {
   display: flex;
+  justify-content: flex-end; /* viib elemendid lehe paremale äärde */
 }
+
 .social-media-button {
   align-items: center;
-  margin-right: 20px; /* Soovitud vahemaa ikoonide vahel */
+  margin-left: 20px; /* Soovitud vahemaa ikoonide vahel */
 }
+
 .social-media-icon {
   width: 27px; /* Muutke vastavalt soovitud suurusele */
 }
+
 .social-media-link {
   text-decoration: none; /* Eemaldab lingi vaikimisi stiili */
 }
