@@ -1,25 +1,43 @@
-.course_txt {
-  transform: translate(20px, 10vh); 
-  font-family: 'Bold';
-  font-size: 70px;
+.courses_title {
+  margin-top: 7vh;
+  font-size: 50px;
   text-align: center;
   width: 100%;
   background: linear-gradient(to right, #2793f2, #f20cb5) text;
   -webkit-text-fill-color: transparent;
  }
 
-.video {
-  border: 3px solid #2793f2; 
-  display: block; /* Veenduge, et video oleks blokelemendina */
-  margin: 0 auto; /* Auto marginaal, et paigutada keskele */
-  margin-top: 30px;
-  transform: translate(1vh, 20vh); 
+ .course_button {
+  font-size: 24px;
+  border-radius: 10px;
+  border: 2px solid ;
+  margin: 10px;
+  color: white;
+  background-color: rgb(5, 17, 242);
+  padding: 10px;
+  animation: colorChange 5s infinite alternate;  
+  transition: border-color 0.4s ease; 
+  transition: transform 1s ease;
  }
 
- .video:hover {
-  border-color: #ca38fa; /* Borderi värv hiirega peale minnes */
+ .course_button:hover {
+  transform: scale(1.1);
+  color:  rgb(242, 12, 181);
  }
 
- body {
-  overflow-x: hidden; /* Peida horisontaalne scrollbar */
-}
+ .course_cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16vh;
+  margin-left: 45vh;
+  margin-right: 50vh;
+  justify-content: center;
+ }
+
+ .course_text {
+  font-size: 20px;
+  color: aliceblue;
+  margin-left: 50vh;
+  margin-right: 50vh;
+  margin-top: 16vh;
+ }

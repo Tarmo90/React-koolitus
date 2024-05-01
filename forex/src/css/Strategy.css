@@ -1,0 +1,39 @@
+.strategy_title{
+  background: linear-gradient(to right, #2793f2, #f20cb5) text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 7vh;
+  font-size: 50px;
+}
+
+.strategy_button {
+  font-size: 24px;
+  border-radius: 10px;
+  border: 2px solid ;
+  margin: 10px;
+  color: white;
+  background-color: rgb(5, 17, 242);
+  padding: 10px;
+  animation: colorChange 5s infinite alternate;  
+  transition: border-color 0.4s ease; 
+  transition: transform 1s ease;
+}
+
+.strategy_button:hover {
+  transform: scale(1.1);
+  color:  rgb(242, 12, 181);
+}
+
+@keyframes colorChange {
+  0% { border-color: rgb(242, 12, 181); }
+  50% { border-color: rgb(102, 4, 240); }
+  100% { border-color: rgb(5, 187, 242); }
+}
+.strategy_cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20vh;
+  margin-left: 45vh;
+  margin-right: 50vh;
+  justify-content: center;
+}

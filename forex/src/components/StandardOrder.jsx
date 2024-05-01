@@ -36,12 +36,12 @@ function StandardOrder() {
           {selectedBillingCycle === 'monthly' ? (
             <div>
               <h4><strong>{standardSubscription.pricePerMonth}</strong></h4>
-              <p>Valitud: Kuumakse</p>
+              <p>Selected: monthly payment</p>
             </div>
           ) : (
             <div>
               <h4><strong>{standardSubscription.pricePerYear}</strong></h4>
-              <p>Valitud: Aastamakse</p>
+              <p>Selected: Annual payment</p>
             </div>
           )}
         </div>
@@ -49,7 +49,7 @@ function StandardOrder() {
 
       <div className='radio-container'>
         <label className='label' htmlFor="monthly">
-          Kuumakse
+        Monthly
           <input className='radio'
             type='radio'
             id='monthly'
@@ -60,7 +60,7 @@ function StandardOrder() {
         </label>
 
         <label className='label' htmlFor="yearly">
-          Aastamakse
+        Annual
           <input className='radio'
             type='radio'
             id='yearly'
@@ -71,7 +71,7 @@ function StandardOrder() {
         </label>
       </div>
       <Link to={`/cart/${encodeURIComponent(price)}`}>
-          <button className='pay_button'>maksma</button>
+          <button className='pay_button'>Pay</button>
         </Link>
     </div>
   );

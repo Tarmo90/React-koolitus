@@ -33,12 +33,12 @@ function PremiumOrder() {
           {selectedBillingCycle === 'monthly' ? (
             <div>
               <h4><strong>{premiumSubscription.pricePerMonth}</strong></h4>
-              <p>Valitud: Kuumakse</p>
+              <p>Selected: monthly payment</p>
             </div>
           ) : (
             <div>
               <h4><strong>{premiumSubscription.pricePerYear}</strong></h4>
-              <p>Valitud: Aastamakse</p>
+              <p>Selected: Annual payment</p>
             </div>
           )}
         </div>
@@ -46,7 +46,7 @@ function PremiumOrder() {
 
       <div className='radio-container'>
         <label className='label' htmlFor="monthly">
-          Kuumakse
+        Monthly
           <input className='radio'
             type='radio'
             id='monthly'
@@ -57,7 +57,7 @@ function PremiumOrder() {
         </label>
 
         <label className='label' htmlFor="yearly">
-          Aastamakse
+        Annual
           <input className='radio'
             type='radio'
             id='yearly'
@@ -68,7 +68,7 @@ function PremiumOrder() {
         </label>
       </div>
       <Link to={`/cart/${encodeURIComponent(price)}`}>
-          <button className='pay_button'>maksma</button>
+          <button className='pay_button'>Pay</button>
         </Link>
     </div>
   );

@@ -1,11 +1,7 @@
 .main-link-list {
   text-align: center;
-}
-
-.main-link {
-  display: inline-block; /* Muudab elemendi blokelemendist in-line blokelemendiks */
-  margin: 10px; /* Väike vahe iga elemendi vahel */
-  font-size: 12px;
+  margin-left: 30vh;
+  margin-right: 30vh;
 }
 
 .main-link img {
@@ -25,17 +21,16 @@
   100% { border-color: rgb(5, 17, 242); }
 }
 
-
-.separator {
-  width: 9%; /* Reguleerige vastavalt soovile */
-  height: 3px; /* Joon kõrgus */
-  background-color: #ffffff; /* Joon värv */
-  margin: 20px auto; /* Paigutab joone horisontaalselt keskele ja lisab ülemise ja alumise marginaali */
-  position: absolute; /* Absoluutne positsioneerimine */
-  top: 55%; /* Ülaosas, lehe keskel */
-  left: 45%; /* Horisontaalselt, lehe keskel */
-  transform: translateY(-50%); /* Liigutab joone vertikaalselt ülespoole, et asuda täpselt lehe keskel */
-}
+/* .separator {
+  width: 9%; 
+  height: 3px; 
+  background-color: #ffffff; 
+  margin: 20px auto; 
+  position: absolute; 
+  top: 55%; 
+  left: 45%; 
+  transform: translateY(-50%); 
+} */
 
 .headerText {
   margin-top: 50px; /* Muudab ülemist vahe teksti ja ülemise pildi vahel */
@@ -56,8 +51,6 @@
   transition: transform 1s ease; /* Lisab ülemineku efekti suuruse muutmisel */
 }
 
- 
-
 .container {
   display: flex;
   align-items: center; /* Kesktõmbab sisu vertikaalselt */
@@ -70,25 +63,30 @@
 
 .text-container {
   flex: 1; /* Tekst võtab kogu ruumi */
+  margin-top: 20px;
 }
 
 .main-link {
   position: relative;
   display: inline-block;
   width: auto;
+  z-index: 9999;
 }
 
 .main-link h1 {
   position: absolute;
-  top: 50%; /* Paigutage teksti keskele */
-  left: 42%; /* Paigutage teksti keskele */
-  transform: translate(-50%, -50%); /* Keskpunkt */
-  color: white; /* Teksti värv */
-  background-color: rgb(5, 17, 242); /* Läbipaistev taust */
-  padding: 10px; /* Teksti polsterdus */
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgb(5, 17, 242);
+  padding: 10px;
   border-radius: 20px;
-  font-size: 30px;
+  font-size: 20px; /* Kindel suurus */
+  width: 130px; /* Kindel laius */
+  text-align: center; /* Teksti joondamine keskele */
 }
+
 
 .main-link:hover {
   transform: scale(1.1);

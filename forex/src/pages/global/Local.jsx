@@ -3,8 +3,12 @@ import '../../css/Local.css';
 import '../../css/LocalSubscribe.css';
 import subscribeData from '../../data/Subscribe.json';
 import { Link } from 'react-router-dom';
+// import { useTranslation } from 'react-i18next';
+
 
 function Local() {
+  // const { t, } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
   const [standardSubscription, setStandardSubscription] = useState(null);
   const [premiumSubscription, setPremiumSubscription] = useState(null);
@@ -25,33 +29,38 @@ function Local() {
   };
 
   const formattedContent = `
-    <p>
-      Kas soovid õppida, kuidas edukalt kaubelda valuutaturul (Forex)? Meie veebileht pakub põhjalikke kursusi ja tõhusaid strateegiaid, mis aitavad sul omandada vajalikud oskused ja teadmised Forex turul edukaks navigeerimiseks.<br><br>
-      Kogenud kauplejatena mõistame, kui oluline on õige haridus ja praktilised teadmised Forex turul kauplemiseks. Seetõttu oleme loonud selle platvormi, et aidata nii algajaid kui ka edasijõudnud kauplejaid. Meie kursused käsitlevad erinevaid teemasid alates põhialustest kuni keerukamate strateegiateni, sealhulgas tehniline analüüs, riskijuhtimine, fundamentaalne analüüs ja palju muud.<br><br>
-      Miks valida meie kursused?<br>
-      - Interaktiivne õpikeskkond, kus saate õppida enda tempos.<br>
-      - Praktilised näited ja reaalajas kauplemise simulatsioonid.<br>
-      - Täiustatud strateegiad ja tööriistad turu mõistmiseks ja analüüsimiseks.<br>
-      - Tugev fookus praktilistel oskustel ja kaubanduslike teadmiste rakendamisel.<br><br>
-      Olenemata sellest, kas olete täiesti algaja või otsite täiustatud teadmisi, pakume kursusi, mis aitavad teil oma Forex kauplemise oskusi arendada ja saavutada edu finantsturgudel.<br><br>
-      Alustage juba täna ja muutke oma lähenemisviisi Forex kauplemisele! Registreeru kursustele ja avasta uusi võimalusi finantsturgudel.
-    </p>
+  <h2>Do you want to learn how to trade successfully on the foreign exchange market (Forex)?</h2>
+  <p>Our website offers comprehensive courses and effective strategies to help you acquire the necessary skills and knowledge for successful navigation in the Forex market.</p>
+  <br>
+  <p>As experienced traders, we understand the importance of proper education and practical knowledge for trading on the Forex market. Therefore, we have created this platform to assist both beginners and advanced traders alike. Our courses cover various topics ranging from fundamentals to more complex strategies, including technical analysis, risk management, fundamental analysis, and much more.</p>
+  <br>
+  <h3>Why choose our courses?</h3>
+  <ul>
+    <li>Interactive learning environment where you can learn at your own pace.</li>
+    <li>Practical examples and real-time trading simulations.</li>
+    <li>Advanced strategies and tools for understanding and analyzing the market.</li>
+    <li>Strong focus on practical skills and application of trading knowledge.</li>
+  </ul>
+  <br>
+  <p>Whether you are a complete beginner or seeking advanced knowledge, we offer courses to help you develop your Forex trading skills and achieve success in financial markets.</p>
+  <br>
+  <p>Start today and change your approach to Forex trading! Enroll in courses and discover new opportunities in financial markets.</p>
   `;
-
+ 
   return (
     <div>
-      <h1 className='heading'>Tere tulemast Forex kauplemise kursuste ja strateegiate veebilehele!</h1>
+      <h1 className='heading'>Welcome to the website of Forex trading courses and strategies!</h1>
       <div className='text-content' onClick={handleClick}>
         {isOpen ? (
           <div dangerouslySetInnerHTML={{ __html: formattedContent }} />
         ) : (
           <p>
-            Kas soovid õppida, kuidas edukalt kaubelda valuutaturul (Forex)?
-            Klõpsake siia, et lugeda täielikku teksti...
+           Would you like to learn how to trade successfully on the foreign exchange market (Forex)?<br />
+          Click here to read the full text...
           </p>
         )}
       </div>
-      <div>
+      <div className='subscribe_cont'>
         {standardSubscription && (
           <div className='subscribe'>
             <h3>{standardSubscription.title}</h3>
@@ -60,12 +69,12 @@ function Local() {
             <br />
             <h5>{standardSubscription.description}</h5>
             <Link to={"/standard_order"}>
-              <button className='sub_button'>Telli Standardne</button>
+              <button className='sub_button'>Order Standard</button>
             </Link>
             <br /><br />
             <ul>
-              {standardSubscription.benefits.map((benefit, index) => (
-                <li key={index}>{benefit}</li>
+              {standardSubscription.benefits.map((sentence, id) => (
+                <li key={id}>{sentence}</li>
               ))}
             </ul>
             <p><em>{standardSubscription.note}</em></p>
@@ -80,20 +89,20 @@ function Local() {
             <br />
             <h5>{premiumSubscription.description}</h5>
             <Link to={"/premium_order"}>
-              <button className='sub_button'>Telli Premium</button>
+              <button className='sub_button'>Order Premium</button>
             </Link>
             <br/><br />
             <ul>
-              {premiumSubscription.benefits.map((benefit, index) => (
-                <li key={index}>{benefit}</li>
+              {premiumSubscription.benefits.map((sentence, index) => (
+                <li key={index}>{sentence}</li>
               ))}
             </ul>
             <p><em>{premiumSubscription.note}</em></p>
           </div>
         )}
       </div>
-      {/* Sotsiaalmeedia ikoonid */}
-      <div className="social-media-container">
+      
+      {/* <div className="social-media-container">
         <div className="social-media-button">
             <a className="social-media-link" href="https://www.facebook.com/">
               <img className="social-media-icon" src="icons/facebook.png" alt="Facebook Icon" />
@@ -104,7 +113,7 @@ function Local() {
               <img className="social-media-icon" src="icons/instagram.png" alt="Instagram Icon" />
             </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

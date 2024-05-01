@@ -50,11 +50,10 @@ function Chart() {
   }, []);
 
   return (
-    <div
-      className="tradingview-widget-container"
+    <div className='chart'
       ref={containerRef}
-      style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100vw', zIndex: 9999 }}
-    ></div>
+      style={{ position: 'fixed', top: 60, left: 0, height: '95vh', width: '177vh', zIndex: 9999 }}
+    > Tee Refresh</div>
   );
 }
 

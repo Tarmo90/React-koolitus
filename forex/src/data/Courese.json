@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "title": "Forex Trading Basics",
+    "title2": "Forex Trading Basics",
+    "description": [
+      "Forex, or the foreign exchange market, is a global market where currencies of different countries are exchanged.",
+      "The forex market is the world's largest and most liquid asset market.",
+      "Currencies are traded against each other in pairs known as exchange rate pairs. For example, EUR/USD is a currency pair for trading the euro against the US dollar.",
+      "The forex market operates 24 hours a day, five and a half days a week.",
+      "The forex market is influenced by various factors, including economic indicators, political events, and market participants' emotions."
+    ],
+    "image": "images/forex_course.jpg"
+  },
+  {
+    "id": 1,
+    "title": "Technical Analysis",
+    "description": [
+      "Technical analysis is one of the primary methods of trading in the forex market. This course explores chart analysis, identifying trends and patterns, and using indicators to make trading decisions. You will learn how to read and interpret candlestick charts, draw trend lines and support zones, and use various technical indicators such as moving averages and RSI in trading strategies."
+    ],
+    "image": "images/technical_analysis_course.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Fundamental Analysis",
+    "description": [
+      "Technical analysis is one of the primary methods of trading in the forex market. This course explores chart analysis, identifying trends and patterns, and using indicators to make trading decisions. You will learn how to read and interpret candlestick charts, draw trend lines and support zones, and use various technical indicators such as moving averages and RSI in trading strategies."
+    ],
+    "image": "images/technical_analysis_course.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Risk Management",
+    "description": [
+      "Risk management is an important part of successful forex trading. This course examines various risk management strategies and methods, including position sizing, using stop-loss orders, evaluating risk-reward ratios, and diversifying portfolios. You will learn how to manage your trading risk and maintain long-term success in the forex market."
+    ],
+    "image": "images/risk_management_course.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Psychology",
+    "description": [
+      "Understanding trading psychology is crucial for success in the forex market. This course explores traders' emotions, psychological traps, and behavioral tendencies that can influence trading decisions. You will learn how to control emotions, maintain discipline, and develop a positive trading mindset."
+    ],
+    "image": "images/trading_psychology_course.jpg"
+  }
+]

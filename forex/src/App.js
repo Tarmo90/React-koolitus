@@ -1,7 +1,5 @@
 import React from 'react';
 import {  Route, Routes } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
-import Starfield from 'react-starfield';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Chart from './pages/global/Chart';
@@ -16,29 +14,23 @@ import PremiumOrder from './components/PremiumOrder';
 import Cart from './pages/global/singleProducts/Cart';
 import Strategies from './pages/global/Strategies';
 import SingleStrategy from './pages/global/singleProducts/SingleStrategy';
+import SingleCourse from './pages/global/singleProducts/SingleCourse';
+import Starfield from 'react-starfield';
+import News from './pages/News';
+import Test from './pages/Test';
 
 function App() {
   
   return (
     <div >
       <NavigationBar />
-      <Starfield clas
+      <Starfield
         starCount={4000}
-        starColor={[242, 12, 242]}
-        speedFactor={0.03}
+        starColor={[242, 12, 181]}
+        speedFactor={0.05}
         backgroundColor="black"
       />
-      <Container>
-        <Row>
-          <Col xs={12} md={6}>
-            {/* Sisu siin, mis kuvatakse täisekraanilaiusel kõigis seadmetes */}
-          </Col>
-          <Col xs={12} md={6}>
-            {/* Sisu siin, mis kuvatakse täisekraanilaiusel ainult suurematel ekraanidel (MD ja üles) */}
-          </Col>
-        </Row>
-      </Container>
-
+      
       <Routes>
         <Route path="/" element={<Local />} />
         <Route path="/homepage" element={<HomePage />} />
@@ -49,11 +41,14 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/standard_order" element={<StandardOrder />} />
         <Route path="/premium_order" element={<PremiumOrder />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/test" element={<Test />} />
 
         <Route path="/cart/:price" element={<Cart />} />
         <Route path="/single_strategy/:id" element={<SingleStrategy />} />
-
+        <Route path="/single_course/:id" element={<SingleCourse />} />
       </Routes>
+      
     </div>
   );
 }
