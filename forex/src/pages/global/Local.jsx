@@ -102,7 +102,7 @@ function Local() {
         )}
       </div>
       
-      {/* <div className="social-media-container">
+      <div className="social-media-container">
         <div className="social-media-button">
             <a className="social-media-link" href="https://www.facebook.com/">
               <img className="social-media-icon" src="icons/facebook.png" alt="Facebook Icon" />
@@ -113,7 +113,7 @@ function Local() {
               <img className="social-media-icon" src="icons/instagram.png" alt="Instagram Icon" />
             </a>
         </div>
-      </div> */}
+      </div> 
     </div>
   );
 }
