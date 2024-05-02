@@ -1,7 +1,7 @@
-import React from 'react';
-import {  Route, Routes } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Chart from './pages/global/Chart';
 import Courses from './pages/global/Courses';
 import SignIn from './pages/auth/SignIn';
@@ -18,11 +18,11 @@ import SingleCourse from './pages/global/singleProducts/SingleCourse';
 import Starfield from 'react-starfield';
 import News from './pages/News';
 import Test from './pages/Test';
+import { ContactUs } from './pages/global/ContactUs';
 
 function App() {
-  
   return (
-    <div >
+    <div className="app-container">
       <NavigationBar />
       <Starfield
         starCount={4000}
@@ -31,24 +31,26 @@ function App() {
         backgroundColor="black"
       />
       
-      <Routes>
-        <Route path="/" element={<Local />} />
-        <Route path="/homepage" element={<HomePage />} />
-        <Route path="/chart" element={<Chart />} />
-        <Route path="/strategies" element={<Strategies />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/standard_order" element={<StandardOrder />} />
-        <Route path="/premium_order" element={<PremiumOrder />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/test" element={<Test />} />
+        <Routes>
+          <Route path="/" element={<Local />} />
+          <Route path="/homepage" element={<HomePage />} />
+          <Route path="/chart" element={<Chart />} />
+          <Route path="/strategies" element={<Strategies />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/standard_order" element={<StandardOrder />} />
+          <Route path="/premium_order" element={<PremiumOrder />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/test" element={<Test />} />
+          <Route path="/contactUs" element={<ContactUs />} />
 
-        <Route path="/cart/:price" element={<Cart />} />
-        <Route path="/single_strategy/:id" element={<SingleStrategy />} />
-        <Route path="/single_course/:id" element={<SingleCourse />} />
-      </Routes>
-      
+
+          <Route path="/cart/:price" element={<Cart />} />
+          <Route path="/single_strategy/:id" element={<SingleStrategy />} />
+          <Route path="/single_course/:id" element={<SingleCourse />} />
+
+        </Routes>
     </div>
   );
 }

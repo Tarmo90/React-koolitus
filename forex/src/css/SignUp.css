@@ -1,11 +1,11 @@
-.signIn-container {
+.signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.signIn-content {
+.signup-content {
   text-align: center;
   padding: 60px 70px;
   background-color: rgba(17, 16, 16, 0.315);
@@ -13,7 +13,6 @@
   border: 1px solid rgb(242, 12, 181);
   border-radius: 30px;
 }
-
 .signup-content form {
   display: flex;
   flex-direction: column;
@@ -24,30 +23,27 @@
   color: rgb(242, 12, 181);
 }
 
-label {
+.auth {
   display: flex;
   flex-direction: column;
-  gap: px;
   font-weight: bold;
   font-size: 16px;
   color: #fff;
-  width: 250px;
 }
 
-input {
+.auth-input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 2px solid #ca38f2;
   border-radius: 5px;
-  background-color: #ebe9e9; /* Vaikimisi taustavärv */
 }
 
 /* Stiil input-väljale aktiivse oleku korral (fokuseeritud) */
 input:focus {
-  border-color: #220ce7; /* Muutke piirjoone värvust aktiivse oleku korral */
-  outline: none; /* Eemaldage vaikefookus */
-  box-shadow: 0px 7px 20px #0d28c2; /* Lisa varjutus aktiivsele input-väljale */
+  border-color: #220ce7; 
+  outline: none; 
+  box-shadow: 0px 7px 20px #0d28c2; 
 }
 
 .signup-content button {

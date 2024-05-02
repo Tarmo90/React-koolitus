@@ -41,7 +41,7 @@ function NavigationBar() {
           <NavDropdown className='outline-icon' title={<span> <FontAwesomeIcon icon={faBars}/></span>} id="collapsible-nav-dropdown" >
               <NavDropdown.Item as={Link} to='/' className='custom-dropdown-item'>{t("action")}</NavDropdown.Item>
               <NavDropdown.Item as={Link} to='/' className='custom-dropdown-item'>{t("another")}</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to='/' className='custom-dropdown-item'>{t("something")}</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/contactUs' className='custom-dropdown-item'>{t("contactUs")}</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown className='arrow' title={<span className="language-title">{t("language")}</span>} id="language-dropdown">
                 <NavDropdown.Item onClick={() => changeLang('en')} className='custom-dropdown-item'>{t("english")} <img className='lang' src="/english.png" alt="" /></NavDropdown.Item>

@@ -48,7 +48,7 @@ function StandardOrder() {
       )}
 
       <div className='radio-container'>
-        <label className='label' htmlFor="monthly">
+        <label className='order_1' htmlFor="monthly">
         Monthly
           <input className='radio'
             type='radio'
@@ -59,7 +59,7 @@ function StandardOrder() {
           />
         </label>
 
-        <label className='label' htmlFor="yearly">
+        <label className='order_1' htmlFor="yearly">
         Annual
           <input className='radio'
             type='radio'

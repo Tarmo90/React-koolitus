@@ -42,24 +42,24 @@ function SignUp() {
       <div className="signup-content text-color">
         {message}
         <h2>Register</h2><br />
-          <label>
+          <label className='auth'>
             <div>First Name</div>
-            <input ref={firstNameRef} type="text" 
+            <input className='auth-input' ref={firstNameRef} type="text" 
             />
           </label><br />
-          <label>
+          <label className='auth'>
            <div> Last Name</div>
-            <input ref={lastNameRef} type="text" 
+            <input className='auth-input' ref={lastNameRef} type="text" 
             />
           </label><br />
-          <label>
+          <label className='auth'>
             <div>Email</div>
-            <input ref={emailRef} type="email" 
+            <input className='auth-input' ref={emailRef} type="email" 
             />
           </label><br />
-          <label>
+          <label className='auth'>
             <div>Password (Min 10 characters)</div>
-            <input ref={passwordRef} type="password" 
+            <input className='auth-input' ref={passwordRef} type="password" 
             />
           </label><br />
           <button onClick={signup}>Register</button>

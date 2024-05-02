@@ -38,11 +38,11 @@ function SingleStrategy() {
             <div className='image-cont'>
               <div className='image-wrapper'>
                 <p className='title2'> IRL & ERL</p>
-                <img src={process.env.PUBLIC_URL + '/' + found.image} className='chart_img' alt="" />
+                <img src={found.image} className='chart_img' alt="" />
               </div>
               <div className='image-wrapper'>
                 <p className='title3'> ERL & IRL</p>
-                <img src={process.env.PUBLIC_URL + '/' + found.image_2} className='chart_img' alt="" />
+                <img src={found.image_2} className='chart_img' alt="" />
               </div>
             </div>
           </div>
@@ -62,11 +62,11 @@ function SingleStrategy() {
             <div className='image-cont'>
               <div className='image-wrapper'>
                 <p className='title2'> REVERSAL</p>
-                <img src={process.env.PUBLIC_URL + '/' + found.image_3} className='chart_img' alt="" />
+                <img src={found.image_3} className='chart_img' alt="" />
               </div>
               <div className='image-wrapper'>
                 <p className='title3'> CONTINUATION</p>
-                <img src={process.env.PUBLIC_URL + '/' + found.image_4} className='chart_img' alt="" />
+                <img src={found.image_4} className='chart_img' alt="" />
               </div>
             </div>
           </div>
@@ -80,8 +80,8 @@ function SingleStrategy() {
             </div>
             <div className='image-cont'>
               <div className='image-wrapper'>
-                <p className='title2'> POWER OF 3</p>
-                <img src={process.env.PUBLIC_URL + '/' + found.ltf_structure_image} className='structure_image' alt="" />
+                <p className='title2'> LTF STRUCTURE</p>
+                <img src={found.ltf_structure_image} className='structure_image' alt="" />
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ function SingleStrategy() {
             <div className='image-cont'>
               <div className='image-wrapper'>
                 <p className='title2'>POWER OF 3</p>
-                <img src={process.env.PUBLIC_URL + '/' + found.opening_prices_image} className='structure_image' alt="" />
+                <img src={found.opening_prices_image} className='structure_image' alt="" />
               </div>
             </div>
           </div>

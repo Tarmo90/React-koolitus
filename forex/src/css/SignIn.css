@@ -1,11 +1,12 @@
-.signup-container {
+
+.signIn-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.signup-content {
+.signIn-content {
   text-align: center;
   padding: 60px 70px;
   background-color: rgba(17, 16, 16, 0.315);
@@ -24,7 +25,7 @@
   color: rgb(242, 12, 181);
 }
 
-label {
+.auth {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -34,13 +35,12 @@ label {
   width: 250px;
 }
 
-input {
+.auth-input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 2px solid #ca38f2;
   border-radius: 5px;
-  background-color: #ebe9e9; /* Vaikimisi taustavärv */
 }
 
 /* Stiil input-väljale aktiivse oleku korral (fokuseeritud) */

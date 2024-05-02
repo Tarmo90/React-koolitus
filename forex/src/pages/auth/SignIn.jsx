@@ -36,19 +36,17 @@ function SignIn() {
   }
 
   return (
-    <div className="signIn-container background">
+    <div className="signIn-container">
       <div className="signIn-content text-color">
         {message}
         <h2>Sign in</h2><br />
-          <label>
+          <label className='auth'>
             <div>Email</div>
-            <input ref={emailRef} type='text'
-            />
+            <input className='auth-input' ref={emailRef} type='text'/>
           </label><br />
-          <label>
+          <label className='auth'>
             <div>Password</div>
-            <input ref={passwordRef} type='password'
-            />
+            <input className='auth-input' ref={passwordRef} type='password'/>
           </label><br />
           <button onClick={login}>Sign in</button>
       </div>
