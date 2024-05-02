@@ -1,6 +1,6 @@
 .heading {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%); 
   text-align: center; 
@@ -15,12 +15,12 @@
   margin: 0 auto;
   color: aliceblue;
   position: absolute; 
-  top: 70%; 
+  top: 75%; 
   left: 50%; 
   transform: translate(-50%, -50%); 
   padding: 20px; 
   border: 4px solid#2793f2;
-  box-shadow: 0px 0px 80px rgba(112, 0, 143, 0.993); 
+  box-shadow: 0px 0px 50px rgba(112, 0, 143, 0.993); 
   border-radius: 30px; 
   cursor: pointer;
 }

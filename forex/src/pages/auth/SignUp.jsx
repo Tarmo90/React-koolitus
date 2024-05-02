@@ -62,7 +62,7 @@ function SignUp() {
             <input className='auth-input' ref={passwordRef} type="password" 
             />
           </label><br />
-          <button onClick={signup}>Register</button>
+          <button className='signUp_button' onClick={signup}>Register</button>
         
       </div>
     </div>

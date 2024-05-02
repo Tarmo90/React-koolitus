@@ -48,7 +48,7 @@ function SignIn() {
             <div>Password</div>
             <input className='auth-input' ref={passwordRef} type='password'/>
           </label><br />
-          <button onClick={login}>Sign in</button>
+          <button className='signIn_button' onClick={login}>Sign in</button>
       </div>
     </div>
   );

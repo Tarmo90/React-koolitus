@@ -1,26 +1,27 @@
 .subscribe_cont {
   display: flex;
   justify-content: space-between;
-  margin: 60% 25% 20%;
+  margin: 63% 25% 20%;
   padding: 10px 0%;
 }
 
 .subscribe {
-  width: 40vh;
-  height: 75vh;
+  width: 45vh;
+  height: 90vh;
   color: aliceblue;
   border: 1px solid #f20cb5;
+  box-shadow: 0px 0px 50px rgba(112, 0, 143, 0.993); 
   border-radius: 60px; 
   text-align: left;
   line-height: 2.5;
 }
 
 .subscribe2 {
-  width: 40vh;
-  height: 75vh;
+  width: 45vh;
+  height: 90vh;
   color: aliceblue;
   border: 1px solid#f20cb5;
-  box-shadow: 0px 0px 80px rgba(112, 0, 143, 0.993); 
+  box-shadow: 0px 0px 50px rgba(112, 0, 143, 0.993); 
   border-radius: 60px; 
   text-align: left;
   line-height: 2.5;
@@ -83,15 +84,15 @@ li::before {
 
 .sub_button {
   font-size: 19px;
-  margin: 20px 14%;
-  background-color: #000000;
-  border-color: #f20cb5;
+  margin: 40px 18%;
+  background-color: #080808;
+  border-color: #f20cb5 ;
+  color: rgb(243, 239, 243);
   border-radius: 20px;
-  color: #f20cb5;;
-  padding: 0px 20%;
+  padding: 0px 70px;
 }
 
 .sub_button:hover {
-  color: rgb(39, 146, 242);
-  border-color: rgb(39, 146, 242) ;
+  color: #2793f2;
+  border-color: #2793f2 ;
 }

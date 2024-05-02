@@ -1,8 +1,12 @@
 
+.order-container {
+  margin: 10% 10%;
+}
+
 .order {
   color: #f7f5f5;
   border: 2px solid#2793f2;  padding: 20px;
-  box-shadow: 0px 0px 80px rgba(112, 0, 143, 0.993); 
+  box-shadow: 0px 0px 50px rgba(112, 0, 143, 0.993); 
   width: 30vh;
   text-align: center;
   margin-left: 70vh;
@@ -28,17 +32,12 @@
   margin-left: 70vh;
   margin-top:10vh;
   border: 2px solid#2793f2;
-  box-shadow: 0px 0px 80px rgba(112, 0, 143, 0.993); 
+  box-shadow: 0px 0px 50px rgba(112, 0, 143, 0.993); 
 }
 
 .radio {
-  margin-left: 30px;
-  margin-top: -30px;
+ margin: 0 10px;
  }
-
-.radio[type="radio"]:focus {
-  box-shadow: 0 0 3px 2px rgba(12, 12, 12, 0.2);
-}
 
 .order_1 {
   margin-left: 20px;
@@ -47,27 +46,23 @@
   cursor: pointer;
  }
  
- .order_1:hover {
-    color: #2793f2; /* Värvi muutus hõljumise ajal */
+.order_1:hover {
+  color: #2793f2; /* Värvi muutus hõljumise ajal */
  }
- .order_1:focus-within { 
-    color: #2793f2; /* Värvi muutus siis, kui labeli sees olev input on fookuses */
- }
- 
 
-  .pay_button {
-    color: #1a1919;
-    margin-top: 5vh;
-    margin-left: 79vh;
-    background-color: #000000;
-    border-color: #f20cb5;
-    border-radius: 20px;
-    color: #f7f5f5;;
-    padding: 8px 50px;
+.pay_button {
+  color: #1a1919;
+  margin-top: 5vh;
+  margin-left: 79vh;
+  background-color: #000000;
+  border-color: #f20cb5;
+  border-radius: 20px;
+  color: #f7f5f5;;
+  padding: 8px 50px;
   }
-   .pay_button:hover {
-    color: rgb(39, 146, 242);
-    border-color: rgb(39, 146, 242) ;
+.pay_button:hover {
+  color: rgb(39, 146, 242);
+  border-color: rgb(39, 146, 242) ;
    }
   
   

@@ -3,7 +3,7 @@ display:block;
 padding: 30px 20px;
 border-radius: 30px;
 border: 1px solid rgb(242, 12, 181);
-box-shadow: 0px 0px 200px rgba(112, 0, 143, 0.993); 
+box-shadow: 0px 0px 50px rgba(112, 0, 143, 0.993); 
 margin: 90px 40% 0 40%;
 }
 
@@ -31,15 +31,22 @@ margin: 90px 40% 0 40%;
 .contact_input:focus {
   border-color: #220ce7; 
   outline: none; 
-  box-shadow: 0px 7px 20px #0d28c2; 
+  box-shadow: 0px 0px 20px #0d28c2; 
 }
 
 .contact_button {
   padding: 10px 20px; /* Polstri suurus */
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #080808;
+  border-color: #f20cb5 ;
   color: rgb(243, 239, 243);
   font-size: 16px;
   display: block; /* Muudab nupu blokk-veelemendiks */
   margin: 0 auto; /* Horisontaalne keskmine asetus */
+}
+
+.contact_button:hover{
+  color: #2793f2;
+  border-color:#2793f2 ;
+  background-color: #080808;
 }

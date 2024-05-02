@@ -9,7 +9,7 @@
   text-align: center;
   padding: 60px 70px;
   background-color: rgba(17, 16, 16, 0.315);
-  box-shadow: 0px 0px 200px rgba(112, 0, 143, 0.993); 
+  box-shadow: 0px 0px 50px rgba(112, 0, 143, 0.993); 
   border: 1px solid rgb(242, 12, 181);
   border-radius: 30px;
 }
@@ -40,18 +40,25 @@
 }
 
 /* Stiil input-väljale aktiivse oleku korral (fokuseeritud) */
-input:focus {
+.auth-input:focus {
   border-color: #220ce7; 
   outline: none; 
-  box-shadow: 0px 7px 20px #0d28c2; 
+  box-shadow: 0px 0px 20px #0d28c2; 
 }
 
-.signup-content button {
+.signUp_button {
   padding: 10px 20px; /* Polstri suurus */
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #080808;
+  border-color: #f20cb5 ;
   color: rgb(243, 239, 243);
   font-size: 16px;
   display: block; /* Muudab nupu blokk-veelemendiks */
   margin: 0 auto; /* Horisontaalne keskmine asetus */
+}
+
+.signUp_button:hover {
+  color: #2793f2;
+  border-color:#2793f2 ;
+  background-color: #080808;
 }

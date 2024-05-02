@@ -1,69 +1,29 @@
 .main-link-list {
-  text-align: center;
-  margin-left: 30vh;
-  margin-right: 30vh;
+  display: absolute;
+  margin: 10% 20% 0 25%;
+  justify-content: space-between;
+  padding: 10px 0;
 }
 
+.img-container {
+  padding: 30px 30px;
+ }
+
 .main-link img {
-  width: 25vh; /* Muutke vastavalt vajadusele */
-  height: 15vh; /* Säilitab pildi proportsioonid */
-  border-width: 2px;
+  width: 30vh; 
+  height: 20vh; 
+  border-width: 3px;
   border-style: solid;
   animation: colorChange 5s infinite alternate;
-  border-radius: 10px; /* Lisab piltidele ümardatud nurgad */
-  box-shadow: 0px 0px 60px rgba(112, 0, 143, 0.993);  
-  transition: border-color 0.2s ease; /* Animatsioon üleminekuks */
+  border-radius: 10px; 
+  box-shadow: 0px 0px 34px rgba(112, 0, 143, 0.993);  
+  transition: border-color 0.2s ease; 
 }
 
 @keyframes colorChange {
   0% { border-color: rgb(242, 12, 181); }
   50% { border-color: rgb(75, 29, 139); }
   100% { border-color: rgb(5, 17, 242); }
-}
-
-/* .separator {
-  width: 9%; 
-  height: 3px; 
-  background-color: #ffffff; 
-  margin: 20px auto; 
-  position: absolute; 
-  top: 55%; 
-  left: 45%; 
-  transform: translateY(-50%); 
-} */
-
-.headerText {
-  margin-top: 50px; /* Muudab ülemist vahe teksti ja ülemise pildi vahel */
-  text-align: center; /* Kesktõmbab teksti horisontaalselt */
-  font-weight: bold;
-  font-size: 25px;
-  color: #4ab9fa;
-  text-align: left;
-}
-  
-.pilt1, .pilt2, .pilt3 {
-  transform: translate(1%, 0vh); 
-  margin-right: 40px; /* Väike parem vahe, et eraldada järgmisest pildist */
-  margin-top: 200px;  
-}
-.pilt1:hover, .pilt2:hover, .pilt3:hover {
-  transform: scale(1.0); /* Muudab pildi suurust 20% võrra suuremaks hiirega peale liikudes */
-  transition: transform 1s ease; /* Lisab ülemineku efekti suuruse muutmisel */
-}
-
-.container {
-  display: flex;
-  align-items: center; /* Kesktõmbab sisu vertikaalselt */
-}
-
-.img-container {
-  flex: 1; /* Pilt võtab kogu ruumi */
-  margin-right: 20px; /* Parempoolne vahe pildi ja teksti vahel */
-}
-
-.text-container {
-  flex: 1; /* Tekst võtab kogu ruumi */
-  margin-top: 20px;
 }
 
 .main-link {
@@ -75,18 +35,15 @@
 
 .main-link h1 {
   position: absolute;
-  top: 50%;
-  left: 43%;
-  transform: translate(-50%, -50%);
+  top: 15px;
+  left: 30%;
   color: white;
   background-color: rgb(5, 17, 242);
-  padding: 10px;
+  padding: 10px 30px;
   border-radius: 20px;
-  font-size: 20px; /* Kindel suurus */
-  width: 130px; /* Kindel laius */
-  text-align: center; /* Teksti joondamine keskele */
+  font-size: 20px; 
+  text-align: center; 
 }
-
 
 .main-link:hover {
   transform: scale(1.1);
