@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import '../../../css/SingleCourse.css'
 function SingleCourse() {
   const [dbCourses, setDbCourses] = useState([]);
@@ -16,7 +16,8 @@ function SingleCourse() {
   const found = dbCourses.find(course => course.id === Number(id));
 
   return (
-    <div className='course_container'>
+    <div>
+      <div className='course_container'>
       {!dbCourses.length ? (
         <div></div>
       ) : found ? (
@@ -32,6 +33,10 @@ function SingleCourse() {
       ) : (
         <div>Kursust ei leitud.</div>
       )}
+      </div>
+       <Link to={"/courses"}>
+        <button className='courses_button'>Tagasi</button>
+      </Link>
     </div>
   );
 }

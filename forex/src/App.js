@@ -45,7 +45,6 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/contactUs" element={<ContactUs />} />
 
-
           <Route path="/cart/:price" element={<Cart />} />
           <Route path="/single_strategy/:id" element={<SingleStrategy />} />
           <Route path="/single_course/:id" element={<SingleCourse />} />

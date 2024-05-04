@@ -24,13 +24,6 @@ useEffect(() => {
           </div>
         ))}
       </div>
-
-      {/* <iframe className='video' width="360" height="215" 
-        src="https://www.youtube.com/embed/U2Wltnv-doo?si=GYssur7ZWD8MAMgA" 
-        title="YouTube video player"  
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowFullScreen
-      /> */}
     </div>
   );
 }

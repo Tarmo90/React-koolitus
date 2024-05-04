@@ -37,12 +37,11 @@ function Chart() {
     });
 
     window.onload = function() {
-      container.innerHTML = ''; // Tühjendage konteineri sisu enne skripti lisamist
+      container.innerHTML = ''; 
       container.appendChild(script);
     };
 
     return () => {
-      // Eemaldage skript komponendi mahalaadimisel, kui see on tõesti konteineri laps
       if (container.contains(script)) {
         container.removeChild(script);
       }
@@ -52,7 +51,7 @@ function Chart() {
   return (
     <div className='chart'
       ref={containerRef}
-      style={{ position: 'fixed', top: 60, left: 0, height: '95vh', width: '177vh', zIndex: 9999 }}
+      style={{ position: 'fixed', top: 60, left: 0, height: '95vh', width: '100%', zIndex: 9999 }}
     > Tee Refresh</div>
   );
 }
